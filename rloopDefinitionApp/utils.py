@@ -1,6 +1,7 @@
-import os
 import hashlib
+import os
 from typing import List, Union
+
 from data_constants import PACKET_SIZES
 
 

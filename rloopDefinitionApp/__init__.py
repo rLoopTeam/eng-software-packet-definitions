@@ -1,14 +1,14 @@
 import json
 import logging
 import os
-import sys
 import random
+import sys
+from typing import Optional, Union
 
-from typing import Union, Optional
 import yaml
 
-from utils import get_packet_files, md5
-from structs import Packet
+from rloopDefinitionApp.structs import Packet
+from rloopDefinitionApp.utils import get_packet_files, md5
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -17,7 +17,7 @@ log = logging.getLogger(__name__)
 class DefinitionGenerator:
     def __init__(self, input_folder: str="packets/", output_folder: str="output/"):
         # Data holding
-        self.packets = []
+        self.packets = {"packetDefinitions": []}
         self.packet_ids = set()
         self.packet_names = set()
         self.sums = {}
@@ -79,11 +79,11 @@ class DefinitionGenerator:
 
                     # Duplicate ID warning
                     if parsed_packet.packet_type in self.packet_ids:
-                        all_users = [_["Name"] for _ in self.packets if _["PacketType"] == parsed_packet.packet_type]
+                        all_users = [_["Name"] for _ in self.packets["packetDefinitions"] if _["PacketType"] == parsed_packet.packet_type]
                         log.warning(f"'{parsed_packet.name}' is reusing {hex(parsed_packet.packet_type)}. {all_users}")
 
                     # Append packet to lists.
-                    self.packets.append(parsed_packet.to_dict())
+                    self.packets["packetDefinitions"].append(parsed_packet.to_gs_dict())
                     self.packet_names.add(parsed_packet.name)
                     self.packet_ids.add(parsed_packet.packet_type)
 
@@ -127,8 +127,3 @@ class DefinitionGenerator:
 
             with open(self.file_sums_json, "w") as f:
                 json.dump(self.sums, f, indent=4)
-
-if __name__ == "__main__":
-    generator = DefinitionGenerator()
-    generator.load_all()
-    generator.save()

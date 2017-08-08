@@ -3,7 +3,7 @@ This generates a packet definitions JSON/YAML file that can be used in the groun
 
 # Usage
 1. Add/edit packet defintions in the packets/ directory.
-2. `python generate_definitions.py` with the virtual environment active.
+2. `python rloopDefinitionApp` with the virtual environment active.
 3. Grab the output files in output/ and push changes to Git.
 
 # General Notes
@@ -86,6 +86,7 @@ virtualenv -p python3 env/
 # Creates the environment and installs our dependicies.
 source env/bin/activate
 pip install -r requirements.txt
+python setup.py develop
 
 # Do some code! :)
 ````

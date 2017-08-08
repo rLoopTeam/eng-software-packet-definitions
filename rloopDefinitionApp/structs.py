@@ -1,6 +1,9 @@
-from typing import Union, Optional
-from data_constants import KNOWN_DAQ_KEYS, KNOWN_PARAM_KEYS, KNOWN_ROOT_KEYS
-from utils import get_size
+from typing import List, Optional, Union
+
+from rloopDefinitionApp.data_constants import (KNOWN_DAQ_KEYS,
+                                               KNOWN_PARAM_KEYS,
+                                               KNOWN_ROOT_KEYS)
+from rloopDefinitionApp.utils import get_size
 
 
 class Packet:
@@ -30,7 +33,7 @@ class Packet:
         return f"<Packet '{self.name}', type={hex(self.packet_type)}, prefix='{self.prefix}', " \
                f"parameters={len(self.parameters)}, {daq_text}>"
 
-    def to_dict(self):
+    def to_gs_dict(self):
         output = {
             "Name": self.name,
             "PacketType": self.packet_type,
@@ -45,13 +48,14 @@ class Packet:
 
         if self.daq:
             output.update({
+                "DAQ": True,
                 "dataType": self.daq["type"],
                 "dataSize": self.daq["size"],
             })
 
         if self.parameters:
             output.update({
-                "Parameters": self.parameters,
+                "Parameters": self.parameter_hack_for_ground_station(),
             })
 
         return output
@@ -60,6 +64,8 @@ class Packet:
     def from_yaml(cls, node: str, yaml_blob: dict, file_vars: Optional[dict]=None):
         # Do formatting of all variables if we have variables.
         if file_vars:
+            node = node.format(**file_vars)
+
             if "packetName" in yaml_blob:
                 yaml_blob["packetName"] = yaml_blob["packetName"].format(**file_vars)
 
@@ -106,6 +112,31 @@ class Packet:
             yaml_blob.get("daq", False)
         )
 
+    def parameter_hack_for_ground_station(self) -> List[dict]:
+        """
+            This is awful but a necessary evil for the current state of the ground station.
+            Thing it does
+                * Capitalize Name, beginLoop, endLoop
+                * Decapitalizes type, units
+        """
+
+        parameters_copy = self.parameters.copy()
+        for parameter in parameters_copy:
+            for key in parameter.keys():
+                if key == "name":
+                    parameter["Name"] = parameter["name"]
+                    del parameter["name"]
+                elif key.lower() in ("beginloop", "endloop") and key not in ("beginLoop", "endLoop"):
+                    # TODO: lol this is awful
+                    realKey = "beginLoop" if key.lower() == "beginloop" else "endLoop"
+                    parameter[realKey] = parameter[key]
+                    try:
+                        del parameter[key]
+                    except KeyError:
+                        pass
+
+        return parameters_copy
+
     def fill_defaults(self):
         """
             Fills in a packet's default values accordingly.
@@ -138,7 +169,7 @@ class Packet:
         if not self.name:
             raise ValueError(f"Packet must have a name. {str(self)}")
 
-        # Packet name
+        # Node name
         if not self.node:
             raise ValueError(f"Packet must have a node. {str(self)}")
 

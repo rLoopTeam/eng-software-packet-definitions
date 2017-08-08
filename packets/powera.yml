@@ -95,7 +95,7 @@ packets:
         type: 'float32'
         beginLoop: true
         endLoop: true
-      - name: 'BMD ID'
+      - name: 'BMS ID'
         type: 'uint8'
         beginLoop: true
         endLoop: true
