@@ -31,7 +31,7 @@ output/ # Persistent data folder
   packetDefinitions.yml # Final combined defintions file.
 ```
 
-## Packet definition template
+## Packet definition example
 ```yaml
 # Variables to substitute in [optional]
 vars:
@@ -44,6 +44,9 @@ node: 'Imaginary Node {{nodeName}}'
 # These files checksums will be calculated and saved to fileSums.json in the output folder.
 # This is so we can automate the process of knowing if anything in the transmission code has changed.
 podSources: 
+  # Imaginary packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # Moon data.
   - FIRMWARE/PROJECT_CODE/LCCM999__RLOOP__IMAGINARY/IMAGINARY_THING/imaginary_thing__moon__ethernet.c
 
 # List of all the packets that file serves.
