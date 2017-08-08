@@ -23,8 +23,10 @@ packets:
         type: 'uint16'
       - name: 'Spare'
         type: 'uint16'
+        units: 'RAW'
       - name: 'Temperature'
         type: 'float32'
+        units: 'C'
         beginLoop: true
         endLoop: true
 
