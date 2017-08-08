@@ -38,7 +38,7 @@ vars:
   nodeName: 'A'
 
 # Node name
-node: 'Imaginary Node {{nodeName}}'
+node: 'Imaginary Node {nodeName}'
 
 # Source code files that correspond to packet transmissions.
 # These files checksums will be calculated and saved to fileSums.json in the output folder.
@@ -52,8 +52,8 @@ podSources:
 # List of all the packets that file serves.
 packets:
   # Normal Packet
-  - packetName: 'Imaginary {{nodeName}} Moon Distance'
-    prefix: 'Imaginary {{nodeName}} Moon ' # Prefix for parameters
+  - packetName: 'Imaginary {nodeName} Moon Distance'
+    prefix: 'Imaginary {nodeName} Moon ' # Prefix for parameters
     packetType: 0x1337 # Aqquired from pod code
     parameters:
       - 'Distance':
@@ -63,7 +63,7 @@ packets:
         endLoop: false # optional, defaults to false
 
   # DAQ Packet
-  - packetName: 'IMAGINARY DAQ {{nodeName}} DISTANCE'
+  - packetName: 'IMAGINARY DAQ {nodeName} DISTANCE'
     packetType: 0x1337
     daq: # This has to be defined to make the packet a DAQ packet.
       type: 'int64' # [u]int[8,16,32,64], float[32,64]

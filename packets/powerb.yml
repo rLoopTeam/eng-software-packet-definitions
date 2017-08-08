@@ -1,7 +1,7 @@
 vars:
   nodeName: 'B'
 
-node: 'Power Node {{nodeName}}'
+node: 'Power Node {nodeName}'
 
 podSources:
   # Power packet types are in here.
@@ -14,8 +14,8 @@ podSources:
   - FIRMWARE/PROJECT_CODE/LCCM653__RLOOP__POWER_CORE/BMS/power_core__bms__ethernet.c
 
 packets:
-  - packetName: 'Power {{nodeName}} Current Temps'
-    prefix: 'Power {{nodeName}} Temps'
+  - packetName: 'Power {nodeName} Current Temps'
+    prefix: 'Power {nodeName} Temps'
     packetType: 0x3201
     parameters:
       - 'Count':
@@ -27,8 +27,8 @@ packets:
         beginLoop: true
         endLoop: true
 
-  - packetName: 'Power {{nodeName}} Temps Locations'
-    prefix: 'Power {{nodeName}} Temps Loc'
+  - packetName: 'Power {nodeName} Temps Locations'
+    prefix: 'Power {nodeName} Temps Loc'
     packetType: 0x3203
     parameters:
       - 'Number of Temps':
@@ -44,8 +44,8 @@ packets:
         type: 'uint8'
         endLoop: true
 
-  - packetName: 'Power {{nodeName}} ROM ID'
-    prefix: 'Power {{nodeName}} ROM'
+  - packetName: 'Power {nodeName} ROM ID'
+    prefix: 'Power {nodeName} ROM'
     packetType: 0x3205
     parameters:
       - 'Index':
@@ -56,8 +56,8 @@ packets:
       - 'Lo':
         type: 'uint16'
 
-  - packetName: 'Power {{nodeName}} BMS'
-    prefix: 'Power {{nodeName}} BMS'
+  - packetName: 'Power {nodeName} BMS'
+    prefix: 'Power {nodeName} BMS'
     packetType: 0x3205
     parameters:
       - 'Faults':
@@ -104,8 +104,8 @@ packets:
         type: 'float32'
 
   # Cooling code files are missing?
-  - packetName: 'Power {{nodeName}} Cooling'
-    prefix: 'Power {{nodeName}} Cooling'
+  - packetName: 'Power {nodeName} Cooling'
+    prefix: 'Power {nodeName} Cooling'
     packetType: 0x3601
     parameters:
       - 'Fault Flags':

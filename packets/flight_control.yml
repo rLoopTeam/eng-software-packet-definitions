@@ -576,7 +576,7 @@ packets:
         type: 'int32'
         endLoop: true
       # TODO: What's the type of this? FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/BRAKES/fcu__brakes__ethernet.c:112
-      - 'Unknown Timer'
+      - 'Unknown Timer':
         type: 'int8'
 
   # 0x1500 Throttle
