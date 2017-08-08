@@ -1,14 +1,20 @@
 # eng-software-packet-defintions
 This generates a packet definitions JSON/YAML file that can be used in the ground station or other internal apps that parse pod packets.
 
+# Usage
+1. Add/edit packet defintions in the packets/ directory.
+2. `python generate_definitions.py` with the virtual environment active.
+3. Grab the output files in output/ and push changes to Git.
+
 # General Notes
 * Ensure that you have eng-software-pod one folder up from this repo.
-* Python3 is the interpreter of choice for this project.
 
 # Standards
+* Python
+  * Version 3.
 * PEP8
-  * Rules [TODO] are excluded.
-  * Line length 120.
+  * --ignore=
+  * --max-line-length=120
 * Python
   * 4 spaces.
 * YAML, Markdown
