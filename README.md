@@ -33,8 +33,12 @@ output/ # Persistent data folder
 
 ## Packet definition template
 ```yaml
+# Variables to substitute in [optional]
+vars:
+  nodeName: 'A'
+
 # Node name
-node: 'Imaginary Node'
+node: 'Imaginary Node {{nodeName}}'
 
 # Source code files that correspond to packet transmissions.
 # These files checksums will be calculated and saved to fileSums.json in the output folder.
@@ -44,14 +48,14 @@ podSources:
 
 # List of all the packets that file serves.
 packets:
-  - packetName: 'Imaginary Moon Distance'
-    prefix: 'Imaginary Moon ' # Prefix for parameters
+  - packetName: 'Imaginary {{nodeName}} Moon Distance'
+    prefix: 'Imaginary {{nodeName}} Moon ' # Prefix for parameters
     packetType: 0x1337 # Aqquired from pod code
-    daq: false # DAQ packet
+    daq: false # DAQ packet, defaults to false.
     parameters:
-      - 'Count':
+      - 'Distance':
         type: 'int64' # [u]int[8,16,32,64], float[32,64]
-        units: 'km' # Units to show on the frontend
+        units: 'km' # Units to show on the frontend, defaults to ''
         beginLoop: false # optional, defaults to false
         endLoop: false # optional, defaults to false
 ```
