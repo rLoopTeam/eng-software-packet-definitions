@@ -4,7 +4,7 @@ from data_constants import PACKET_SIZES
 from typing import List
 
 
-def get_packet_files(folder) -> List[str]:
+def get_packet_files(folder: str) -> List[str]:
     """
         Utility function that lists all YAML files in the input folder.
     """

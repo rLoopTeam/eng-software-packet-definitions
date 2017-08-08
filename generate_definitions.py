@@ -6,7 +6,6 @@ import sys
 from typing import Union, Optional
 import yaml
 
-from data_constants import KNOWN_DAQ_KEYS, KNOWN_PARAM_KEYS, KNOWN_ROOT_KEYS
 from utils import get_packet_files
 from structs import Packet
 
@@ -30,7 +29,7 @@ class DefinitionGenerator:
         self.packet_definitions_human_json = os.path.join(self.output_folder, "packetDefinitions_human.json")
         self.file_sums_json = os.path.join(self.output_folder, "fileSums.json")
 
-    def load(self, file_name):
+    def load(self, file_name: str) -> None:
         """
             Loads a single defintion file.
             This method exists for testing and to drop exceptions when there is malformed data
@@ -66,7 +65,7 @@ class DefinitionGenerator:
                     self.packet_names.add(parsed_packet.name)
                     self.packet_ids.add(parsed_packet.packet_type)
 
-    def load_all(self):
+    def load_all(self) -> None:
         """
             Loads all packet defintion files in the given input folder.
         """
@@ -81,7 +80,7 @@ class DefinitionGenerator:
         for filename in packet_files:
             self.load(filename)
 
-    def save(self, with_sums=True):
+    def save(self, with_sums: bool=True) -> None:
         """
             Saves all the packets to their respective folders.
         """
