@@ -51,16 +51,22 @@ podSources:
 
 # List of all the packets that file serves.
 packets:
+  # Normal Packet
   - packetName: 'Imaginary {{nodeName}} Moon Distance'
     prefix: 'Imaginary {{nodeName}} Moon ' # Prefix for parameters
     packetType: 0x1337 # Aqquired from pod code
-    daq: false # DAQ packet, defaults to false.
     parameters:
       - 'Distance':
         type: 'int64' # [u]int[8,16,32,64], float[32,64]
         units: 'km' # Units to show on the frontend, defaults to ''
         beginLoop: false # optional, defaults to false
         endLoop: false # optional, defaults to false
+
+  # DAQ Packet
+  - packetName: 'IMAGINARY DAQ {{nodeName}} DISTANCE'
+    packetType: 0x1337
+    daq: # This has to be defined to make the packet a DAQ packet.
+      type: 'int64' # [u]int[8,16,32,64], float[32,64]
 ```
 
 # Windows Environment Setup

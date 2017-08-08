@@ -1,0 +1,134 @@
+vars:
+  nodeName: 'A'
+
+node: 'Power Node {{nodeName}}'
+
+podSources:
+  # Power packet types are in here.
+  - ./FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # Current temps, sensor location data, ROM IDs.
+  - FIRMWARE/PROJECT_CODE/LCCM653__RLOOP__POWER_CORE/BATTERY_TEMP/power_core__battery_temp__ethernet.c
+  # Current status data.
+  - FIRMWARE/PROJECT_CODE/LCCM653__RLOOP__POWER_CORE/CHARGER/power_core__charger_ethernet.c
+  # BMS status data.
+  - FIRMWARE/PROJECT_CODE/LCCM653__RLOOP__POWER_CORE/BMS/power_core__bms__ethernet.c
+
+packets:
+  - packetName: 'Power {{nodeName}} Current Temps'
+    prefix: 'Power {{nodeName}} Temps'
+    packetType: 0x3201
+    parameters:
+      - 'Count':
+        type: 'uint16'
+      - 'Spare':
+        type: 'uint16'
+      - 'Temperature':
+        type: 'float32'
+        beginLoop: true
+        endLoop: true
+
+  - packetName: 'Power {{nodeName}} Temps Locations'
+    prefix: 'Power {{nodeName}} Temps Loc'
+    packetType: 0x3203
+    parameters:
+      - 'Number of Temps':
+        type: 'uint16'
+      - 'Spare':
+        type: 'uint16'
+      - 'User Index':
+        type: 'uint16'
+        beginLoop: true
+      - 'Resolution':
+        type: 'uint8'
+      - 'Bus Index':
+        type: 'uint8'
+        endLoop: true
+
+  - packetName: 'Power {{nodeName}} ROM ID'
+    prefix: 'Power {{nodeName}} ROM'
+    packetType: 0x3205
+    parameters:
+      - 'Index':
+        type: 'uint32'
+      # TODO: Why is this split by Hi, Lo instead of the entire ROM ID?
+      - 'Hi':
+        type: 'uint16'
+      - 'Lo':
+        type: 'uint16'
+
+  - packetName: 'Power {{nodeName}} BMS'
+    prefix: 'Power {{nodeName}} BMS'
+    packetType: 0x3205
+    parameters:
+      - 'Faults':
+        type: 'uint32'
+      - 'Temp State':
+        type: 'uint8'
+      - 'Charger State':
+        type: 'uint8'
+      - 'Num Temp Sensors':
+        type: 'uint16'
+      # TODO: Figure out why this is Value instead of Temp
+      - 'Highest Sensor Value':
+        type: 'float32'
+      - 'Average Temp':
+        type: 'float32'
+      - 'Highest Sensor Index':
+        type: 'uint16'
+      - 'Pack Volts':
+        type: 'float32'
+      - 'Highest Cell Volts':
+        type: 'float32'
+      - 'Lowest Cell Volts':
+        type: 'float32'
+      - 'Board Temp':
+        type: 'float32'
+      - 'Node Pressure':
+        type: 'float32'
+      - 'Node Temp':
+        type: 'float32'
+      # TODO: Pray looping the Module Voltage, BMS ID works instead of the manual way of 1-18.
+      - 'Module Voltage':
+        type: 'float32'
+        beginLoop: true
+        endLoop: true
+      - 'BMD ID':
+        type: 'uint8'
+        beginLoop: true
+        endLoop: true
+      - 'Voltage Updates':
+        type: 'uint32'
+      - 'Temp Scan Count':
+        type: 'uint32'
+      - 'Pack Current':
+        type: 'float32'
+
+  # Cooling code files are missing?
+  - packetName: 'Power {{nodeName}} Cooling'
+    prefix: 'Power {{nodeName}} Cooling'
+    packetType: 0x3601
+    parameters:
+      - 'Fault Flags':
+        type: 'uint32'
+        # Original parameters
+        # {'Name': 'State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover1/2 Temp', 'type': 'int32', 'units': 'degF', 'size': 4},
+        # {'Name': 'Hover1/2 Cooling State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover1/2 Solenoid State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover1/2 Solenoid Pin', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover3/4 Temp', 'type': 'int32', 'units': 'degF', 'size': 4},
+        # {'Name': 'Hover3/4 Cooling State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover3/4 Solenoid State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover3/4 Solenoid Pin', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover5/6 Temp', 'type': 'int32', 'units': 'degF', 'size': 4},
+        # {'Name': 'Hover5/6 Cooling State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover5/6 Solenoid State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover5/6 Solenoid Pin', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover7/8 Temp', 'type': 'int32', 'units': 'degF', 'size': 4},
+        # {'Name': 'Hover7/8 Cooling State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover7/8 Solenoid State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'Hover7/8 Solenoid Pin', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'EddyBrake Temp', 'type': 'int32', 'units': 'degF', 'size': 4},
+        # {'Name': 'EddyBrake Cooling State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'EddyBrake Solenoid State', 'type': 'uint8', 'units': '', 'size': 1},
+        # {'Name': 'EddyBrake Solenoid Pin', 'type': 'uint8', 'units': '', 'size': 1}

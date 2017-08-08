@@ -1,0 +1,72 @@
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - ./FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # TODO: Where are the DAQ packets defined?
+
+packets:
+  - packetName: 'FCU DAQ CPU LOAD'
+    packetType: 0x4000
+    daq:
+      type: 'uint8'
+
+  - packetName: 'FCU DAQ ACCEL 0 X'
+    packetType: 0x4001
+    daq:
+      type: 'int16'
+
+  - packetName: 'FCU DAQ ACCEL 0 Y'
+    packetType: 0x4002
+    daq:
+      type: 'int16'
+
+  - packetName: 'FCU DAQ ACCEL 0 Z'
+    packetType: 0x4003
+    daq:
+      type: 'int16'
+
+  - packetName: 'FCU DAQ ACCEL 1 X'
+    packetType: 0x4004
+    daq:
+      type: 'int16'
+
+  - packetName: 'FCU DAQ ACCEL 1 Y'
+    packetType: 0x4005
+    daq:
+      type: 'int16'
+
+  - packetName: 'FCU DAQ ACCEL 1 Z'
+    packetType: 0x4006
+    daq:
+      type: 'int16'
+
+  - packetName: 'FCU DAQ ACCEL 0 ACCEL'
+    packetType: 0x4007
+    daq:
+      type: 'int42'
+
+  - packetName: 'FCU DAQ ACCEL 0 VELOCITY'
+    packetType: 0x4008
+    daq:
+      type: 'int42'
+
+  - packetName: 'FCU DAQ ACCEL 0 DISPLACEMENT'
+    packetType: 0x4009
+    daq:
+      type: 'int42'
+
+  - packetName: 'FCU DAQ ACCEL 1 ACCEL'
+    packetType: 0x400a
+    daq:
+      type: 'int42'
+
+  - packetName: 'FCU DAQ ACCEL 1 VELOCITY'
+    packetType: 0x400c
+    daq:
+      type: 'int42'
+
+  - packetName: 'FCU DAQ ACCEL 1 DISPLACEMENT'
+    packetType: 0x400d
+    daq:
+      type: 'int42'

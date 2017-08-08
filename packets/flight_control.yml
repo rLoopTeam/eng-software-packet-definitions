@@ -1,0 +1,620 @@
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - ./FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # 0x1000 Accel
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/ACCELEROMETERS/fcu__accel__ethernet.c
+  # 0x1100 Laser Opto
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/LASER_OPTO/fcu__laser_opto__ethernet.c
+  # 0x1200 Laser Distance
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/LASER_DISTANCE/fcu__laser_distance__ethernet.c
+  # 0x1300 Laser Contrast
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/LASER_CONTRAST/fcu__laser_cont__ethernet.c
+  # 0x1400 Brake
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/BRAKES/fcu__brakes__ethernet.c
+  # 0x1500 Throttle
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/THROTTLES/fcu__throttles__ethernet.c
+
+packets:
+  # 0x1000 Accel
+  - packetName: 'Accel Cal Full'
+    prefix: 'Accel'
+    packetType: 0x1001
+    parameters:
+      - 'Flags':
+        type: 'uint32'
+        beginLoop: true
+      - 'X Raw':
+        type: 'int16'
+      - 'Y Raw':
+        type: 'int16'
+      - 'Z Raw':
+        type: 'int16'
+        endLoop: true
+
+  - packetName: 'Accel Data Full'
+    prefix: 'Accel'
+    packetType: 0x1003
+    parameters:
+      - 'Flags':
+        type: 'uint32'
+        beginLoop: true
+      - 'X Raw':
+        type: 'int16'
+      - 'Y Raw':
+        type: 'int16'
+      - 'Z Raw':
+        type: 'int16'
+      - 'X Gs':
+        type: 'float32'
+      - 'Y Gs':
+        type: 'float32'
+      - 'Z Gs':
+        type: 'float32'
+      - 'Pitch':
+        type: 'float32'
+      - 'Roll':
+        type: 'float32'
+      - 'Current Accel':
+        type: 'int32'
+      - 'Current Velocity':
+        type: 'int32'
+      - 'Previous Velocity':
+        type: 'int32'
+      - 'Current Displacement':
+        type: 'int32'
+      - 'Previous Displacement':
+        type: 'int32'
+        endLoop: true
+
+  # 0x1100 Laser Opto
+  - packetName: 'Laser Opto Sensor'
+    prefix: 'LaserOpto'
+    packetType: 0x1101
+    parameters:
+      - 'Fault Flags':
+        type: 'uint32'
+      - 'Spare':
+        type: 'uint32'
+  
+      - 'Fault Flags':
+        type: 'uint32'
+        beginLoop: true
+      - 'Laser error packet count':
+        type: 'uint32'
+      - 'First byte wrong':
+        type: 'uint32'
+      - 'Raw distance':
+        type: 'float32'
+      - 'Filtered value':
+        type: 'float32'
+      - 'Spare':
+        type: 'uint32'
+
+  # 0x1200 Laser Distance
+  - packetName: 'Brake Data'
+    prefix: 'Brake'
+    packetType: 0x1402
+    parameters:
+      - 'Fault Flags':
+        type: 'uint32'
+      # TODO: Avionics, are you drunk? (read other comments below this for context)
+      # BEGIN QUESTIONABLE VARIABLES
+      # sFCU.sLaserDist.s32Distance_mm
+      - 'Spare 0':
+        type: 'int32'
+      # sFCU.sLaserDist.s32PrevDistance_mm
+      - 'Spare 1':
+        type: 'int32'
+      # sFCU.sLaserDist.s32Velocity_mms
+      - 'Spare 2':
+        type: 'int32'
+      # sFCU.sLaserDist.s32PrevVelocity_mms
+      - 'Distance Raw':
+        type: 'int32'
+      # sFCU.sLaserDist.s32Accel_mmss
+      - 'Distance Filtered':
+        type: 'int32'
+      # sFCU.sLaserDist.s32PrevAccel_mmss
+      - 'Spare 3':
+        type: 'int32'
+      # END QUESTIONABLE VARIABLES 
+      - 'Binary Distance':
+        type: 'uint32'
+      - 'Missed Start':
+        type: 'uint32'
+      - 'Bad Distance':
+        type: 'uint32'
+      - 'Error Code':
+        type: 'uint32'
+
+  # 0x1300 Laser Contrast
+  - packetName: 'Laser Contrast 0'
+    prefix: 'LaserContrast0'
+    packetType: 0x1301
+    parameters:
+      - 'System Fault Flags':
+        type: 'uint32'
+      - 'Spare 1':
+        type: 'uint32'
+      - 'Spare 2':
+        type: 'uint32'
+      - 'Spare 3':
+        type: 'uint32'
+      - 'Spare 4':
+        type: 'uint32'
+
+      - 'Laser Fault Flags':
+        type: 'uint32'
+
+      - 'Rising Count':
+        type: 'uint16'
+      - 'Falling Count':
+        type: 'uint16'
+      - 'Max Stripes':
+        type: 'uint16'
+
+      # 55 stripes
+      - 'Rise_00':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_01':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_02':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_03':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_04':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_05':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_06':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_07':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_08':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_09':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_10':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_11':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_12':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_13':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_14':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_15':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_16':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_17':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_18':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_19':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_20':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_21':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_22':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_23':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_24':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_25':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_26':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_27':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_28':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_29':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_30':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_31':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_32':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_33':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_34':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_35':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_36':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_37':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_38':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_39':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_40':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_41':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_42':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_43':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_44':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_45':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_46':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_47':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_48':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_49':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_50':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_51':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_52':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_53':
+        type: 'uint64'
+        units: 'ns'
+      - 'Rise_54':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_00':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_01':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_02':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_03':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_04':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_05':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_06':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_07':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_08':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_09':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_10':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_11':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_12':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_13':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_14':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_15':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_16':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_17':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_18':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_19':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_20':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_21':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_22':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_23':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_24':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_25':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_26':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_27':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_28':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_29':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_30':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_31':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_32':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_33':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_34':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_35':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_36':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_37':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_38':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_39':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_40':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_41':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_42':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_43':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_44':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_45':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_46':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_47':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_48':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_49':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_50':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_51':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_52':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_53':
+        type: 'uint64'
+        units: 'ns'
+      - 'Fall_54':
+        type: 'uint64'
+        units: 'ns'
+
+  # 0x1400 Brake
+  - packetName: 'Brake Data'
+    prefix: 'Brake'
+    packetType: 0x1402
+    parameters:
+      - 'Fault Flags':
+        type: 'uint32'
+        units: 'a'
+        startLoop: true
+
+      - 'I Beam mm Target':
+        units: 'mm'
+        type: 'float32'
+      - 'Lead Screw mm Target':
+        units: 'mm'
+        type: 'float32'
+      - 'Lead Screw um Target':
+        units: 'um'
+        type: 'uint32'
+
+      - 'I Beam mm Current':
+        units: 'mm'
+        type: 'float32'
+      - 'Lead Screw mm Current':
+        units: 'mm'
+        type: 'float32'
+      - 'MLP Current':
+        units: 'mm'
+        type: 'float32'
+
+      # Spare packet slots
+      - 'Spare 1':
+        type: 'uint32'
+      - 'Spare 2':
+        type: 'uint32'
+
+      # TODO: WTF? fcu__brakes__ethernet.c:146
+      - 'Limit Extend':
+        type: 'uint8'
+      - 'Limit Retract':
+        type: 'uint8'
+      - 'Limit Extend Edge':
+        type: 'uint8'
+      - 'Limit Retract Edge':
+        type: 'uint8'
+      - 'SW Error':
+        type: 'uint8'
+
+      - 'ADC Sample':
+        type: 'uint16'
+      - 'ADC Zero':
+        type: 'uint16'
+      - 'ADC Minus Zero':
+        type: 'int32'
+      - 'System Span':
+        type: 'float32'
+      - 'Brake Position':
+        type: 'float32'
+
+      - 'Linear Velocity':
+        type: 'int31'
+      - 'Linear Acceleration':
+        type: 'int31'
+      - 'Current Position':
+        type: 'int31'
+        endLoop: true
+
+      - 'State':
+        type: 'uint8'
+      - 'Calibration State':
+        type: 'uint8'
+
+  - packetName: 'Motor Parameters'
+    prefix: 'Motor'
+    packetType: 0x1406
+    parameters:
+      - 'Microstep Resolution':
+        type: 'uint32'
+        startLoop: true
+      - 'Max Acceleration':
+        type: 'int32'
+      - 'Microns per Revolution':
+        type: 'int32'
+      - 'Steps per Revolution':
+        type: 'uint32'
+      - 'Max Angular Velocity':
+        type: 'int32'
+        endLoop: true
+      # TODO: What's the type of this? FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/BRAKES/fcu__brakes__ethernet.c:112
+      - 'Unknown Timer'
+        type: 'int8'
+
+  # 0x1500 Throttle
+  - packetName: 'Throttle Parameters'
+    prefix: 'Throttle'
+    packetType: 0x1503
+    parameters:
+      - 'Fault Flags':
+        type: 'uint32'
+      - 'AMC Fault Flags':
+        type: 'uint32'
+
+      - 'Requested RPM':
+        type: 'uint16'
+        beginLoop: true
+        endLoop: true
+      - 'Current RPM':
+        type: 'uint16'
+        beginLoop: true
+        endLoop: true
+      - 'ASI RPM':
+        type: 'uint16'
+        beginLoop: true
+        endLoop: true
+
+      - 'State':
+        type: 'uint8'
+      - 'Current Index':
+        type: 'uint8'
+      - 'AMC State':
+        type: 'uint8'
+
+  # TODO: 0x1901 Auto Sequence could not be found in pod code.
+  - packetName: 'Auto-sequence test'
+    prefix: 'Auto-test'
+    packetType: 0x1901
+    parameters:
+      - 'State':
+        type: 'uint32'
+      - 'Status':
+        type: 'uint8'
