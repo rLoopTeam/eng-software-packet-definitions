@@ -45,29 +45,29 @@ packets:
   - packetName: 'FCU DAQ ACCEL 0 ACCEL'
     packetType: 0x4007
     daq:
-      type: 'int42'
+      type: 'int32'
 
   - packetName: 'FCU DAQ ACCEL 0 VELOCITY'
     packetType: 0x4008
     daq:
-      type: 'int42'
+      type: 'int32'
 
   - packetName: 'FCU DAQ ACCEL 0 DISPLACEMENT'
     packetType: 0x4009
     daq:
-      type: 'int42'
+      type: 'int32'
 
   - packetName: 'FCU DAQ ACCEL 1 ACCEL'
     packetType: 0x400a
     daq:
-      type: 'int42'
+      type: 'int32'
 
   - packetName: 'FCU DAQ ACCEL 1 VELOCITY'
     packetType: 0x400c
     daq:
-      type: 'int42'
+      type: 'int32'
 
   - packetName: 'FCU DAQ ACCEL 1 DISPLACEMENT'
     packetType: 0x400d
     daq:
-      type: 'int42'
+      type: 'int32'

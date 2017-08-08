@@ -41,7 +41,8 @@ KNOWN_PARAM_KEYS = [
 ]
 
 KNOWN_DAQ_KEYS = [
-    "type"
+    "type",
+    "size",
 ]
 
 class DefinitionGenerator:
@@ -72,6 +73,10 @@ class DefinitionGenerator:
         return PACKET_SIZES[packet_type.lower()]
 
     def fill_packet(self, packet):
+        # Fill in DAQ sizes if we have a DAQ.
+        if "daq" in packet:
+            packet["daq"]["size"] = self.get_size(packet["daq"]["type"])
+
         # Default DAQ to false if not appended.
         if "daq" not in packet:
             packet["daq"] = False
