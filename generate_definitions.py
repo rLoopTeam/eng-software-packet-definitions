@@ -1,49 +1,16 @@
-import os
-from typing import List
-import yaml
 import json
 import logging
+import os
+
+import yaml
+
+from data_constants import (KNOWN_DAQ_KEYS, KNOWN_PARAM_KEYS, KNOWN_ROOT_KEYS,
+                            PACKET_SIZES)
+from typing import List
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
-PACKET_SIZES = {
-    "uint8": 1,
-    "int8": 1,
-
-    "uint16": 2,
-    "int16": 2,
-
-    "uint32": 4,
-    "int32": 4,
-    "float32": 4,
-
-    "uint64": 8,
-    "int64": 8,
-    "float64": 8,
-}
-
-KNOWN_ROOT_KEYS = [
-    "daq",
-    "packetName",
-    "packetType",
-    "parameters",
-    "prefix",
-]
-
-KNOWN_PARAM_KEYS = [
-    "name",
-    "type",
-    "units",
-    "size",
-    "beginLoop",
-    "endLoop",
-]
-
-KNOWN_DAQ_KEYS = [
-    "type",
-    "size",
-]
 
 class DefinitionGenerator:
     def __init__(self, input_folder: str="packets/", output_folder: str="output/"):
@@ -67,12 +34,23 @@ class DefinitionGenerator:
         return files
 
     def get_size(self, packet_type):
+        """
+            Gets a packet's byte size from a dictionary.
+        """
+
         if packet_type not in PACKET_SIZES:
             raise ValueError(f"Packet type '{packet_type}' is not a valid packet type.")
 
         return PACKET_SIZES[packet_type.lower()]
 
     def fill_packet(self, packet):
+        """
+            Fills in a packet's default values accordingly.
+                * packet["daq"]["size"] = byte size [if DAQ]
+                * packet["daq"] = False [if not DAQ]
+                * packet["parameters"][param]["units"] = ""
+                * packet["parameters"][param]["size"] = byte size
+        """
         # Fill in DAQ sizes if we have a DAQ.
         if "daq" in packet:
             packet["daq"]["size"] = self.get_size(packet["daq"]["type"])
@@ -93,6 +71,10 @@ class DefinitionGenerator:
                     parameter["size"] = self.get_size(parameter["type"])
 
     def validate_packet(self, packet: dict):
+        """
+            Validates a packet's keys and raises exceptions and warnings if anything is wrong.
+        """
+
         # Packet name
         if "packetName" not in packet:
             raise ValueError(f"Packet must have a name. {str(packet)}")
@@ -127,7 +109,7 @@ class DefinitionGenerator:
         # DAQ and parameters
         if ("daq" in packet and "parameters" in packet) and packet["daq"]:
             raise ValueError(f"DAQ and parameters cannot both be defined in packet. [{packet['packetName']}]")
-        
+
         # Duplicate names
         if packet["packetName"] in self.packet_names:
             raise ValueError(f"Packet name '{packet['packetName']}' is already in use.'")
@@ -151,7 +133,7 @@ class DefinitionGenerator:
                     if not in_loop:
                         raise ValueError(f"'{packet['packetName']}' is ending a loop while not in a loop.")
                     in_loop = False
-            
+
             if in_loop:
                 raise ValueError(f"Loop not closed in '{packet['packetName']}'")
 
@@ -194,6 +176,10 @@ class DefinitionGenerator:
             self.load(filename)
 
     def save(self):
+        """
+            Saves all the packets to their respective folders.
+        """
+
         if not os.path.exists(self.output_folder):
             os.makedirs(self.output_folder)
 
