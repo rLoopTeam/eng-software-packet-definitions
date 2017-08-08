@@ -19,10 +19,16 @@ This generates a packet definitions JSON/YAML file that can be used in the groun
 
 # Layout
 
-## Folders
+## Files
 ```sh
 packets/ # Node folder container
   node.yml # Packet definitions split by node
+
+output/ # Persistent data folder
+  fileSums.json # Checksums of pod files.
+  packetDefinitions.json # Machine friendly combined defintions file.
+  packetDefinitions_human.json # Human friendly combined defintions file.
+  packetDefinitions.yml # Final combined defintions file.
 ```
 
 ## Packet definition template
@@ -31,7 +37,7 @@ packets/ # Node folder container
 node: 'Imaginary Node'
 
 # Source code files that correspond to packet transmissions.
-# These files checksums will be calculated and saved to .fileSums in the root folder.
+# These files checksums will be calculated and saved to fileSums.json in the output folder.
 # This is so we can automate the process of knowing if anything in the transmission code has changed.
 podSources: 
   - FIRMWARE/PROJECT_CODE/LCCM999__RLOOP__IMAGINARY/IMAGINARY_THING/imaginary_thing__moon__ethernet.c
