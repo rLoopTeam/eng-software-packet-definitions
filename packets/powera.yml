@@ -18,11 +18,11 @@ packets:
     prefix: 'Power {nodeName} Temps'
     packetType: 0x3201
     parameters:
-      - 'Count':
+      - name: 'Count'
         type: 'uint16'
-      - 'Spare':
+      - name: 'Spare'
         type: 'uint16'
-      - 'Temperature':
+      - name: 'Temperature'
         type: 'float32'
         beginLoop: true
         endLoop: true
@@ -31,16 +31,16 @@ packets:
     prefix: 'Power {nodeName} Temps Loc'
     packetType: 0x3203
     parameters:
-      - 'Number of Temps':
+      - name: 'Number of Temps'
         type: 'uint16'
-      - 'Spare':
+      - name: 'Spare'
         type: 'uint16'
-      - 'User Index':
+      - name: 'User Index'
         type: 'uint16'
         beginLoop: true
-      - 'Resolution':
+      - name: 'Resolution'
         type: 'uint8'
-      - 'Bus Index':
+      - name: 'Bus Index'
         type: 'uint8'
         endLoop: true
 
@@ -48,59 +48,59 @@ packets:
     prefix: 'Power {nodeName} ROM'
     packetType: 0x3205
     parameters:
-      - 'Index':
+      - name: 'Index'
         type: 'uint32'
       # TODO: Why is this split by Hi, Lo instead of the entire ROM ID?
-      - 'Hi':
+      - name: 'Hi'
         type: 'uint16'
-      - 'Lo':
+      - name: 'Lo'
         type: 'uint16'
 
   - packetName: 'Power {nodeName} BMS'
     prefix: 'Power {nodeName} BMS'
     packetType: 0x3205
     parameters:
-      - 'Faults':
+      - name: 'Faults'
         type: 'uint32'
-      - 'Temp State':
+      - name: 'Temp State'
         type: 'uint8'
-      - 'Charger State':
+      - name: 'Charger State'
         type: 'uint8'
-      - 'Num Temp Sensors':
+      - name: 'Num Temp Sensors'
         type: 'uint16'
       # TODO: Figure out why this is Value instead of Temp
-      - 'Highest Sensor Value':
+      - name: 'Highest Sensor Value'
         type: 'float32'
-      - 'Average Temp':
+      - name: 'Average Temp'
         type: 'float32'
-      - 'Highest Sensor Index':
+      - name: 'Highest Sensor Index'
         type: 'uint16'
-      - 'Pack Volts':
+      - name: 'Pack Volts'
         type: 'float32'
-      - 'Highest Cell Volts':
+      - name: 'Highest Cell Volts'
         type: 'float32'
-      - 'Lowest Cell Volts':
+      - name: 'Lowest Cell Volts'
         type: 'float32'
-      - 'Board Temp':
+      - name: 'Board Temp'
         type: 'float32'
-      - 'Node Pressure':
+      - name: 'Node Pressure'
         type: 'float32'
-      - 'Node Temp':
+      - name: 'Node Temp'
         type: 'float32'
       # TODO: Pray looping the Module Voltage, BMS ID works instead of the manual way of 1-18.
-      - 'Module Voltage':
+      - name: 'Module Voltage'
         type: 'float32'
         beginLoop: true
         endLoop: true
-      - 'BMD ID':
+      - name: 'BMD ID'
         type: 'uint8'
         beginLoop: true
         endLoop: true
-      - 'Voltage Updates':
+      - name: 'Voltage Updates'
         type: 'uint32'
-      - 'Temp Scan Count':
+      - name: 'Temp Scan Count'
         type: 'uint32'
-      - 'Pack Current':
+      - name: 'Pack Current'
         type: 'float32'
 
   # Cooling code files are missing?
@@ -108,7 +108,7 @@ packets:
     prefix: 'Power {nodeName} Cooling'
     packetType: 0x3601
     parameters:
-      - 'Fault Flags':
+      - name: 'Fault Flags'
         type: 'uint32'
         # Original parameters
         # {'Name': 'State', 'type': 'uint8', 'units': '', 'size': 1},
