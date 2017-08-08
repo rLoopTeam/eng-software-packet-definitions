@@ -50,9 +50,8 @@ packets:
     daq: false # DAQ packet
     parameters:
       - 'Count':
-        type: 'uint16' # [u]int[8,16,32,64], float[32,64]
-        units: '' # Units to show on the frontend
-        size: 2 # Parameter size type / 8 (this can be automated)
+        type: 'int64' # [u]int[8,16,32,64], float[32,64]
+        units: 'km' # Units to show on the frontend
         beginLoop: false # optional, defaults to false
         endLoop: false # optional, defaults to false
 ```
@@ -65,7 +64,9 @@ packets:
 # Explicit interpreter choice to ensure that our default interpreter is python3.
 virtualenv -p python3 env/
 
+# Creates the environment and installs our dependicies.
 source env/bin/activate
 pip install -r requirements.txt
-# Do some code!
+
+# Do some code! :)
 ````
