@@ -1,12 +1,12 @@
 import json
 import logging
 import os
+import sys
 
 import yaml
 
-from data_constants import (KNOWN_DAQ_KEYS, KNOWN_PARAM_KEYS, KNOWN_ROOT_KEYS,
-                            PACKET_SIZES)
-from typing import List
+from data_constants import KNOWN_DAQ_KEYS, KNOWN_PARAM_KEYS, KNOWN_ROOT_KEYS
+from utils import get_size, get_packet_files
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -14,34 +14,19 @@ log = logging.getLogger(__name__)
 
 class DefinitionGenerator:
     def __init__(self, input_folder: str="packets/", output_folder: str="output/"):
+        # Data holding
         self.packets = []
         self.packet_ids = set()
         self.packet_names = set()
+        self.sums = {}
 
+        # Paths
         self.input_folder = input_folder
         self.output_folder = output_folder
-
-    def get_packet_files(self) -> List[str]:
-        """
-            Utility function that lists all YAML files in the input folder.
-        """
-        files = []
-
-        for filename in os.listdir(self.input_folder):
-            if filename.endswith(".yml") or filename.endswith(".yaml"):
-                files.append(os.path.join(self.input_folder, filename))
-
-        return files
-
-    def get_size(self, packet_type):
-        """
-            Gets a packet's byte size from a dictionary.
-        """
-
-        if packet_type not in PACKET_SIZES:
-            raise ValueError(f"Packet type '{packet_type}' is not a valid packet type.")
-
-        return PACKET_SIZES[packet_type.lower()]
+        self.packet_definitions_yaml = os.path.join(self.output_folder, "packetDefinitions.yml")
+        self.packet_definitions_json = os.path.join(self.output_folder, "packetDefinitions.json")
+        self.packet_definitions_human_json = os.path.join(self.output_folder, "packetDefinitions_human.json")
+        self.file_sums_json = os.path.join(self.output_folder, "fileSums.json")
 
     def fill_packet(self, packet):
         """
@@ -51,9 +36,10 @@ class DefinitionGenerator:
                 * packet["parameters"][param]["units"] = ""
                 * packet["parameters"][param]["size"] = byte size
         """
+
         # Fill in DAQ sizes if we have a DAQ.
         if "daq" in packet:
-            packet["daq"]["size"] = self.get_size(packet["daq"]["type"])
+            packet["daq"]["size"] = get_size(packet["daq"]["type"])
 
         # Default DAQ to false if not appended.
         if "daq" not in packet:
@@ -68,7 +54,7 @@ class DefinitionGenerator:
 
                 # Fill in size
                 if "size" not in parameter:
-                    parameter["size"] = self.get_size(parameter["type"])
+                    parameter["size"] = get_size(parameter["type"])
 
     def validate_packet(self, packet: dict):
         """
@@ -137,45 +123,57 @@ class DefinitionGenerator:
             if in_loop:
                 raise ValueError(f"Loop not closed in '{packet['packetName']}'")
 
-    def load(self, packet_file):
+    def load(self, file_name):
         """
             Loads a single defintion file.
             This method exists for testing and to drop exceptions when there is malformed data
             in the packet defintions.
         """
-        with open(packet_file, "r") as f:
-            packets_data = yaml.load(f)
-            packet_vars = packets_data.get("vars")
+        is_sums = file_name == self.file_sums_json
 
-            for packet in packets_data["packets"]:
-                # Do formatting of all variables if we have variables.
-                if packet_vars:
-                    if "packetName" in packet:
-                        packet["packetName"] = packet["packetName"].format(**packet_vars)
-                    if "prefix" in packet:
-                        packet["prefix"] = packet["prefix"].format(**packet_vars)
-                    # TODO: If we ever put variables in parameters, implement this.
-                    if "parameters" in packet:
-                        pass
+        with open(file_name, "r") as f:
+            if is_sums:
+                self.sums = json.load(f)
+            else:
+                packets_data = yaml.load(f)
+                packet_vars = packets_data.get("vars")
 
-                # Fill blanks and validate.
-                self.fill_packet(packet)
-                self.validate_packet(packet)
+                for packet in packets_data["packets"]:
+                    # Do formatting of all variables if we have variables.
+                    if packet_vars:
+                        if "packetName" in packet:
+                            packet["packetName"] = packet["packetName"].format(**packet_vars)
+                        if "prefix" in packet:
+                            packet["prefix"] = packet["prefix"].format(**packet_vars)
+                        # TODO: If we ever put variables in parameters, implement this.
+                        if "parameters" in packet:
+                            pass
 
-                # Append packet to lists.
-                self.packets.append(packet)
-                self.packet_names.add(packet["packetName"])
-                self.packet_ids.add(packet["packetType"])
+                    # Fill blanks and validate.
+                    self.fill_packet(packet)
+                    self.validate_packet(packet)
+
+                    # Append packet to lists.
+                    self.packets.append(packet)
+                    self.packet_names.add(packet["packetName"])
+                    self.packet_ids.add(packet["packetType"])
 
     def load_all(self):
         """
             Loads all packet defintion files in the given input folder.
         """
-        packet_files = self.get_packet_files()
+        # Load the sums before the packets.
+        try:
+            self.load(self.file_sums_json)
+        except FileNotFoundError:
+            pass
+
+        # Load the packets.
+        packet_files = get_packet_files(self.input_folder)
         for filename in packet_files:
             self.load(filename)
 
-    def save(self):
+    def save(self, with_sums=True):
         """
             Saves all the packets to their respective folders.
         """
@@ -183,14 +181,18 @@ class DefinitionGenerator:
         if not os.path.exists(self.output_folder):
             os.makedirs(self.output_folder)
 
-        with open(os.path.join(self.output_folder, "packetDefinitions.yml"), "w") as f:
+        with open(self.packet_definitions_yaml, "w") as f:
             yaml.dump(self.packets, f, explicit_start=True)
 
-        with open(os.path.join(self.output_folder, "packetDefinitions.json"), "w") as f:
+        with open(self.packet_definitions_json, "w") as f:
             json.dump(self.packets, f)
 
-        with open(os.path.join(self.output_folder, "packetDefinitions_human.json"), "w") as f:
+        with open(self.packet_definitions_human_json, "w") as f:
             json.dump(self.packets, f, indent=4)
+
+        if with_sums:
+            with open(self.file_sums_json, "w") as f:
+                json.dump(self.sums, f)
 
 if __name__ == "__main__":
     generator = DefinitionGenerator()
