@@ -1,3 +1,4 @@
+---
 node: 'Flight Control'
 
 podSources:
@@ -91,11 +92,12 @@ packets:
         type: 'float32'
       - name: 'Spare'
         type: 'uint32'
+        endLoop: true
 
   # 0x1200 Laser Distance
-  - packetName: 'Brake Data'
-    prefix: 'Brake'
-    packetType: 0x1402
+  - packetName: 'Forward Laser Distance Sensor'
+    prefix: 'ForwardLaser'
+    packetType: 0x1201
     parameters:
       - name: 'Fault Flags'
         type: 'uint32'
@@ -495,7 +497,7 @@ packets:
       - name: 'Fault Flags'
         type: 'uint32'
         units: 'a'
-        startLoop: true
+        beginLoop: true
 
       - name: 'I Beam mm Target'
         units: 'mm'
@@ -547,11 +549,11 @@ packets:
         type: 'float32'
 
       - name: 'Linear Velocity'
-        type: 'int31'
+        type: 'int32'
       - name: 'Linear Acceleration'
-        type: 'int31'
+        type: 'int32'
       - name: 'Current Position'
-        type: 'int31'
+        type: 'int32'
         endLoop: true
 
       - name: 'State'
@@ -565,7 +567,7 @@ packets:
     parameters:
       - name: 'Microstep Resolution'
         type: 'uint32'
-        startLoop: true
+        beginLoop: true
       - name: 'Max Acceleration'
         type: 'int32'
       - name: 'Microns per Revolution'

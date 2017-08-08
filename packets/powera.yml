@@ -1,3 +1,4 @@
+---
 vars:
   nodeName: 'A'
 
@@ -58,7 +59,7 @@ packets:
 
   - packetName: 'Power {nodeName} BMS'
     prefix: 'Power {nodeName} BMS'
-    packetType: 0x3205
+    packetType: 0x3405
     parameters:
       - name: 'Faults'
         type: 'uint32'
