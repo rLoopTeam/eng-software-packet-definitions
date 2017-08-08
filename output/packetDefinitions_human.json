@@ -1,0 +1,1845 @@
+[
+    {
+        "Name": "FCU DAQ CPU LOAD",
+        "PacketType": 16384,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "uint8",
+        "dataSize": 1
+    },
+    {
+        "Name": "FCU DAQ ACCEL 0 X",
+        "PacketType": 16385,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int16",
+        "dataSize": 2
+    },
+    {
+        "Name": "FCU DAQ ACCEL 0 Y",
+        "PacketType": 16386,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int16",
+        "dataSize": 2
+    },
+    {
+        "Name": "FCU DAQ ACCEL 0 Z",
+        "PacketType": 16387,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int16",
+        "dataSize": 2
+    },
+    {
+        "Name": "FCU DAQ ACCEL 1 X",
+        "PacketType": 16388,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int16",
+        "dataSize": 2
+    },
+    {
+        "Name": "FCU DAQ ACCEL 1 Y",
+        "PacketType": 16389,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int16",
+        "dataSize": 2
+    },
+    {
+        "Name": "FCU DAQ ACCEL 1 Z",
+        "PacketType": 16390,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int16",
+        "dataSize": 2
+    },
+    {
+        "Name": "FCU DAQ ACCEL 0 ACCEL",
+        "PacketType": 16391,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int32",
+        "dataSize": 4
+    },
+    {
+        "Name": "FCU DAQ ACCEL 0 VELOCITY",
+        "PacketType": 16392,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int32",
+        "dataSize": 4
+    },
+    {
+        "Name": "FCU DAQ ACCEL 0 DISPLACEMENT",
+        "PacketType": 16393,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int32",
+        "dataSize": 4
+    },
+    {
+        "Name": "FCU DAQ ACCEL 1 ACCEL",
+        "PacketType": 16394,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int32",
+        "dataSize": 4
+    },
+    {
+        "Name": "FCU DAQ ACCEL 1 VELOCITY",
+        "PacketType": 16396,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int32",
+        "dataSize": 4
+    },
+    {
+        "Name": "FCU DAQ ACCEL 1 DISPLACEMENT",
+        "PacketType": 16397,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "dataType": "int32",
+        "dataSize": 4
+    },
+    {
+        "Name": "Accel Cal Full",
+        "PacketType": 4097,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "ParameterPrefix": "Accel ",
+        "Parameters": [
+            {
+                "name": "Flags",
+                "type": "uint32",
+                "beginLoop": true,
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "X Raw",
+                "type": "int16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Y Raw",
+                "type": "int16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Z Raw",
+                "type": "int16",
+                "endLoop": true,
+                "units": "",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "Name": "Accel Data Full",
+        "PacketType": 4099,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "ParameterPrefix": "Accel ",
+        "Parameters": [
+            {
+                "name": "Flags",
+                "type": "uint32",
+                "beginLoop": true,
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "X Raw",
+                "type": "int16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Y Raw",
+                "type": "int16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Z Raw",
+                "type": "int16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "X Gs",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Y Gs",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Z Gs",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Pitch",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Roll",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Current Accel",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Current Velocity",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Previous Velocity",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Current Displacement",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Previous Displacement",
+                "type": "int32",
+                "endLoop": true,
+                "units": "",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "Name": "Laser Opto Sensor",
+        "PacketType": 4353,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "ParameterPrefix": "LaserOpto ",
+        "Parameters": [
+            {
+                "name": "Fault Flags",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Fault Flags",
+                "type": "uint32",
+                "beginLoop": true,
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Laser error packet count",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "First byte wrong",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Raw distance",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Filtered value",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare",
+                "type": "uint32",
+                "endLoop": true,
+                "units": "",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "Name": "Forward Laser Distance Sensor",
+        "PacketType": 4609,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "ParameterPrefix": "ForwardLaser ",
+        "Parameters": [
+            {
+                "name": "Fault Flags",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare 0",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare 1",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare 2",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Distance Raw",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Distance Filtered",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare 3",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Binary Distance",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Missed Start",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Bad Distance",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Error Code",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "Name": "Laser Contrast 0",
+        "PacketType": 4865,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "ParameterPrefix": "LaserContrast0 ",
+        "Parameters": [
+            {
+                "name": "System Fault Flags",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare 1",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare 2",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare 3",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare 4",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Laser Fault Flags",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Rising Count",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Falling Count",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Max Stripes",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Rise_00",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_01",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_02",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_03",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_04",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_05",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_06",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_07",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_08",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_09",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_10",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_11",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_12",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_13",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_14",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_15",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_16",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_17",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_18",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_19",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_20",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_21",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_22",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_23",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_24",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_25",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_26",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_27",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_28",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_29",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_30",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_31",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_32",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_33",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_34",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_35",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_36",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_37",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_38",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_39",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_40",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_41",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_42",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_43",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_44",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_45",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_46",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_47",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_48",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_49",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_50",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_51",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_52",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_53",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Rise_54",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_00",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_01",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_02",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_03",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_04",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_05",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_06",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_07",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_08",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_09",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_10",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_11",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_12",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_13",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_14",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_15",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_16",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_17",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_18",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_19",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_20",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_21",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_22",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_23",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_24",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_25",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_26",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_27",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_28",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_29",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_30",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_31",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_32",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_33",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_34",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_35",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_36",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_37",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_38",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_39",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_40",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_41",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_42",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_43",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_44",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_45",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_46",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_47",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_48",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_49",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_50",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_51",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_52",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_53",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            },
+            {
+                "name": "Fall_54",
+                "type": "uint64",
+                "units": "ns",
+                "size": 8
+            }
+        ]
+    },
+    {
+        "Name": "Brake Data",
+        "PacketType": 5122,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "ParameterPrefix": "Brake ",
+        "Parameters": [
+            {
+                "name": "Fault Flags",
+                "type": "uint32",
+                "units": "a",
+                "beginLoop": true,
+                "size": 4
+            },
+            {
+                "name": "I Beam mm Target",
+                "units": "mm",
+                "type": "float32",
+                "size": 4
+            },
+            {
+                "name": "Lead Screw mm Target",
+                "units": "mm",
+                "type": "float32",
+                "size": 4
+            },
+            {
+                "name": "Lead Screw um Target",
+                "units": "um",
+                "type": "uint32",
+                "size": 4
+            },
+            {
+                "name": "I Beam mm Current",
+                "units": "mm",
+                "type": "float32",
+                "size": 4
+            },
+            {
+                "name": "Lead Screw mm Current",
+                "units": "mm",
+                "type": "float32",
+                "size": 4
+            },
+            {
+                "name": "MLP Current",
+                "units": "mm",
+                "type": "float32",
+                "size": 4
+            },
+            {
+                "name": "Spare 1",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Spare 2",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Limit Extend",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Limit Retract",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Limit Extend Edge",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Limit Retract Edge",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "SW Error",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "ADC Sample",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "ADC Zero",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "ADC Minus Zero",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "System Span",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Brake Position",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Linear Velocity",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Linear Acceleration",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Current Position",
+                "type": "int32",
+                "endLoop": true,
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "State",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Calibration State",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "Name": "Motor Parameters",
+        "PacketType": 5126,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "ParameterPrefix": "Motor ",
+        "Parameters": [
+            {
+                "name": "Microstep Resolution",
+                "type": "uint32",
+                "beginLoop": true,
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Max Acceleration",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Microns per Revolution",
+                "type": "int32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Steps per Revolution",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Max Angular Velocity",
+                "type": "int32",
+                "endLoop": true,
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Unknown Timer",
+                "type": "int8",
+                "units": "",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "Name": "Throttle Parameters",
+        "PacketType": 5379,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "ParameterPrefix": "Throttle ",
+        "Parameters": [
+            {
+                "name": "Fault Flags",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "AMC Fault Flags",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Requested RPM",
+                "type": "uint16",
+                "beginLoop": true,
+                "endLoop": true,
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Current RPM",
+                "type": "uint16",
+                "beginLoop": true,
+                "endLoop": true,
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "ASI RPM",
+                "type": "uint16",
+                "beginLoop": true,
+                "endLoop": true,
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "State",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Current Index",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "AMC State",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "Name": "Auto-sequence test",
+        "PacketType": 6401,
+        "Node": "Flight Control",
+        "DAQ": false,
+        "ParameterPrefix": "Auto-test ",
+        "Parameters": [
+            {
+                "name": "State",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Status",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "Name": "Power B Current Temps",
+        "PacketType": 12801,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power B Temps ",
+        "Parameters": [
+            {
+                "name": "Count",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Spare",
+                "type": "uint16",
+                "units": "RAW",
+                "size": 2
+            },
+            {
+                "name": "Temperature",
+                "type": "float32",
+                "units": "C",
+                "beginLoop": true,
+                "endLoop": true,
+                "size": 4
+            }
+        ]
+    },
+    {
+        "Name": "Power B Temps Locations",
+        "PacketType": 12803,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power B Temps Loc ",
+        "Parameters": [
+            {
+                "name": "Number of Temps",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Spare",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "User Index",
+                "type": "uint16",
+                "beginLoop": true,
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Resolution",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Bus Index",
+                "type": "uint8",
+                "endLoop": true,
+                "units": "",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "Name": "Power B ROM ID",
+        "PacketType": 12805,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power B ROM ",
+        "Parameters": [
+            {
+                "name": "Index",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Hi",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Lo",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "Name": "Power B BMS",
+        "PacketType": 13317,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power B BMS ",
+        "Parameters": [
+            {
+                "name": "Faults",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Temp State",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Charger State",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Num Temp Sensors",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Highest Sensor Value",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Average Temp",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Highest Sensor Index",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Pack Volts",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Highest Cell Volts",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Lowest Cell Volts",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Board Temp",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Node Pressure",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Node Temp",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Module Voltage",
+                "type": "float32",
+                "beginLoop": true,
+                "endLoop": true,
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "BMD ID",
+                "type": "uint8",
+                "beginLoop": true,
+                "endLoop": true,
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Voltage Updates",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Temp Scan Count",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Pack Current",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "Name": "Power B Cooling",
+        "PacketType": 13825,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power B Cooling ",
+        "Parameters": [
+            {
+                "name": "Fault Flags",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "Name": "Power A Current Temps",
+        "PacketType": 12801,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power A Temps ",
+        "Parameters": [
+            {
+                "name": "Count",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Spare",
+                "type": "uint16",
+                "units": "RAW",
+                "size": 2
+            },
+            {
+                "name": "Temperature",
+                "type": "float32",
+                "units": "C",
+                "beginLoop": true,
+                "endLoop": true,
+                "size": 4
+            }
+        ]
+    },
+    {
+        "Name": "Power A Temps Locations",
+        "PacketType": 12803,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power A Temps Loc ",
+        "Parameters": [
+            {
+                "name": "Number of Temps",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Spare",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "User Index",
+                "type": "uint16",
+                "beginLoop": true,
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Resolution",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Bus Index",
+                "type": "uint8",
+                "endLoop": true,
+                "units": "",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "Name": "Power A ROM ID",
+        "PacketType": 12805,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power A ROM ",
+        "Parameters": [
+            {
+                "name": "Index",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Hi",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Lo",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "Name": "Power A BMS",
+        "PacketType": 13317,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power A BMS ",
+        "Parameters": [
+            {
+                "name": "Faults",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Temp State",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Charger State",
+                "type": "uint8",
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Num Temp Sensors",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Highest Sensor Value",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Average Temp",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Highest Sensor Index",
+                "type": "uint16",
+                "units": "",
+                "size": 2
+            },
+            {
+                "name": "Pack Volts",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Highest Cell Volts",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Lowest Cell Volts",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Board Temp",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Node Pressure",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Node Temp",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Module Voltage",
+                "type": "float32",
+                "beginLoop": true,
+                "endLoop": true,
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "BMD ID",
+                "type": "uint8",
+                "beginLoop": true,
+                "endLoop": true,
+                "units": "",
+                "size": 1
+            },
+            {
+                "name": "Voltage Updates",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Temp Scan Count",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            },
+            {
+                "name": "Pack Current",
+                "type": "float32",
+                "units": "",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "Name": "Power A Cooling",
+        "PacketType": 13825,
+        "Node": "Power Node {nodeName}",
+        "DAQ": false,
+        "ParameterPrefix": "Power A Cooling ",
+        "Parameters": [
+            {
+                "name": "Fault Flags",
+                "type": "uint32",
+                "units": "",
+                "size": 4
+            }
+        ]
+    }
+]

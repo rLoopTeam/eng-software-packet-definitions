@@ -1,7 +1,28 @@
 import os
-
+import hashlib
+from typing import List, Union
 from data_constants import PACKET_SIZES
-from typing import List
+
+
+def md5(content: str, filehash: bool=False) -> Union[str, None]:
+    """
+        Lazy man's md5 for files and strings.
+        Saves us from doing this.
+            with open(filename, "rb") as f:
+                hash = hashlib.md5(f.read()).hexdigest()
+        Or this.
+            hashlib.md5("rLoop!".encode("utf8")).hexdigest()
+    """
+    if filehash:
+        with open(content, "rb") as f:
+            hashed = hashlib.md5(f.read()).hexdigest()
+    else:
+        try:
+            hashed = hashlib.md5(content.encode("utf8")).hexdigest()
+        except AttributeError:
+            hashed = hashlib.md5(content).hexdigest()
+
+    return hashed
 
 
 def get_packet_files(folder: str) -> List[str]:

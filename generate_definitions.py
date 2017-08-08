@@ -2,11 +2,12 @@ import json
 import logging
 import os
 import sys
+import random
 
 from typing import Union, Optional
 import yaml
 
-from utils import get_packet_files
+from utils import get_packet_files, md5
 from structs import Packet
 
 logging.basicConfig(level=logging.INFO)
@@ -20,6 +21,9 @@ class DefinitionGenerator:
         self.packet_ids = set()
         self.packet_names = set()
         self.sums = {}
+
+        # State
+        self.md5_ok = True
 
         # Paths
         self.input_folder = input_folder
@@ -42,6 +46,24 @@ class DefinitionGenerator:
                 self.sums = json.load(f)
             else:
                 packets_data = yaml.load(f)
+
+                for source_path in packets_data["podSources"]:
+                    full_source_path = os.path.join("../eng-software-pod", source_path)
+                    filehash = md5(full_source_path, True)
+
+                    if full_source_path not in self.sums:
+                        self.sums[full_source_path] = filehash
+
+                    if self.sums[full_source_path] != filehash:
+                        looked_at_code = int(os.environ.get("I_REALLY_LOOKED", -1)) == self.sums["I_REALLY_LOOKED"]
+
+                        log.warning(f"Hash has changed for {full_source_path}{'' if looked_at_code else '; not saving hashes to output'}")
+                        if looked_at_code:
+                            self.sums[full_source_path] = filehash
+                        else:
+                            log.warning(f"Please review the recent changes for those files and rerun this script with environment variable I_REALLY_LOOKED={self.sums['I_REALLY_LOOKED']}")
+                            log.warning(f"new={filehash}, old={self.sums[full_source_path]}")
+                            self.md5_ok = False
 
                 for unparsed_packet in packets_data["packets"]:
                     # Fill blanks and validate.
@@ -80,7 +102,7 @@ class DefinitionGenerator:
         for filename in packet_files:
             self.load(filename)
 
-    def save(self, with_sums: bool=True) -> None:
+    def save(self) -> None:
         """
             Saves all the packets to their respective folders.
         """
@@ -97,9 +119,14 @@ class DefinitionGenerator:
         with open(self.packet_definitions_human_json, "w") as f:
             json.dump(self.packets, f, indent=4)
 
-        if with_sums:
+        if self.md5_ok:
+            # Did you really look at the code or did you not? ;)
+            self.sums.update({
+                "I_REALLY_LOOKED": random.randint(0, 65535),
+            })
+
             with open(self.file_sums_json, "w") as f:
-                json.dump(self.sums, f)
+                json.dump(self.sums, f, indent=4)
 
 if __name__ == "__main__":
     generator = DefinitionGenerator()

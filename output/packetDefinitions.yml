@@ -1,0 +1,399 @@
+---
+- {DAQ: false, Name: FCU DAQ CPU LOAD, Node: Flight Control, PacketType: 16384, dataSize: 1,
+  dataType: uint8}
+- {DAQ: false, Name: FCU DAQ ACCEL 0 X, Node: Flight Control, PacketType: 16385, dataSize: 2,
+  dataType: int16}
+- {DAQ: false, Name: FCU DAQ ACCEL 0 Y, Node: Flight Control, PacketType: 16386, dataSize: 2,
+  dataType: int16}
+- {DAQ: false, Name: FCU DAQ ACCEL 0 Z, Node: Flight Control, PacketType: 16387, dataSize: 2,
+  dataType: int16}
+- {DAQ: false, Name: FCU DAQ ACCEL 1 X, Node: Flight Control, PacketType: 16388, dataSize: 2,
+  dataType: int16}
+- {DAQ: false, Name: FCU DAQ ACCEL 1 Y, Node: Flight Control, PacketType: 16389, dataSize: 2,
+  dataType: int16}
+- {DAQ: false, Name: FCU DAQ ACCEL 1 Z, Node: Flight Control, PacketType: 16390, dataSize: 2,
+  dataType: int16}
+- {DAQ: false, Name: FCU DAQ ACCEL 0 ACCEL, Node: Flight Control, PacketType: 16391,
+  dataSize: 4, dataType: int32}
+- {DAQ: false, Name: FCU DAQ ACCEL 0 VELOCITY, Node: Flight Control, PacketType: 16392,
+  dataSize: 4, dataType: int32}
+- {DAQ: false, Name: FCU DAQ ACCEL 0 DISPLACEMENT, Node: Flight Control, PacketType: 16393,
+  dataSize: 4, dataType: int32}
+- {DAQ: false, Name: FCU DAQ ACCEL 1 ACCEL, Node: Flight Control, PacketType: 16394,
+  dataSize: 4, dataType: int32}
+- {DAQ: false, Name: FCU DAQ ACCEL 1 VELOCITY, Node: Flight Control, PacketType: 16396,
+  dataSize: 4, dataType: int32}
+- {DAQ: false, Name: FCU DAQ ACCEL 1 DISPLACEMENT, Node: Flight Control, PacketType: 16397,
+  dataSize: 4, dataType: int32}
+- DAQ: false
+  Name: Accel Cal Full
+  Node: Flight Control
+  PacketType: 4097
+  ParameterPrefix: 'Accel '
+  Parameters:
+  - {beginLoop: true, name: Flags, size: 4, type: uint32, units: ''}
+  - {name: X Raw, size: 2, type: int16, units: ''}
+  - {name: Y Raw, size: 2, type: int16, units: ''}
+  - {endLoop: true, name: Z Raw, size: 2, type: int16, units: ''}
+- DAQ: false
+  Name: Accel Data Full
+  Node: Flight Control
+  PacketType: 4099
+  ParameterPrefix: 'Accel '
+  Parameters:
+  - {beginLoop: true, name: Flags, size: 4, type: uint32, units: ''}
+  - {name: X Raw, size: 2, type: int16, units: ''}
+  - {name: Y Raw, size: 2, type: int16, units: ''}
+  - {name: Z Raw, size: 2, type: int16, units: ''}
+  - {name: X Gs, size: 4, type: float32, units: ''}
+  - {name: Y Gs, size: 4, type: float32, units: ''}
+  - {name: Z Gs, size: 4, type: float32, units: ''}
+  - {name: Pitch, size: 4, type: float32, units: ''}
+  - {name: Roll, size: 4, type: float32, units: ''}
+  - {name: Current Accel, size: 4, type: int32, units: ''}
+  - {name: Current Velocity, size: 4, type: int32, units: ''}
+  - {name: Previous Velocity, size: 4, type: int32, units: ''}
+  - {name: Current Displacement, size: 4, type: int32, units: ''}
+  - {endLoop: true, name: Previous Displacement, size: 4, type: int32, units: ''}
+- DAQ: false
+  Name: Laser Opto Sensor
+  Node: Flight Control
+  PacketType: 4353
+  ParameterPrefix: 'LaserOpto '
+  Parameters:
+  - {name: Fault Flags, size: 4, type: uint32, units: ''}
+  - {name: Spare, size: 4, type: uint32, units: ''}
+  - {beginLoop: true, name: Fault Flags, size: 4, type: uint32, units: ''}
+  - {name: Laser error packet count, size: 4, type: uint32, units: ''}
+  - {name: First byte wrong, size: 4, type: uint32, units: ''}
+  - {name: Raw distance, size: 4, type: float32, units: ''}
+  - {name: Filtered value, size: 4, type: float32, units: ''}
+  - {endLoop: true, name: Spare, size: 4, type: uint32, units: ''}
+- DAQ: false
+  Name: Forward Laser Distance Sensor
+  Node: Flight Control
+  PacketType: 4609
+  ParameterPrefix: 'ForwardLaser '
+  Parameters:
+  - {name: Fault Flags, size: 4, type: uint32, units: ''}
+  - {name: Spare 0, size: 4, type: int32, units: ''}
+  - {name: Spare 1, size: 4, type: int32, units: ''}
+  - {name: Spare 2, size: 4, type: int32, units: ''}
+  - {name: Distance Raw, size: 4, type: int32, units: ''}
+  - {name: Distance Filtered, size: 4, type: int32, units: ''}
+  - {name: Spare 3, size: 4, type: int32, units: ''}
+  - {name: Binary Distance, size: 4, type: uint32, units: ''}
+  - {name: Missed Start, size: 4, type: uint32, units: ''}
+  - {name: Bad Distance, size: 4, type: uint32, units: ''}
+  - {name: Error Code, size: 4, type: uint32, units: ''}
+- DAQ: false
+  Name: Laser Contrast 0
+  Node: Flight Control
+  PacketType: 4865
+  ParameterPrefix: 'LaserContrast0 '
+  Parameters:
+  - {name: System Fault Flags, size: 4, type: uint32, units: ''}
+  - {name: Spare 1, size: 4, type: uint32, units: ''}
+  - {name: Spare 2, size: 4, type: uint32, units: ''}
+  - {name: Spare 3, size: 4, type: uint32, units: ''}
+  - {name: Spare 4, size: 4, type: uint32, units: ''}
+  - {name: Laser Fault Flags, size: 4, type: uint32, units: ''}
+  - {name: Rising Count, size: 2, type: uint16, units: ''}
+  - {name: Falling Count, size: 2, type: uint16, units: ''}
+  - {name: Max Stripes, size: 2, type: uint16, units: ''}
+  - {name: Rise_00, size: 8, type: uint64, units: ns}
+  - {name: Rise_01, size: 8, type: uint64, units: ns}
+  - {name: Rise_02, size: 8, type: uint64, units: ns}
+  - {name: Rise_03, size: 8, type: uint64, units: ns}
+  - {name: Rise_04, size: 8, type: uint64, units: ns}
+  - {name: Rise_05, size: 8, type: uint64, units: ns}
+  - {name: Rise_06, size: 8, type: uint64, units: ns}
+  - {name: Rise_07, size: 8, type: uint64, units: ns}
+  - {name: Rise_08, size: 8, type: uint64, units: ns}
+  - {name: Rise_09, size: 8, type: uint64, units: ns}
+  - {name: Rise_10, size: 8, type: uint64, units: ns}
+  - {name: Rise_11, size: 8, type: uint64, units: ns}
+  - {name: Rise_12, size: 8, type: uint64, units: ns}
+  - {name: Rise_13, size: 8, type: uint64, units: ns}
+  - {name: Rise_14, size: 8, type: uint64, units: ns}
+  - {name: Rise_15, size: 8, type: uint64, units: ns}
+  - {name: Rise_16, size: 8, type: uint64, units: ns}
+  - {name: Rise_17, size: 8, type: uint64, units: ns}
+  - {name: Rise_18, size: 8, type: uint64, units: ns}
+  - {name: Rise_19, size: 8, type: uint64, units: ns}
+  - {name: Rise_20, size: 8, type: uint64, units: ns}
+  - {name: Rise_21, size: 8, type: uint64, units: ns}
+  - {name: Rise_22, size: 8, type: uint64, units: ns}
+  - {name: Rise_23, size: 8, type: uint64, units: ns}
+  - {name: Rise_24, size: 8, type: uint64, units: ns}
+  - {name: Rise_25, size: 8, type: uint64, units: ns}
+  - {name: Rise_26, size: 8, type: uint64, units: ns}
+  - {name: Rise_27, size: 8, type: uint64, units: ns}
+  - {name: Rise_28, size: 8, type: uint64, units: ns}
+  - {name: Rise_29, size: 8, type: uint64, units: ns}
+  - {name: Rise_30, size: 8, type: uint64, units: ns}
+  - {name: Rise_31, size: 8, type: uint64, units: ns}
+  - {name: Rise_32, size: 8, type: uint64, units: ns}
+  - {name: Rise_33, size: 8, type: uint64, units: ns}
+  - {name: Rise_34, size: 8, type: uint64, units: ns}
+  - {name: Rise_35, size: 8, type: uint64, units: ns}
+  - {name: Rise_36, size: 8, type: uint64, units: ns}
+  - {name: Rise_37, size: 8, type: uint64, units: ns}
+  - {name: Rise_38, size: 8, type: uint64, units: ns}
+  - {name: Rise_39, size: 8, type: uint64, units: ns}
+  - {name: Rise_40, size: 8, type: uint64, units: ns}
+  - {name: Rise_41, size: 8, type: uint64, units: ns}
+  - {name: Rise_42, size: 8, type: uint64, units: ns}
+  - {name: Rise_43, size: 8, type: uint64, units: ns}
+  - {name: Rise_44, size: 8, type: uint64, units: ns}
+  - {name: Rise_45, size: 8, type: uint64, units: ns}
+  - {name: Rise_46, size: 8, type: uint64, units: ns}
+  - {name: Rise_47, size: 8, type: uint64, units: ns}
+  - {name: Rise_48, size: 8, type: uint64, units: ns}
+  - {name: Rise_49, size: 8, type: uint64, units: ns}
+  - {name: Rise_50, size: 8, type: uint64, units: ns}
+  - {name: Rise_51, size: 8, type: uint64, units: ns}
+  - {name: Rise_52, size: 8, type: uint64, units: ns}
+  - {name: Rise_53, size: 8, type: uint64, units: ns}
+  - {name: Rise_54, size: 8, type: uint64, units: ns}
+  - {name: Fall_00, size: 8, type: uint64, units: ns}
+  - {name: Fall_01, size: 8, type: uint64, units: ns}
+  - {name: Fall_02, size: 8, type: uint64, units: ns}
+  - {name: Fall_03, size: 8, type: uint64, units: ns}
+  - {name: Fall_04, size: 8, type: uint64, units: ns}
+  - {name: Fall_05, size: 8, type: uint64, units: ns}
+  - {name: Fall_06, size: 8, type: uint64, units: ns}
+  - {name: Fall_07, size: 8, type: uint64, units: ns}
+  - {name: Fall_08, size: 8, type: uint64, units: ns}
+  - {name: Fall_09, size: 8, type: uint64, units: ns}
+  - {name: Fall_10, size: 8, type: uint64, units: ns}
+  - {name: Fall_11, size: 8, type: uint64, units: ns}
+  - {name: Fall_12, size: 8, type: uint64, units: ns}
+  - {name: Fall_13, size: 8, type: uint64, units: ns}
+  - {name: Fall_14, size: 8, type: uint64, units: ns}
+  - {name: Fall_15, size: 8, type: uint64, units: ns}
+  - {name: Fall_16, size: 8, type: uint64, units: ns}
+  - {name: Fall_17, size: 8, type: uint64, units: ns}
+  - {name: Fall_18, size: 8, type: uint64, units: ns}
+  - {name: Fall_19, size: 8, type: uint64, units: ns}
+  - {name: Fall_20, size: 8, type: uint64, units: ns}
+  - {name: Fall_21, size: 8, type: uint64, units: ns}
+  - {name: Fall_22, size: 8, type: uint64, units: ns}
+  - {name: Fall_23, size: 8, type: uint64, units: ns}
+  - {name: Fall_24, size: 8, type: uint64, units: ns}
+  - {name: Fall_25, size: 8, type: uint64, units: ns}
+  - {name: Fall_26, size: 8, type: uint64, units: ns}
+  - {name: Fall_27, size: 8, type: uint64, units: ns}
+  - {name: Fall_28, size: 8, type: uint64, units: ns}
+  - {name: Fall_29, size: 8, type: uint64, units: ns}
+  - {name: Fall_30, size: 8, type: uint64, units: ns}
+  - {name: Fall_31, size: 8, type: uint64, units: ns}
+  - {name: Fall_32, size: 8, type: uint64, units: ns}
+  - {name: Fall_33, size: 8, type: uint64, units: ns}
+  - {name: Fall_34, size: 8, type: uint64, units: ns}
+  - {name: Fall_35, size: 8, type: uint64, units: ns}
+  - {name: Fall_36, size: 8, type: uint64, units: ns}
+  - {name: Fall_37, size: 8, type: uint64, units: ns}
+  - {name: Fall_38, size: 8, type: uint64, units: ns}
+  - {name: Fall_39, size: 8, type: uint64, units: ns}
+  - {name: Fall_40, size: 8, type: uint64, units: ns}
+  - {name: Fall_41, size: 8, type: uint64, units: ns}
+  - {name: Fall_42, size: 8, type: uint64, units: ns}
+  - {name: Fall_43, size: 8, type: uint64, units: ns}
+  - {name: Fall_44, size: 8, type: uint64, units: ns}
+  - {name: Fall_45, size: 8, type: uint64, units: ns}
+  - {name: Fall_46, size: 8, type: uint64, units: ns}
+  - {name: Fall_47, size: 8, type: uint64, units: ns}
+  - {name: Fall_48, size: 8, type: uint64, units: ns}
+  - {name: Fall_49, size: 8, type: uint64, units: ns}
+  - {name: Fall_50, size: 8, type: uint64, units: ns}
+  - {name: Fall_51, size: 8, type: uint64, units: ns}
+  - {name: Fall_52, size: 8, type: uint64, units: ns}
+  - {name: Fall_53, size: 8, type: uint64, units: ns}
+  - {name: Fall_54, size: 8, type: uint64, units: ns}
+- DAQ: false
+  Name: Brake Data
+  Node: Flight Control
+  PacketType: 5122
+  ParameterPrefix: 'Brake '
+  Parameters:
+  - {beginLoop: true, name: Fault Flags, size: 4, type: uint32, units: a}
+  - {name: I Beam mm Target, size: 4, type: float32, units: mm}
+  - {name: Lead Screw mm Target, size: 4, type: float32, units: mm}
+  - {name: Lead Screw um Target, size: 4, type: uint32, units: um}
+  - {name: I Beam mm Current, size: 4, type: float32, units: mm}
+  - {name: Lead Screw mm Current, size: 4, type: float32, units: mm}
+  - {name: MLP Current, size: 4, type: float32, units: mm}
+  - {name: Spare 1, size: 4, type: uint32, units: ''}
+  - {name: Spare 2, size: 4, type: uint32, units: ''}
+  - {name: Limit Extend, size: 1, type: uint8, units: ''}
+  - {name: Limit Retract, size: 1, type: uint8, units: ''}
+  - {name: Limit Extend Edge, size: 1, type: uint8, units: ''}
+  - {name: Limit Retract Edge, size: 1, type: uint8, units: ''}
+  - {name: SW Error, size: 1, type: uint8, units: ''}
+  - {name: ADC Sample, size: 2, type: uint16, units: ''}
+  - {name: ADC Zero, size: 2, type: uint16, units: ''}
+  - {name: ADC Minus Zero, size: 4, type: int32, units: ''}
+  - {name: System Span, size: 4, type: float32, units: ''}
+  - {name: Brake Position, size: 4, type: float32, units: ''}
+  - {name: Linear Velocity, size: 4, type: int32, units: ''}
+  - {name: Linear Acceleration, size: 4, type: int32, units: ''}
+  - {endLoop: true, name: Current Position, size: 4, type: int32, units: ''}
+  - {name: State, size: 1, type: uint8, units: ''}
+  - {name: Calibration State, size: 1, type: uint8, units: ''}
+- DAQ: false
+  Name: Motor Parameters
+  Node: Flight Control
+  PacketType: 5126
+  ParameterPrefix: 'Motor '
+  Parameters:
+  - {beginLoop: true, name: Microstep Resolution, size: 4, type: uint32, units: ''}
+  - {name: Max Acceleration, size: 4, type: int32, units: ''}
+  - {name: Microns per Revolution, size: 4, type: int32, units: ''}
+  - {name: Steps per Revolution, size: 4, type: uint32, units: ''}
+  - {endLoop: true, name: Max Angular Velocity, size: 4, type: int32, units: ''}
+  - {name: Unknown Timer, size: 1, type: int8, units: ''}
+- DAQ: false
+  Name: Throttle Parameters
+  Node: Flight Control
+  PacketType: 5379
+  ParameterPrefix: 'Throttle '
+  Parameters:
+  - {name: Fault Flags, size: 4, type: uint32, units: ''}
+  - {name: AMC Fault Flags, size: 4, type: uint32, units: ''}
+  - {beginLoop: true, endLoop: true, name: Requested RPM, size: 2, type: uint16, units: ''}
+  - {beginLoop: true, endLoop: true, name: Current RPM, size: 2, type: uint16, units: ''}
+  - {beginLoop: true, endLoop: true, name: ASI RPM, size: 2, type: uint16, units: ''}
+  - {name: State, size: 1, type: uint8, units: ''}
+  - {name: Current Index, size: 1, type: uint8, units: ''}
+  - {name: AMC State, size: 1, type: uint8, units: ''}
+- DAQ: false
+  Name: Auto-sequence test
+  Node: Flight Control
+  PacketType: 6401
+  ParameterPrefix: 'Auto-test '
+  Parameters:
+  - {name: State, size: 4, type: uint32, units: ''}
+  - {name: Status, size: 1, type: uint8, units: ''}
+- DAQ: false
+  Name: Power B Current Temps
+  Node: Power Node {nodeName}
+  PacketType: 12801
+  ParameterPrefix: 'Power B Temps '
+  Parameters:
+  - {name: Count, size: 2, type: uint16, units: ''}
+  - {name: Spare, size: 2, type: uint16, units: RAW}
+  - {beginLoop: true, endLoop: true, name: Temperature, size: 4, type: float32, units: C}
+- DAQ: false
+  Name: Power B Temps Locations
+  Node: Power Node {nodeName}
+  PacketType: 12803
+  ParameterPrefix: 'Power B Temps Loc '
+  Parameters:
+  - {name: Number of Temps, size: 2, type: uint16, units: ''}
+  - {name: Spare, size: 2, type: uint16, units: ''}
+  - {beginLoop: true, name: User Index, size: 2, type: uint16, units: ''}
+  - {name: Resolution, size: 1, type: uint8, units: ''}
+  - {endLoop: true, name: Bus Index, size: 1, type: uint8, units: ''}
+- DAQ: false
+  Name: Power B ROM ID
+  Node: Power Node {nodeName}
+  PacketType: 12805
+  ParameterPrefix: 'Power B ROM '
+  Parameters:
+  - {name: Index, size: 4, type: uint32, units: ''}
+  - {name: Hi, size: 2, type: uint16, units: ''}
+  - {name: Lo, size: 2, type: uint16, units: ''}
+- DAQ: false
+  Name: Power B BMS
+  Node: Power Node {nodeName}
+  PacketType: 13317
+  ParameterPrefix: 'Power B BMS '
+  Parameters:
+  - {name: Faults, size: 4, type: uint32, units: ''}
+  - {name: Temp State, size: 1, type: uint8, units: ''}
+  - {name: Charger State, size: 1, type: uint8, units: ''}
+  - {name: Num Temp Sensors, size: 2, type: uint16, units: ''}
+  - {name: Highest Sensor Value, size: 4, type: float32, units: ''}
+  - {name: Average Temp, size: 4, type: float32, units: ''}
+  - {name: Highest Sensor Index, size: 2, type: uint16, units: ''}
+  - {name: Pack Volts, size: 4, type: float32, units: ''}
+  - {name: Highest Cell Volts, size: 4, type: float32, units: ''}
+  - {name: Lowest Cell Volts, size: 4, type: float32, units: ''}
+  - {name: Board Temp, size: 4, type: float32, units: ''}
+  - {name: Node Pressure, size: 4, type: float32, units: ''}
+  - {name: Node Temp, size: 4, type: float32, units: ''}
+  - {beginLoop: true, endLoop: true, name: Module Voltage, size: 4, type: float32,
+    units: ''}
+  - {beginLoop: true, endLoop: true, name: BMD ID, size: 1, type: uint8, units: ''}
+  - {name: Voltage Updates, size: 4, type: uint32, units: ''}
+  - {name: Temp Scan Count, size: 4, type: uint32, units: ''}
+  - {name: Pack Current, size: 4, type: float32, units: ''}
+- DAQ: false
+  Name: Power B Cooling
+  Node: Power Node {nodeName}
+  PacketType: 13825
+  ParameterPrefix: 'Power B Cooling '
+  Parameters:
+  - {name: Fault Flags, size: 4, type: uint32, units: ''}
+- DAQ: false
+  Name: Power A Current Temps
+  Node: Power Node {nodeName}
+  PacketType: 12801
+  ParameterPrefix: 'Power A Temps '
+  Parameters:
+  - {name: Count, size: 2, type: uint16, units: ''}
+  - {name: Spare, size: 2, type: uint16, units: RAW}
+  - {beginLoop: true, endLoop: true, name: Temperature, size: 4, type: float32, units: C}
+- DAQ: false
+  Name: Power A Temps Locations
+  Node: Power Node {nodeName}
+  PacketType: 12803
+  ParameterPrefix: 'Power A Temps Loc '
+  Parameters:
+  - {name: Number of Temps, size: 2, type: uint16, units: ''}
+  - {name: Spare, size: 2, type: uint16, units: ''}
+  - {beginLoop: true, name: User Index, size: 2, type: uint16, units: ''}
+  - {name: Resolution, size: 1, type: uint8, units: ''}
+  - {endLoop: true, name: Bus Index, size: 1, type: uint8, units: ''}
+- DAQ: false
+  Name: Power A ROM ID
+  Node: Power Node {nodeName}
+  PacketType: 12805
+  ParameterPrefix: 'Power A ROM '
+  Parameters:
+  - {name: Index, size: 4, type: uint32, units: ''}
+  - {name: Hi, size: 2, type: uint16, units: ''}
+  - {name: Lo, size: 2, type: uint16, units: ''}
+- DAQ: false
+  Name: Power A BMS
+  Node: Power Node {nodeName}
+  PacketType: 13317
+  ParameterPrefix: 'Power A BMS '
+  Parameters:
+  - {name: Faults, size: 4, type: uint32, units: ''}
+  - {name: Temp State, size: 1, type: uint8, units: ''}
+  - {name: Charger State, size: 1, type: uint8, units: ''}
+  - {name: Num Temp Sensors, size: 2, type: uint16, units: ''}
+  - {name: Highest Sensor Value, size: 4, type: float32, units: ''}
+  - {name: Average Temp, size: 4, type: float32, units: ''}
+  - {name: Highest Sensor Index, size: 2, type: uint16, units: ''}
+  - {name: Pack Volts, size: 4, type: float32, units: ''}
+  - {name: Highest Cell Volts, size: 4, type: float32, units: ''}
+  - {name: Lowest Cell Volts, size: 4, type: float32, units: ''}
+  - {name: Board Temp, size: 4, type: float32, units: ''}
+  - {name: Node Pressure, size: 4, type: float32, units: ''}
+  - {name: Node Temp, size: 4, type: float32, units: ''}
+  - {beginLoop: true, endLoop: true, name: Module Voltage, size: 4, type: float32,
+    units: ''}
+  - {beginLoop: true, endLoop: true, name: BMD ID, size: 1, type: uint8, units: ''}
+  - {name: Voltage Updates, size: 4, type: uint32, units: ''}
+  - {name: Temp Scan Count, size: 4, type: uint32, units: ''}
+  - {name: Pack Current, size: 4, type: float32, units: ''}
+- DAQ: false
+  Name: Power A Cooling
+  Node: Power Node {nodeName}
+  PacketType: 13825
+  ParameterPrefix: 'Power A Cooling '
+  Parameters:
+  - {name: Fault Flags, size: 4, type: uint32, units: ''}
