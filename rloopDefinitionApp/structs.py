@@ -30,8 +30,8 @@ class Packet:
 
     def __repr__(self):
         daq_text = f"{self.daq['type']} daq" if self.daq else "not daq"
-        return f"<Packet '{self.name}', type={hex(self.packet_type)}, prefix='{self.prefix}', " \
-               f"parameters={len(self.parameters)}, {daq_text}>"
+        return f"<Packet '{self.name or ''}', type={hex(self.packet_type or 0)}, prefix='{self.prefix or ''}', " \
+               f"parameters={len(self.parameters) or 0}, {daq_text}>"
 
     def to_gs_dict(self):
         output = {
@@ -62,6 +62,9 @@ class Packet:
 
     @classmethod
     def from_yaml(cls, node: str, yaml_blob: dict, file_vars: Optional[dict]=None):
+        if not isinstance(yaml_blob, dict):
+            raise TypeError(f"Packet YAML file is giving us a {type(yaml_blob)}, instead of a dict.")
+
         # Do formatting of all variables if we have variables.
         if file_vars:
             node = node.format(**file_vars)
@@ -75,6 +78,16 @@ class Packet:
             # TODO: If we ever put variables in parameters, implement this.
             if "parameters" in yaml_blob:
                 pass
+
+        # Fail if we have templated strings without variables.
+        if "{" in node or "}" in node:
+            raise ValueError(f"Untemplated strings in node name. {yaml_blob['packetName']}")
+
+        if "packetName" in yaml_blob and ("{" in yaml_blob["packetName"] or "}" in yaml_blob["packetName"]):
+            raise ValueError(f"Untemplated strings in packet name. {yaml_blob['packetName']}")
+
+        if "prefix" in yaml_blob and ("{" in yaml_blob["prefix"] or "}" in yaml_blob["prefix"]):
+            raise ValueError(f"Untemplated strings in prefix. {yaml_blob['prefix']}")
 
         # Unknown packet root arguments
         unknown_root_keys = set()
@@ -172,6 +185,10 @@ class Packet:
         # Node name
         if not self.node:
             raise ValueError(f"Packet must have a node. {str(self)}")
+
+        # Packet type
+        if not self.packet_type:
+            raise ValueError(f"Packet must have a type that is not blank or 0x00. {str(self)}")
 
         # DAQ and parameters
         if self.daq and self.parameters:
