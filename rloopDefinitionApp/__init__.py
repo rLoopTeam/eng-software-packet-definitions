@@ -24,6 +24,7 @@ class DefinitionGenerator:
 
         # State
         self.md5_ok = True
+        self.already_warned = set()
 
         # Paths
         self.input_folder = input_folder
@@ -57,12 +58,12 @@ class DefinitionGenerator:
                     if self.sums[full_source_path] != filehash:
                         looked_at_code = int(os.environ.get("I_REALLY_LOOKED", -1)) == self.sums["I_REALLY_LOOKED"]
 
-                        log.warning(f"Hash has changed for {full_source_path}{'' if looked_at_code else '; not saving hashes to output'}")
                         if looked_at_code:
                             self.sums[full_source_path] = filehash
-                        else:
-                            log.warning(f"Please review the recent changes for those files and rerun this script with environment variable I_REALLY_LOOKED={self.sums['I_REALLY_LOOKED']}")
+                        elif full_source_path not in self.already_warned:
+                            log.warning(f"Hash has changed for {full_source_path}")
                             log.warning(f"new={filehash}, old={self.sums[full_source_path]}")
+                            self.already_warned.add(full_source_path)
                             self.md5_ok = False
 
                 for unparsed_packet in packets_data["packets"]:
@@ -127,3 +128,7 @@ class DefinitionGenerator:
 
             with open(self.file_sums_json, "w") as f:
                 json.dump(self.sums, f, indent=4)
+        else:
+            log.warning("Not saving updated checksums to disk.")
+            log.warning("Please review the recent changes for those files and rerun this script with environment variable " \
+                        f"I_REALLY_LOOKED={self.sums['I_REALLY_LOOKED']} if you would like to save checksums to disk.")
