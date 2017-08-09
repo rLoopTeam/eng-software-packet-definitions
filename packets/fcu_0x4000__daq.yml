@@ -3,7 +3,7 @@ node: 'Flight Control'
 
 podSources:
   # FCU packet types are in here.
-  - ./FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
   # TODO: Where are the DAQ packets defined?
 
 packets:

@@ -95,7 +95,7 @@ class DefinitionGenerator:
         # Load the sums before the packets.
         try:
             self.load(self.file_sums_json)
-        except FileNotFoundError:
+        except (FileNotFoundError, json.decoder.JSONDecodeError):
             pass
 
         # Load the packets.
