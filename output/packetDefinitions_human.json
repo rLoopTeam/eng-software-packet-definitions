@@ -1,374 +1,6 @@
 {
     "packetDefinitions": [
         {
-            "Name": "FCU DAQ CPU LOAD",
-            "PacketType": 16384,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "uint8",
-            "dataSize": 1
-        },
-        {
-            "Name": "FCU DAQ ACCEL 0 X",
-            "PacketType": 16385,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int16",
-            "dataSize": 2
-        },
-        {
-            "Name": "FCU DAQ ACCEL 0 Y",
-            "PacketType": 16386,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int16",
-            "dataSize": 2
-        },
-        {
-            "Name": "FCU DAQ ACCEL 0 Z",
-            "PacketType": 16387,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int16",
-            "dataSize": 2
-        },
-        {
-            "Name": "FCU DAQ ACCEL 1 X",
-            "PacketType": 16388,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int16",
-            "dataSize": 2
-        },
-        {
-            "Name": "FCU DAQ ACCEL 1 Y",
-            "PacketType": 16389,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int16",
-            "dataSize": 2
-        },
-        {
-            "Name": "FCU DAQ ACCEL 1 Z",
-            "PacketType": 16390,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int16",
-            "dataSize": 2
-        },
-        {
-            "Name": "FCU DAQ ACCEL 0 ACCEL",
-            "PacketType": 16391,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int32",
-            "dataSize": 4
-        },
-        {
-            "Name": "FCU DAQ ACCEL 0 VELOCITY",
-            "PacketType": 16392,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int32",
-            "dataSize": 4
-        },
-        {
-            "Name": "FCU DAQ ACCEL 0 DISPLACEMENT",
-            "PacketType": 16393,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int32",
-            "dataSize": 4
-        },
-        {
-            "Name": "FCU DAQ ACCEL 1 ACCEL",
-            "PacketType": 16394,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int32",
-            "dataSize": 4
-        },
-        {
-            "Name": "FCU DAQ ACCEL 1 VELOCITY",
-            "PacketType": 16396,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int32",
-            "dataSize": 4
-        },
-        {
-            "Name": "FCU DAQ ACCEL 1 DISPLACEMENT",
-            "PacketType": 16397,
-            "Node": "Flight Control",
-            "DAQ": true,
-            "dataType": "int32",
-            "dataSize": 4
-        },
-        {
-            "Name": "Accel Cal Full",
-            "PacketType": 4097,
-            "Node": "Flight Control",
-            "DAQ": false,
-            "ParameterPrefix": "Accel ",
-            "Parameters": [
-                {
-                    "type": "uint32",
-                    "beginLoop": true,
-                    "units": "",
-                    "size": 4,
-                    "Name": "Flags"
-                },
-                {
-                    "type": "int16",
-                    "units": "",
-                    "size": 2,
-                    "Name": "X Raw"
-                },
-                {
-                    "type": "int16",
-                    "units": "",
-                    "size": 2,
-                    "Name": "Y Raw"
-                },
-                {
-                    "type": "int16",
-                    "endLoop": true,
-                    "units": "",
-                    "size": 2,
-                    "Name": "Z Raw"
-                }
-            ]
-        },
-        {
-            "Name": "Accel Data Full",
-            "PacketType": 4099,
-            "Node": "Flight Control",
-            "DAQ": false,
-            "ParameterPrefix": "Accel ",
-            "Parameters": [
-                {
-                    "type": "uint32",
-                    "beginLoop": true,
-                    "units": "",
-                    "size": 4,
-                    "Name": "Flags"
-                },
-                {
-                    "type": "int16",
-                    "units": "",
-                    "size": 2,
-                    "Name": "X Raw"
-                },
-                {
-                    "type": "int16",
-                    "units": "",
-                    "size": 2,
-                    "Name": "Y Raw"
-                },
-                {
-                    "type": "int16",
-                    "units": "",
-                    "size": 2,
-                    "Name": "Z Raw"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "X Gs"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Y Gs"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Z Gs"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Pitch"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Roll"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Current Accel"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Current Velocity"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Previous Velocity"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Current Displacement"
-                },
-                {
-                    "type": "int32",
-                    "endLoop": true,
-                    "units": "",
-                    "size": 4,
-                    "Name": "Previous Displacement"
-                }
-            ]
-        },
-        {
-            "Name": "Laser Opto Sensor",
-            "PacketType": 4353,
-            "Node": "Flight Control",
-            "DAQ": false,
-            "ParameterPrefix": "LaserOpto ",
-            "Parameters": [
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Fault Flags"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Spare"
-                },
-                {
-                    "type": "uint32",
-                    "beginLoop": true,
-                    "units": "",
-                    "size": 4,
-                    "Name": "Fault Flags"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Laser error packet count"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "First byte wrong"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Raw distance"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Filtered value"
-                },
-                {
-                    "type": "uint32",
-                    "endLoop": true,
-                    "units": "",
-                    "size": 4,
-                    "Name": "Spare"
-                }
-            ]
-        },
-        {
-            "Name": "Forward Laser Distance Sensor",
-            "PacketType": 4609,
-            "Node": "Flight Control",
-            "DAQ": false,
-            "ParameterPrefix": "ForwardLaser ",
-            "Parameters": [
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Fault Flags"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Spare 0"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Spare 1"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Spare 2"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Distance Raw"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Distance Filtered"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Spare 3"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Binary Distance"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Missed Start"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Bad Distance"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Error Code"
-                }
-            ]
-        },
-        {
             "Name": "Laser Contrast 0",
             "PacketType": 4865,
             "Node": "Flight Control",
@@ -1092,206 +724,108 @@
             ]
         },
         {
-            "Name": "Brake Data",
-            "PacketType": 5122,
+            "Name": "FCU DAQ CPU LOAD",
+            "PacketType": 16384,
             "Node": "Flight Control",
-            "DAQ": false,
-            "ParameterPrefix": "Brake ",
-            "Parameters": [
-                {
-                    "type": "uint32",
-                    "units": "a",
-                    "beginLoop": true,
-                    "size": 4,
-                    "Name": "Fault Flags"
-                },
-                {
-                    "units": "mm",
-                    "type": "float32",
-                    "size": 4,
-                    "Name": "I Beam mm Target"
-                },
-                {
-                    "units": "mm",
-                    "type": "float32",
-                    "size": 4,
-                    "Name": "Lead Screw mm Target"
-                },
-                {
-                    "units": "um",
-                    "type": "uint32",
-                    "size": 4,
-                    "Name": "Lead Screw um Target"
-                },
-                {
-                    "units": "mm",
-                    "type": "float32",
-                    "size": 4,
-                    "Name": "I Beam mm Current"
-                },
-                {
-                    "units": "mm",
-                    "type": "float32",
-                    "size": 4,
-                    "Name": "Lead Screw mm Current"
-                },
-                {
-                    "units": "mm",
-                    "type": "float32",
-                    "size": 4,
-                    "Name": "MLP Current"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Spare 1"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Spare 2"
-                },
-                {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Limit Extend"
-                },
-                {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Limit Retract"
-                },
-                {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Limit Extend Edge"
-                },
-                {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Limit Retract Edge"
-                },
-                {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "SW Error"
-                },
-                {
-                    "type": "uint16",
-                    "units": "",
-                    "size": 2,
-                    "Name": "ADC Sample"
-                },
-                {
-                    "type": "uint16",
-                    "units": "",
-                    "size": 2,
-                    "Name": "ADC Zero"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "ADC Minus Zero"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "System Span"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Brake Position"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Linear Velocity"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Linear Acceleration"
-                },
-                {
-                    "type": "int32",
-                    "endLoop": true,
-                    "units": "",
-                    "size": 4,
-                    "Name": "Current Position"
-                },
-                {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "State"
-                },
-                {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Calibration State"
-                }
-            ]
+            "DAQ": true,
+            "dataType": "uint8",
+            "dataSize": 1
         },
         {
-            "Name": "Motor Parameters",
-            "PacketType": 5126,
+            "Name": "FCU DAQ ACCEL 0 X",
+            "PacketType": 16385,
             "Node": "Flight Control",
-            "DAQ": false,
-            "ParameterPrefix": "Motor ",
-            "Parameters": [
-                {
-                    "type": "uint32",
-                    "beginLoop": true,
-                    "units": "",
-                    "size": 4,
-                    "Name": "Microstep Resolution"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Max Acceleration"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Microns per Revolution"
-                },
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Steps per Revolution"
-                },
-                {
-                    "type": "int32",
-                    "endLoop": true,
-                    "units": "",
-                    "size": 4,
-                    "Name": "Max Angular Velocity"
-                },
-                {
-                    "type": "int8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Unknown Timer"
-                }
-            ]
+            "DAQ": true,
+            "dataType": "int16",
+            "dataSize": 2
+        },
+        {
+            "Name": "FCU DAQ ACCEL 0 Y",
+            "PacketType": 16386,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int16",
+            "dataSize": 2
+        },
+        {
+            "Name": "FCU DAQ ACCEL 0 Z",
+            "PacketType": 16387,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int16",
+            "dataSize": 2
+        },
+        {
+            "Name": "FCU DAQ ACCEL 1 X",
+            "PacketType": 16388,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int16",
+            "dataSize": 2
+        },
+        {
+            "Name": "FCU DAQ ACCEL 1 Y",
+            "PacketType": 16389,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int16",
+            "dataSize": 2
+        },
+        {
+            "Name": "FCU DAQ ACCEL 1 Z",
+            "PacketType": 16390,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int16",
+            "dataSize": 2
+        },
+        {
+            "Name": "FCU DAQ ACCEL 0 ACCEL",
+            "PacketType": 16391,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int32",
+            "dataSize": 4
+        },
+        {
+            "Name": "FCU DAQ ACCEL 0 VELOCITY",
+            "PacketType": 16392,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int32",
+            "dataSize": 4
+        },
+        {
+            "Name": "FCU DAQ ACCEL 0 DISPLACEMENT",
+            "PacketType": 16393,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int32",
+            "dataSize": 4
+        },
+        {
+            "Name": "FCU DAQ ACCEL 1 ACCEL",
+            "PacketType": 16394,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int32",
+            "dataSize": 4
+        },
+        {
+            "Name": "FCU DAQ ACCEL 1 VELOCITY",
+            "PacketType": 16396,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int32",
+            "dataSize": 4
+        },
+        {
+            "Name": "FCU DAQ ACCEL 1 DISPLACEMENT",
+            "PacketType": 16397,
+            "Node": "Flight Control",
+            "DAQ": true,
+            "dataType": "int32",
+            "dataSize": 4
         },
         {
             "Name": "Throttle Parameters",
@@ -1357,23 +891,207 @@
             ]
         },
         {
-            "Name": "Auto-sequence test",
-            "PacketType": 6401,
+            "Name": "Accel Cal Full",
+            "PacketType": 4097,
             "Node": "Flight Control",
             "DAQ": false,
-            "ParameterPrefix": "Auto-test ",
+            "ParameterPrefix": "Accel ",
+            "Parameters": [
+                {
+                    "type": "uint32",
+                    "beginLoop": true,
+                    "units": "",
+                    "size": 4,
+                    "Name": "Flags"
+                },
+                {
+                    "type": "int16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "X Raw"
+                },
+                {
+                    "type": "int16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "Y Raw"
+                },
+                {
+                    "type": "int16",
+                    "endLoop": true,
+                    "units": "",
+                    "size": 2,
+                    "Name": "Z Raw"
+                }
+            ]
+        },
+        {
+            "Name": "Accel Data Full",
+            "PacketType": 4099,
+            "Node": "Flight Control",
+            "DAQ": false,
+            "ParameterPrefix": "Accel ",
+            "Parameters": [
+                {
+                    "type": "uint32",
+                    "beginLoop": true,
+                    "units": "",
+                    "size": 4,
+                    "Name": "Flags"
+                },
+                {
+                    "type": "int16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "X Raw"
+                },
+                {
+                    "type": "int16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "Y Raw"
+                },
+                {
+                    "type": "int16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "Z Raw"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "X Gs"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Y Gs"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Z Gs"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Pitch"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Roll"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Current Accel"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Current Velocity"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Previous Velocity"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Current Displacement"
+                },
+                {
+                    "type": "int32",
+                    "endLoop": true,
+                    "units": "",
+                    "size": 4,
+                    "Name": "Previous Displacement"
+                }
+            ]
+        },
+        {
+            "Name": "Forward Laser Distance Sensor",
+            "PacketType": 4609,
+            "Node": "Flight Control",
+            "DAQ": false,
+            "ParameterPrefix": "ForwardLaser ",
             "Parameters": [
                 {
                     "type": "uint32",
                     "units": "",
                     "size": 4,
-                    "Name": "State"
+                    "Name": "Fault Flags"
                 },
                 {
-                    "type": "uint8",
+                    "type": "int32",
                     "units": "",
-                    "size": 1,
-                    "Name": "Status"
+                    "size": 4,
+                    "Name": "Spare 0"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Spare 1"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Spare 2"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Distance Raw"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Distance Filtered"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Spare 3"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Binary Distance"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Missed Start"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Bad Distance"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Error Code"
                 }
             ]
         },
@@ -1611,6 +1329,208 @@
             ]
         },
         {
+            "Name": "Brake Data",
+            "PacketType": 5122,
+            "Node": "Flight Control",
+            "DAQ": false,
+            "ParameterPrefix": "Brake ",
+            "Parameters": [
+                {
+                    "type": "uint32",
+                    "units": "a",
+                    "beginLoop": true,
+                    "size": 4,
+                    "Name": "Fault Flags"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "I Beam mm Target"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "Lead Screw mm Target"
+                },
+                {
+                    "units": "um",
+                    "type": "uint32",
+                    "size": 4,
+                    "Name": "Lead Screw um Target"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "I Beam mm Current"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "Lead Screw mm Current"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "MLP Current"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Spare 1"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Spare 2"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Limit Extend"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Limit Retract"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Limit Extend Edge"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Limit Retract Edge"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "SW Error"
+                },
+                {
+                    "type": "uint16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "ADC Sample"
+                },
+                {
+                    "type": "uint16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "ADC Zero"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "ADC Minus Zero"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "System Span"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Brake Position"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Linear Velocity"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Linear Acceleration"
+                },
+                {
+                    "type": "int32",
+                    "endLoop": true,
+                    "units": "",
+                    "size": 4,
+                    "Name": "Current Position"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "State"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Calibration State"
+                }
+            ]
+        },
+        {
+            "Name": "Motor Parameters",
+            "PacketType": 5126,
+            "Node": "Flight Control",
+            "DAQ": false,
+            "ParameterPrefix": "Motor ",
+            "Parameters": [
+                {
+                    "type": "uint32",
+                    "beginLoop": true,
+                    "units": "",
+                    "size": 4,
+                    "Name": "Microstep Resolution"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Max Acceleration"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Microns per Revolution"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Steps per Revolution"
+                },
+                {
+                    "type": "int32",
+                    "endLoop": true,
+                    "units": "",
+                    "size": 4,
+                    "Name": "Max Angular Velocity"
+                },
+                {
+                    "type": "int8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Unknown Timer"
+                }
+            ]
+        },
+        {
             "Name": "Power A Current Temps",
             "PacketType": 12801,
             "Node": "Power Node A",
@@ -1840,6 +1760,86 @@
                     "units": "",
                     "size": 4,
                     "Name": "Fault Flags"
+                }
+            ]
+        },
+        {
+            "Name": "Auto-sequence test",
+            "PacketType": 6401,
+            "Node": "Flight Control",
+            "DAQ": false,
+            "ParameterPrefix": "Auto-test ",
+            "Parameters": [
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "State"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Status"
+                }
+            ]
+        },
+        {
+            "Name": "Laser Opto Sensor",
+            "PacketType": 4353,
+            "Node": "Flight Control",
+            "DAQ": false,
+            "ParameterPrefix": "LaserOpto ",
+            "Parameters": [
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Fault Flags"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Spare"
+                },
+                {
+                    "type": "uint32",
+                    "beginLoop": true,
+                    "units": "",
+                    "size": 4,
+                    "Name": "Fault Flags"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Laser error packet count"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "First byte wrong"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Raw distance"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Filtered value"
+                },
+                {
+                    "type": "uint32",
+                    "endLoop": true,
+                    "units": "",
+                    "size": 4,
+                    "Name": "Spare"
                 }
             ]
         }

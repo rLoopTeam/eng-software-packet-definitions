@@ -1,92 +1,5 @@
 ---
 packetDefinitions:
-- {DAQ: true, Name: FCU DAQ CPU LOAD, Node: Flight Control, PacketType: 16384, dataSize: 1,
-  dataType: uint8}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 X, Node: Flight Control, PacketType: 16385, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 Y, Node: Flight Control, PacketType: 16386, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 Z, Node: Flight Control, PacketType: 16387, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 X, Node: Flight Control, PacketType: 16388, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 Y, Node: Flight Control, PacketType: 16389, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 Z, Node: Flight Control, PacketType: 16390, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 ACCEL, Node: Flight Control, PacketType: 16391,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 VELOCITY, Node: Flight Control, PacketType: 16392,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 DISPLACEMENT, Node: Flight Control, PacketType: 16393,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 ACCEL, Node: Flight Control, PacketType: 16394,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 VELOCITY, Node: Flight Control, PacketType: 16396,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 DISPLACEMENT, Node: Flight Control, PacketType: 16397,
-  dataSize: 4, dataType: int32}
-- DAQ: false
-  Name: Accel Cal Full
-  Node: Flight Control
-  PacketType: 4097
-  ParameterPrefix: 'Accel '
-  Parameters:
-  - {Name: Flags, beginLoop: true, size: 4, type: uint32, units: ''}
-  - {Name: X Raw, size: 2, type: int16, units: ''}
-  - {Name: Y Raw, size: 2, type: int16, units: ''}
-  - {Name: Z Raw, endLoop: true, size: 2, type: int16, units: ''}
-- DAQ: false
-  Name: Accel Data Full
-  Node: Flight Control
-  PacketType: 4099
-  ParameterPrefix: 'Accel '
-  Parameters:
-  - {Name: Flags, beginLoop: true, size: 4, type: uint32, units: ''}
-  - {Name: X Raw, size: 2, type: int16, units: ''}
-  - {Name: Y Raw, size: 2, type: int16, units: ''}
-  - {Name: Z Raw, size: 2, type: int16, units: ''}
-  - {Name: X Gs, size: 4, type: float32, units: ''}
-  - {Name: Y Gs, size: 4, type: float32, units: ''}
-  - {Name: Z Gs, size: 4, type: float32, units: ''}
-  - {Name: Pitch, size: 4, type: float32, units: ''}
-  - {Name: Roll, size: 4, type: float32, units: ''}
-  - {Name: Current Accel, size: 4, type: int32, units: ''}
-  - {Name: Current Velocity, size: 4, type: int32, units: ''}
-  - {Name: Previous Velocity, size: 4, type: int32, units: ''}
-  - {Name: Current Displacement, size: 4, type: int32, units: ''}
-  - {Name: Previous Displacement, endLoop: true, size: 4, type: int32, units: ''}
-- DAQ: false
-  Name: Laser Opto Sensor
-  Node: Flight Control
-  PacketType: 4353
-  ParameterPrefix: 'LaserOpto '
-  Parameters:
-  - {Name: Fault Flags, size: 4, type: uint32, units: ''}
-  - {Name: Spare, size: 4, type: uint32, units: ''}
-  - {Name: Fault Flags, beginLoop: true, size: 4, type: uint32, units: ''}
-  - {Name: Laser error packet count, size: 4, type: uint32, units: ''}
-  - {Name: First byte wrong, size: 4, type: uint32, units: ''}
-  - {Name: Raw distance, size: 4, type: float32, units: ''}
-  - {Name: Filtered value, size: 4, type: float32, units: ''}
-  - {Name: Spare, endLoop: true, size: 4, type: uint32, units: ''}
-- DAQ: false
-  Name: Forward Laser Distance Sensor
-  Node: Flight Control
-  PacketType: 4609
-  ParameterPrefix: 'ForwardLaser '
-  Parameters:
-  - {Name: Fault Flags, size: 4, type: uint32, units: ''}
-  - {Name: Spare 0, size: 4, type: int32, units: ''}
-  - {Name: Spare 1, size: 4, type: int32, units: ''}
-  - {Name: Spare 2, size: 4, type: int32, units: ''}
-  - {Name: Distance Raw, size: 4, type: int32, units: ''}
-  - {Name: Distance Filtered, size: 4, type: int32, units: ''}
-  - {Name: Spare 3, size: 4, type: int32, units: ''}
-  - {Name: Binary Distance, size: 4, type: uint32, units: ''}
-  - {Name: Missed Start, size: 4, type: uint32, units: ''}
-  - {Name: Bad Distance, size: 4, type: uint32, units: ''}
-  - {Name: Error Code, size: 4, type: uint32, units: ''}
 - DAQ: false
   Name: Laser Contrast 0
   Node: Flight Control
@@ -212,48 +125,32 @@ packetDefinitions:
   - {Name: Fall_52, size: 8, type: uint64, units: ns}
   - {Name: Fall_53, size: 8, type: uint64, units: ns}
   - {Name: Fall_54, size: 8, type: uint64, units: ns}
-- DAQ: false
-  Name: Brake Data
-  Node: Flight Control
-  PacketType: 5122
-  ParameterPrefix: 'Brake '
-  Parameters:
-  - {Name: Fault Flags, beginLoop: true, size: 4, type: uint32, units: a}
-  - {Name: I Beam mm Target, size: 4, type: float32, units: mm}
-  - {Name: Lead Screw mm Target, size: 4, type: float32, units: mm}
-  - {Name: Lead Screw um Target, size: 4, type: uint32, units: um}
-  - {Name: I Beam mm Current, size: 4, type: float32, units: mm}
-  - {Name: Lead Screw mm Current, size: 4, type: float32, units: mm}
-  - {Name: MLP Current, size: 4, type: float32, units: mm}
-  - {Name: Spare 1, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2, size: 4, type: uint32, units: ''}
-  - {Name: Limit Extend, size: 1, type: uint8, units: ''}
-  - {Name: Limit Retract, size: 1, type: uint8, units: ''}
-  - {Name: Limit Extend Edge, size: 1, type: uint8, units: ''}
-  - {Name: Limit Retract Edge, size: 1, type: uint8, units: ''}
-  - {Name: SW Error, size: 1, type: uint8, units: ''}
-  - {Name: ADC Sample, size: 2, type: uint16, units: ''}
-  - {Name: ADC Zero, size: 2, type: uint16, units: ''}
-  - {Name: ADC Minus Zero, size: 4, type: int32, units: ''}
-  - {Name: System Span, size: 4, type: float32, units: ''}
-  - {Name: Brake Position, size: 4, type: float32, units: ''}
-  - {Name: Linear Velocity, size: 4, type: int32, units: ''}
-  - {Name: Linear Acceleration, size: 4, type: int32, units: ''}
-  - {Name: Current Position, endLoop: true, size: 4, type: int32, units: ''}
-  - {Name: State, size: 1, type: uint8, units: ''}
-  - {Name: Calibration State, size: 1, type: uint8, units: ''}
-- DAQ: false
-  Name: Motor Parameters
-  Node: Flight Control
-  PacketType: 5126
-  ParameterPrefix: 'Motor '
-  Parameters:
-  - {Name: Microstep Resolution, beginLoop: true, size: 4, type: uint32, units: ''}
-  - {Name: Max Acceleration, size: 4, type: int32, units: ''}
-  - {Name: Microns per Revolution, size: 4, type: int32, units: ''}
-  - {Name: Steps per Revolution, size: 4, type: uint32, units: ''}
-  - {Name: Max Angular Velocity, endLoop: true, size: 4, type: int32, units: ''}
-  - {Name: Unknown Timer, size: 1, type: int8, units: ''}
+- {DAQ: true, Name: FCU DAQ CPU LOAD, Node: Flight Control, PacketType: 16384, dataSize: 1,
+  dataType: uint8}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 X, Node: Flight Control, PacketType: 16385, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 Y, Node: Flight Control, PacketType: 16386, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 Z, Node: Flight Control, PacketType: 16387, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 X, Node: Flight Control, PacketType: 16388, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 Y, Node: Flight Control, PacketType: 16389, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 Z, Node: Flight Control, PacketType: 16390, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 ACCEL, Node: Flight Control, PacketType: 16391,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 VELOCITY, Node: Flight Control, PacketType: 16392,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 DISPLACEMENT, Node: Flight Control, PacketType: 16393,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 ACCEL, Node: Flight Control, PacketType: 16394,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 VELOCITY, Node: Flight Control, PacketType: 16396,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 DISPLACEMENT, Node: Flight Control, PacketType: 16397,
+  dataSize: 4, dataType: int32}
 - DAQ: false
   Name: Throttle Parameters
   Node: Flight Control
@@ -269,13 +166,52 @@ packetDefinitions:
   - {Name: Current Index, size: 1, type: uint8, units: ''}
   - {Name: AMC State, size: 1, type: uint8, units: ''}
 - DAQ: false
-  Name: Auto-sequence test
+  Name: Accel Cal Full
   Node: Flight Control
-  PacketType: 6401
-  ParameterPrefix: 'Auto-test '
+  PacketType: 4097
+  ParameterPrefix: 'Accel '
   Parameters:
-  - {Name: State, size: 4, type: uint32, units: ''}
-  - {Name: Status, size: 1, type: uint8, units: ''}
+  - {Name: Flags, beginLoop: true, size: 4, type: uint32, units: ''}
+  - {Name: X Raw, size: 2, type: int16, units: ''}
+  - {Name: Y Raw, size: 2, type: int16, units: ''}
+  - {Name: Z Raw, endLoop: true, size: 2, type: int16, units: ''}
+- DAQ: false
+  Name: Accel Data Full
+  Node: Flight Control
+  PacketType: 4099
+  ParameterPrefix: 'Accel '
+  Parameters:
+  - {Name: Flags, beginLoop: true, size: 4, type: uint32, units: ''}
+  - {Name: X Raw, size: 2, type: int16, units: ''}
+  - {Name: Y Raw, size: 2, type: int16, units: ''}
+  - {Name: Z Raw, size: 2, type: int16, units: ''}
+  - {Name: X Gs, size: 4, type: float32, units: ''}
+  - {Name: Y Gs, size: 4, type: float32, units: ''}
+  - {Name: Z Gs, size: 4, type: float32, units: ''}
+  - {Name: Pitch, size: 4, type: float32, units: ''}
+  - {Name: Roll, size: 4, type: float32, units: ''}
+  - {Name: Current Accel, size: 4, type: int32, units: ''}
+  - {Name: Current Velocity, size: 4, type: int32, units: ''}
+  - {Name: Previous Velocity, size: 4, type: int32, units: ''}
+  - {Name: Current Displacement, size: 4, type: int32, units: ''}
+  - {Name: Previous Displacement, endLoop: true, size: 4, type: int32, units: ''}
+- DAQ: false
+  Name: Forward Laser Distance Sensor
+  Node: Flight Control
+  PacketType: 4609
+  ParameterPrefix: 'ForwardLaser '
+  Parameters:
+  - {Name: Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Spare 0, size: 4, type: int32, units: ''}
+  - {Name: Spare 1, size: 4, type: int32, units: ''}
+  - {Name: Spare 2, size: 4, type: int32, units: ''}
+  - {Name: Distance Raw, size: 4, type: int32, units: ''}
+  - {Name: Distance Filtered, size: 4, type: int32, units: ''}
+  - {Name: Spare 3, size: 4, type: int32, units: ''}
+  - {Name: Binary Distance, size: 4, type: uint32, units: ''}
+  - {Name: Missed Start, size: 4, type: uint32, units: ''}
+  - {Name: Bad Distance, size: 4, type: uint32, units: ''}
+  - {Name: Error Code, size: 4, type: uint32, units: ''}
 - DAQ: false
   Name: Power B Current Temps
   Node: Power Node B
@@ -338,6 +274,48 @@ packetDefinitions:
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
 - DAQ: false
+  Name: Brake Data
+  Node: Flight Control
+  PacketType: 5122
+  ParameterPrefix: 'Brake '
+  Parameters:
+  - {Name: Fault Flags, beginLoop: true, size: 4, type: uint32, units: a}
+  - {Name: I Beam mm Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw um Target, size: 4, type: uint32, units: um}
+  - {Name: I Beam mm Current, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm Current, size: 4, type: float32, units: mm}
+  - {Name: MLP Current, size: 4, type: float32, units: mm}
+  - {Name: Spare 1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2, size: 4, type: uint32, units: ''}
+  - {Name: Limit Extend, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract, size: 1, type: uint8, units: ''}
+  - {Name: Limit Extend Edge, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract Edge, size: 1, type: uint8, units: ''}
+  - {Name: SW Error, size: 1, type: uint8, units: ''}
+  - {Name: ADC Sample, size: 2, type: uint16, units: ''}
+  - {Name: ADC Zero, size: 2, type: uint16, units: ''}
+  - {Name: ADC Minus Zero, size: 4, type: int32, units: ''}
+  - {Name: System Span, size: 4, type: float32, units: ''}
+  - {Name: Brake Position, size: 4, type: float32, units: ''}
+  - {Name: Linear Velocity, size: 4, type: int32, units: ''}
+  - {Name: Linear Acceleration, size: 4, type: int32, units: ''}
+  - {Name: Current Position, endLoop: true, size: 4, type: int32, units: ''}
+  - {Name: State, size: 1, type: uint8, units: ''}
+  - {Name: Calibration State, size: 1, type: uint8, units: ''}
+- DAQ: false
+  Name: Motor Parameters
+  Node: Flight Control
+  PacketType: 5126
+  ParameterPrefix: 'Motor '
+  Parameters:
+  - {Name: Microstep Resolution, beginLoop: true, size: 4, type: uint32, units: ''}
+  - {Name: Max Acceleration, size: 4, type: int32, units: ''}
+  - {Name: Microns per Revolution, size: 4, type: int32, units: ''}
+  - {Name: Steps per Revolution, size: 4, type: uint32, units: ''}
+  - {Name: Max Angular Velocity, endLoop: true, size: 4, type: int32, units: ''}
+  - {Name: Unknown Timer, size: 1, type: int8, units: ''}
+- DAQ: false
   Name: Power A Current Temps
   Node: Power Node A
   PacketType: 12801
@@ -398,3 +376,25 @@ packetDefinitions:
   ParameterPrefix: 'Power A Cooling '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
+- DAQ: false
+  Name: Auto-sequence test
+  Node: Flight Control
+  PacketType: 6401
+  ParameterPrefix: 'Auto-test '
+  Parameters:
+  - {Name: State, size: 4, type: uint32, units: ''}
+  - {Name: Status, size: 1, type: uint8, units: ''}
+- DAQ: false
+  Name: Laser Opto Sensor
+  Node: Flight Control
+  PacketType: 4353
+  ParameterPrefix: 'LaserOpto '
+  Parameters:
+  - {Name: Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Spare, size: 4, type: uint32, units: ''}
+  - {Name: Fault Flags, beginLoop: true, size: 4, type: uint32, units: ''}
+  - {Name: Laser error packet count, size: 4, type: uint32, units: ''}
+  - {Name: First byte wrong, size: 4, type: uint32, units: ''}
+  - {Name: Raw distance, size: 4, type: float32, units: ''}
+  - {Name: Filtered value, size: 4, type: float32, units: ''}
+  - {Name: Spare, endLoop: true, size: 4, type: uint32, units: ''}
