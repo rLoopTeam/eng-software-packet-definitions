@@ -1,0 +1,19 @@
+---
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # FCU core enums
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/fcu_core__enums.h
+
+packets:
+  # TODO: 0x1901 Auto Sequence could not be found in pod code.
+  - packetName: 'Auto-sequence test'
+    prefix: 'Auto-test'
+    packetType: 0x1901
+    parameters:
+      - name: 'State'
+        type: 'uint32'
+      - name: 'Status'
+        type: 'uint8'

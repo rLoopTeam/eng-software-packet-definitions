@@ -1,0 +1,102 @@
+---
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # FCU core enums
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/fcu_core__enums.h
+  # 0x1400 Brake
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/BRAKES/fcu__brakes__ethernet.c
+
+packets:
+  - packetName: 'Brake Data'
+    prefix: 'Brake'
+    packetType: 0x1402
+    parameters:
+      - name: 'Fault Flags'
+        type: 'uint32'
+        units: 'a'
+        beginLoop: true
+
+      - name: 'I Beam mm Target'
+        units: 'mm'
+        type: 'float32'
+      - name: 'Lead Screw mm Target'
+        units: 'mm'
+        type: 'float32'
+      - name: 'Lead Screw um Target'
+        units: 'um'
+        type: 'uint32'
+
+      - name: 'I Beam mm Current'
+        units: 'mm'
+        type: 'float32'
+      - name: 'Lead Screw mm Current'
+        units: 'mm'
+        type: 'float32'
+      - name: 'MLP Current'
+        units: 'mm'
+        type: 'float32'
+
+      # Spare packet slots
+      - name: 'Spare 1'
+        type: 'uint32'
+      - name: 'Spare 2'
+        type: 'uint32'
+
+      # TODO: WTF? fcu__brakes__ethernet.c:146
+      - name: 'Limit Extend'
+        type: 'uint8'
+      - name: 'Limit Retract'
+        type: 'uint8'
+      - name: 'Limit Extend Edge'
+        type: 'uint8'
+      - name: 'Limit Retract Edge'
+        type: 'uint8'
+      - name: 'SW Error'
+        type: 'uint8'
+
+      - name: 'ADC Sample'
+        type: 'uint16'
+      - name: 'ADC Zero'
+        type: 'uint16'
+      - name: 'ADC Minus Zero'
+        type: 'int32'
+      - name: 'System Span'
+        type: 'float32'
+      - name: 'Brake Position'
+        type: 'float32'
+
+      - name: 'Linear Velocity'
+        type: 'int32'
+      - name: 'Linear Acceleration'
+        type: 'int32'
+      - name: 'Current Position'
+        type: 'int32'
+        endLoop: true
+
+      - name: 'State'
+        type: 'uint8'
+      - name: 'Calibration State'
+        type: 'uint8'
+
+  - packetName: 'Motor Parameters'
+    prefix: 'Motor'
+    packetType: 0x1406
+    parameters:
+      - name: 'Microstep Resolution'
+        type: 'uint32'
+        beginLoop: true
+      - name: 'Max Acceleration'
+        type: 'int32'
+      - name: 'Microns per Revolution'
+        type: 'int32'
+      - name: 'Steps per Revolution'
+        type: 'uint32'
+      - name: 'Max Angular Velocity'
+        type: 'int32'
+        endLoop: true
+      # TODO: What's the type of this? FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/BRAKES/fcu__brakes__ethernet.c:112
+      - name: 'Unknown Timer'
+        type: 'int8'

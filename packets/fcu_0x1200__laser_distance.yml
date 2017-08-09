@@ -1,0 +1,47 @@
+---
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # FCU core enums
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/fcu_core__enums.h
+  # 0x1200 Laser Distance
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/LASER_DISTANCE/fcu__laser_distance__ethernet.c
+
+packets:
+  - packetName: 'Forward Laser Distance Sensor'
+    prefix: 'ForwardLaser'
+    packetType: 0x1201
+    parameters:
+      - name: 'Fault Flags'
+        type: 'uint32'
+      # TODO: Avionics, are you drunk? (read other comments below this for context)
+      # BEGIN QUESTIONABLE VARIABLES
+      # sFCU.sLaserDist.s32Distance_mm
+      - name: 'Spare 0'
+        type: 'int32'
+      # sFCU.sLaserDist.s32PrevDistance_mm
+      - name: 'Spare 1'
+        type: 'int32'
+      # sFCU.sLaserDist.s32Velocity_mms
+      - name: 'Spare 2'
+        type: 'int32'
+      # sFCU.sLaserDist.s32PrevVelocity_mms
+      - name: 'Distance Raw'
+        type: 'int32'
+      # sFCU.sLaserDist.s32Accel_mmss
+      - name: 'Distance Filtered'
+        type: 'int32'
+      # sFCU.sLaserDist.s32PrevAccel_mmss
+      - name: 'Spare 3'
+        type: 'int32'
+      # END QUESTIONABLE VARIABLES 
+      - name: 'Binary Distance'
+        type: 'uint32'
+      - name: 'Missed Start'
+        type: 'uint32'
+      - name: 'Bad Distance'
+        type: 'uint32'
+      - name: 'Error Code'
+        type: 'uint32'

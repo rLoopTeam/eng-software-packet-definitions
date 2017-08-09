@@ -1,0 +1,34 @@
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # FCU core enums
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/fcu_core__enums.h
+  # 0x1100 Laser Opto
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/LASER_OPTO/fcu__laser_opto__ethernet.c
+
+packets:
+  - packetName: 'Laser Opto Sensor'
+    prefix: 'LaserOpto'
+    packetType: 0x1101
+    parameters:
+      - name: 'Fault Flags'
+        type: 'uint32'
+      - name: 'Spare'
+        type: 'uint32'
+  
+      - name: 'Fault Flags'
+        type: 'uint32'
+        beginLoop: true
+      - name: 'Laser error packet count'
+        type: 'uint32'
+      - name: 'First byte wrong'
+        type: 'uint32'
+      - name: 'Raw distance'
+        type: 'float32'
+      - name: 'Filtered value'
+        type: 'float32'
+      - name: 'Spare'
+        type: 'uint32'
+        endLoop: true

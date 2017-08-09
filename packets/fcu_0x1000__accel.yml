@@ -1,0 +1,62 @@
+---
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # FCU core enums
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/fcu_core__enums.h
+  # 0x1000 Accel
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/ACCELEROMETERS/fcu__accel__ethernet.c
+
+packets:
+  # 0x1000 Accel
+  - packetName: 'Accel Cal Full'
+    prefix: 'Accel'
+    packetType: 0x1001
+    parameters:
+      - name: 'Flags'
+        type: 'uint32'
+        beginLoop: true
+      - name: 'X Raw'
+        type: 'int16'
+      - name: 'Y Raw'
+        type: 'int16'
+      - name: 'Z Raw'
+        type: 'int16'
+        endLoop: true
+
+  - packetName: 'Accel Data Full'
+    prefix: 'Accel'
+    packetType: 0x1003
+    parameters:
+      - name: 'Flags'
+        type: 'uint32'
+        beginLoop: true
+      - name: 'X Raw'
+        type: 'int16'
+      - name: 'Y Raw'
+        type: 'int16'
+      - name: 'Z Raw'
+        type: 'int16'
+      - name: 'X Gs'
+        type: 'float32'
+      - name: 'Y Gs'
+        type: 'float32'
+      - name: 'Z Gs'
+        type: 'float32'
+      - name: 'Pitch'
+        type: 'float32'
+      - name: 'Roll'
+        type: 'float32'
+      - name: 'Current Accel'
+        type: 'int32'
+      - name: 'Current Velocity'
+        type: 'int32'
+      - name: 'Previous Velocity'
+        type: 'int32'
+      - name: 'Current Displacement'
+        type: 'int32'
+      - name: 'Previous Displacement'
+        type: 'int32'
+        endLoop: true

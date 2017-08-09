@@ -1,0 +1,40 @@
+---
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # FCU core enums
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/fcu_core__enums.h
+  # 0x1500 Throttle
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/THROTTLES/fcu__throttles__ethernet.c
+
+packets:
+  - packetName: 'Throttle Parameters'
+    prefix: 'Throttle'
+    packetType: 0x1503
+    parameters:
+      - name: 'Fault Flags'
+        type: 'uint32'
+      - name: 'AMC Fault Flags'
+        type: 'uint32'
+
+      - name: 'Requested RPM'
+        type: 'uint16'
+        beginLoop: true
+        endLoop: true
+      - name: 'Current RPM'
+        type: 'uint16'
+        beginLoop: true
+        endLoop: true
+      - name: 'ASI RPM'
+        type: 'uint16'
+        beginLoop: true
+        endLoop: true
+
+      - name: 'State'
+        type: 'uint8'
+      - name: 'Current Index'
+        type: 'uint8'
+      - name: 'AMC State'
+        type: 'uint8'
