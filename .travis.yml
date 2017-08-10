@@ -5,7 +5,7 @@ python:
 cache: pip
 install:
   - pip install -r requirements.txt
-  - pip install coverage python-coveralls
+  - pip install coverage coveralls-python
   - python setup.py install
 script: coverage run setup.py test
 after_success:
