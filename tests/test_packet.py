@@ -26,7 +26,9 @@ def test_blank_prefix():
 
 def test_daq_and_param():
     with pytest.raises(ValueError) as excinfo:
-        packet = Packet("Packet Name", "Node", 0x1000, "", [{"type": "int32"}], {"type": "int32"})
+        packet = Packet("Packet Name", "Node", 0x1000, "", [
+            {"name": "Test Packet", "type": "int32"}
+        ], {"type": "int32"})
     assert 'cannot both be' in str(excinfo.value)
 
 # YAML user error
