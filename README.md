@@ -1,4 +1,4 @@
-# eng-software-packet-defintions
+# eng-software-packet-defintions [![Build Status](https://travis-ci.org/rLoopTeam/eng-software-packet-definitions.svg?branch=master)](https://travis-ci.org/rLoopTeam/eng-software-packet-definitions) [![Coverage Status](https://coveralls.io/repos/github/rLoopTeam/eng-software-packet-definitions/badge.svg)](https://coveralls.io/github/rLoopTeam/eng-software-packet-definitions)
 This generates a packet definitions JSON/YAML file that can be used in the ground station or other internal apps that parse pod packets.
 
 # Usage

@@ -16,27 +16,20 @@ packets:
     parameters:
       - name: 'Fault Flags'
         type: 'uint32'
-      # TODO: Avionics, are you drunk? (read other comments below this for context)
-      # BEGIN QUESTIONABLE VARIABLES
-      # sFCU.sLaserDist.s32Distance_mm
-      - name: 'Spare 0'
+      - name: 'Distance'
+        units: 'mm'
         type: 'int32'
-      # sFCU.sLaserDist.s32PrevDistance_mm
-      - name: 'Spare 1'
+      - name: 'Precious Distance'
+        units: 'mm'
         type: 'int32'
-      # sFCU.sLaserDist.s32Velocity_mms
-      - name: 'Spare 2'
+      - name: 'Velocity'
         type: 'int32'
-      # sFCU.sLaserDist.s32PrevVelocity_mms
       - name: 'Distance Raw'
         type: 'int32'
-      # sFCU.sLaserDist.s32Accel_mmss
-      - name: 'Distance Filtered'
+      - name: 'Acceleration'
         type: 'int32'
-      # sFCU.sLaserDist.s32PrevAccel_mmss
-      - name: 'Spare 3'
+      - name: 'Previous Acceleration'
         type: 'int32'
-      # END QUESTIONABLE VARIABLES 
       - name: 'Binary Distance'
         type: 'uint32'
       - name: 'Missed Start'

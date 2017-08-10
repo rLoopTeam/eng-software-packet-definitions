@@ -1034,22 +1034,22 @@
                     "Name": "Fault Flags"
                 },
                 {
+                    "units": "mm",
                     "type": "int32",
-                    "units": "",
                     "size": 4,
-                    "Name": "Spare 0"
+                    "Name": "Distance"
+                },
+                {
+                    "units": "mm",
+                    "type": "int32",
+                    "size": 4,
+                    "Name": "Precious Distance"
                 },
                 {
                     "type": "int32",
                     "units": "",
                     "size": 4,
-                    "Name": "Spare 1"
-                },
-                {
-                    "type": "int32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Spare 2"
+                    "Name": "Velocity"
                 },
                 {
                     "type": "int32",
@@ -1061,13 +1061,13 @@
                     "type": "int32",
                     "units": "",
                     "size": 4,
-                    "Name": "Distance Filtered"
+                    "Name": "Acceleration"
                 },
                 {
                     "type": "int32",
                     "units": "",
                     "size": 4,
-                    "Name": "Spare 3"
+                    "Name": "Previous Acceleration"
                 },
                 {
                     "type": "uint32",
@@ -1523,10 +1523,10 @@
                     "Name": "Max Angular Velocity"
                 },
                 {
-                    "type": "int8",
+                    "type": "uint8",
                     "units": "",
                     "size": 1,
-                    "Name": "Unknown Timer"
+                    "Name": "Compare Timer"
                 }
             ]
         },

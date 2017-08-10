@@ -45,7 +45,7 @@ packets:
       - name: 'Spare 2'
         type: 'uint32'
 
-      # TODO: WTF? fcu__brakes__ethernet.c:146
+      # fcu__brakes__ethernet.c:146
       - name: 'Limit Extend'
         type: 'uint8'
       - name: 'Limit Retract'
@@ -97,6 +97,5 @@ packets:
       - name: 'Max Angular Velocity'
         type: 'int32'
         endLoop: true
-      # TODO: What's the type of this? FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/BRAKES/fcu__brakes__ethernet.c:112
-      - name: 'Unknown Timer'
-        type: 'int8'
+      - name: 'Compare Timer'
+        type: 'uint8'
