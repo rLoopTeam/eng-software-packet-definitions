@@ -202,12 +202,12 @@ packetDefinitions:
   ParameterPrefix: 'ForwardLaser '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
-  - {Name: Spare 0, size: 4, type: int32, units: ''}
-  - {Name: Spare 1, size: 4, type: int32, units: ''}
-  - {Name: Spare 2, size: 4, type: int32, units: ''}
+  - {Name: Distance, size: 4, type: int32, units: mm}
+  - {Name: Precious Distance, size: 4, type: int32, units: mm}
+  - {Name: Velocity, size: 4, type: int32, units: ''}
   - {Name: Distance Raw, size: 4, type: int32, units: ''}
-  - {Name: Distance Filtered, size: 4, type: int32, units: ''}
-  - {Name: Spare 3, size: 4, type: int32, units: ''}
+  - {Name: Acceleration, size: 4, type: int32, units: ''}
+  - {Name: Previous Acceleration, size: 4, type: int32, units: ''}
   - {Name: Binary Distance, size: 4, type: uint32, units: ''}
   - {Name: Missed Start, size: 4, type: uint32, units: ''}
   - {Name: Bad Distance, size: 4, type: uint32, units: ''}
@@ -314,7 +314,7 @@ packetDefinitions:
   - {Name: Microns per Revolution, size: 4, type: int32, units: ''}
   - {Name: Steps per Revolution, size: 4, type: uint32, units: ''}
   - {Name: Max Angular Velocity, endLoop: true, size: 4, type: int32, units: ''}
-  - {Name: Unknown Timer, size: 1, type: int8, units: ''}
+  - {Name: Compare Timer, size: 1, type: uint8, units: ''}
 - DAQ: false
   Name: Power A Current Temps
   Node: Power Node A

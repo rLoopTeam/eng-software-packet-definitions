@@ -45,6 +45,8 @@ def get_size(packet_type: str) -> int:
     """
 
     if packet_type not in PACKET_SIZES:
-        raise ValueError(f"Packet type '{packet_type}' is not a valid packet type.")
+        raise ValueError("Packet type '{packet_type}' is not a valid packet type.".format(
+            packet_type=packet_type
+        ))
 
     return PACKET_SIZES[packet_type.lower()]

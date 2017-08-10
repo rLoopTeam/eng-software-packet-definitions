@@ -29,9 +29,14 @@ class Packet:
         self.validate()
 
     def __repr__(self):
-        daq_text = f"{self.daq['type']} daq" if self.daq else "not daq"
-        return f"<Packet '{self.name or ''}', type={hex(self.packet_type or 0)}, prefix='{self.prefix or ''}', " \
-               f"parameters={len(self.parameters) or 0}, {daq_text}>"
+        template = "<Packet '{packet_name}', type={packet_type}, prefix='{packet_prefix}', params={num_params}, daq={daq}"
+        return template.format(
+            packet_name=self.name or "",
+            packet_type=hex(self.packet_type or 0),
+            packet_prefix=self.prefix or "",
+            num_params=len(self.parameters) or 0,
+            daq=self.daq.get("type", "") if self.daq else "",
+        )
 
     def to_gs_dict(self):
         output = {
@@ -63,7 +68,9 @@ class Packet:
     @classmethod
     def from_yaml(cls, node: str, yaml_blob: dict, file_vars: Optional[dict]=None):
         if not isinstance(yaml_blob, dict):
-            raise TypeError(f"Packet YAML file is giving us a {type(yaml_blob)}, instead of a dict.")
+            raise TypeError("Packet YAML file is giving us a {yaml_type}, instead of a dict.".format(
+                yaml_type=type(yaml_blob)
+            ))
 
         # Do formatting of all variables if we have variables.
         if file_vars:
@@ -81,13 +88,13 @@ class Packet:
 
         # Fail if we have templated strings without variables.
         if "{" in node or "}" in node:
-            raise ValueError(f"Untemplated strings in node name. {yaml_blob['packetName']}")
+            raise ValueError("Untemplated strings in node name. " + yaml_blob['packetName'])
 
         if "packetName" in yaml_blob and ("{" in yaml_blob["packetName"] or "}" in yaml_blob["packetName"]):
-            raise ValueError(f"Untemplated strings in packet name. {yaml_blob['packetName']}")
+            raise ValueError("Untemplated strings in packet name. " + yaml_blob['packetName'])
 
         if "prefix" in yaml_blob and ("{" in yaml_blob["prefix"] or "}" in yaml_blob["prefix"]):
-            raise ValueError(f"Untemplated strings in prefix. {yaml_blob['prefix']}")
+            raise ValueError("Untemplated strings in prefix. " + yaml_blob['prefix'])
 
         # Unknown packet root arguments
         unknown_root_keys = set()
@@ -95,7 +102,10 @@ class Packet:
             if key not in KNOWN_ROOT_KEYS:
                 unknown_root_keys.add(key)
         if unknown_root_keys:
-            raise ValueError(f"'{yaml_blob['packetName']}' has unkown keys. {unknown_root_keys}")
+            raise ValueError("'{packet_name}' has unknown keys. {unknown_keys}".format(
+                packet_name=yaml_blob['packetName'],
+                unknown_keys=unknown_root_keys
+            ))
 
         # Unknown packet param arguments
         if "parameters" in yaml_blob:
@@ -105,7 +115,10 @@ class Packet:
                     if key not in KNOWN_PARAM_KEYS:
                         unknown_param_keys.add(key)
             if unknown_param_keys:
-                raise ValueError(f"'{yaml_blob['packetName']}' has unkown param keys. {unknown_param_keys}")
+                raise ValueError("'{packet_name}' has unknown param keys. {unknown_keys}".format(
+                    packet_name=yaml_blob['packetName'],
+                    unknown_keys=unknown_param_keys
+                ))
 
         # Unknown packet param arguments
         if "daq" in yaml_blob and yaml_blob["daq"]:
@@ -114,7 +127,10 @@ class Packet:
                 if key not in KNOWN_DAQ_KEYS:
                     unknown_daq_keys.add(key)
             if unknown_daq_keys:
-                raise ValueError(f"'{yaml_blob['packetName']}' has unkown DAQ keys. {unknown_daq_keys}")
+                raise ValueError("'{packet_name}' has unknown DAQ keys. {unknown_daq_keys}".format(
+                    packet_name=yaml_blob['packetName'],
+                    unknown_keys=unknown_daq_keys
+                ))
 
         return cls(
             yaml_blob.get("packetName"),
@@ -180,19 +196,19 @@ class Packet:
 
         # Packet name
         if not self.name:
-            raise ValueError(f"Packet must have a name. {str(self)}")
+            raise ValueError("Packet must have a name. " + str(self))
 
         # Node name
         if not self.node:
-            raise ValueError(f"Packet must have a node. {str(self)}")
+            raise ValueError("Packet must have a node. " + str(self))
 
         # Packet type
         if not self.packet_type:
-            raise ValueError(f"Packet must have a type that is not blank or 0x00. {str(self)}")
+            raise ValueError("Packet must have a type that is not blank or 0x00. " + str(self))
 
         # DAQ and parameters
         if self.daq and self.parameters:
-            raise ValueError(f"DAQ and parameters cannot both be defined in packet. [{self.name}]")
+            raise ValueError("DAQ and parameters cannot both be defined in packet. " + self.name)
 
         # Parameter validation
         if self.parameters:
@@ -201,13 +217,19 @@ class Packet:
                 # Loop validation
                 if "beginLoop" in parameter:
                     if in_loop:
-                        raise ValueError(f"'{self.name}' is beginning a loop while already in a loop.")
+                        raise ValueError("'{self_name}' is beginning a loop while already in a loop.".format(
+                            self_name=self.name,
+                        ))
                     in_loop = True
 
                 if "endLoop" in parameter:
                     if not in_loop:
-                        raise ValueError(f"'{self.name}' is ending a loop while not in a loop.")
+                        raise ValueError("'{self_name}' is ending a loop while not in a loop.".format(
+                            self_name=self.name,
+                        ))
                     in_loop = False
 
             if in_loop:
-                raise ValueError(f"Loop not closed in '{self.name}'")
+                raise ValueError("Loop not closed in '{self_name}'".format(
+                    self_name=self.name,
+                ))
