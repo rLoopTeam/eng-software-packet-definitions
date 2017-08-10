@@ -6,8 +6,10 @@ import sys
 from typing import Optional, Union
 
 import yaml
+import jsonschema
 
 from rloopDefinitionApp.structs import Packet
+from rloopDefinitionApp.schemas import PACKET_LIST_SCHEMA
 from rloopDefinitionApp.utils import get_packet_files, md5
 
 logging.basicConfig(level=logging.INFO)
@@ -47,6 +49,9 @@ class DefinitionGenerator:
                 self.sums = json.load(f)
             else:
                 packets_data = yaml.load(f)
+
+                # Verify schema before moving on to verification.
+                jsonschema.validate(packets_data, PACKET_LIST_SCHEMA)
 
                 for source_path in packets_data["podSources"]:
                     full_source_path = os.path.join("../eng-software-pod", source_path)

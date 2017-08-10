@@ -1,8 +1,10 @@
 from typing import List, Optional, Union
 
-from rloopDefinitionApp.data_constants import (KNOWN_DAQ_KEYS,
-                                               KNOWN_PARAM_KEYS,
-                                               KNOWN_ROOT_KEYS)
+import jsonschema
+
+from rloopDefinitionApp.schemas import (DAQ_SCHEMA,
+                                        PARAM_SCHEMA,
+                                        PACKET_SCHEMA)
 from rloopDefinitionApp.utils import get_size
 
 
@@ -96,41 +98,8 @@ class Packet:
         if "prefix" in yaml_blob and ("{" in yaml_blob["prefix"] or "}" in yaml_blob["prefix"]):
             raise ValueError("Untemplated strings in prefix. " + yaml_blob['prefix'])
 
-        # Unknown packet root arguments
-        unknown_root_keys = set()
-        for key in yaml_blob.keys():
-            if key not in KNOWN_ROOT_KEYS:
-                unknown_root_keys.add(key)
-        if unknown_root_keys:
-            raise ValueError("'{packet_name}' has unknown keys. {unknown_keys}".format(
-                packet_name=yaml_blob['packetName'],
-                unknown_keys=unknown_root_keys
-            ))
-
-        # Unknown packet param arguments
-        if "parameters" in yaml_blob:
-            unknown_param_keys = set()
-            for param in yaml_blob["parameters"]:
-                for key in param.keys():
-                    if key not in KNOWN_PARAM_KEYS:
-                        unknown_param_keys.add(key)
-            if unknown_param_keys:
-                raise ValueError("'{packet_name}' has unknown param keys. {unknown_keys}".format(
-                    packet_name=yaml_blob['packetName'],
-                    unknown_keys=unknown_param_keys
-                ))
-
-        # Unknown packet param arguments
-        if "daq" in yaml_blob and yaml_blob["daq"]:
-            unknown_daq_keys = set()
-            for key in yaml_blob["daq"].keys():
-                if key not in KNOWN_DAQ_KEYS:
-                    unknown_daq_keys.add(key)
-            if unknown_daq_keys:
-                raise ValueError("'{packet_name}' has unknown DAQ keys. {unknown_daq_keys}".format(
-                    packet_name=yaml_blob['packetName'],
-                    unknown_keys=unknown_daq_keys
-                ))
+        # Schema validation.
+        jsonschema.validate(yaml_blob, PACKET_SCHEMA)
 
         return cls(
             yaml_blob.get("packetName"),
@@ -194,6 +163,11 @@ class Packet:
             Validates a packet's keys and raises exceptions and warnings if anything is wrong.
         """
 
+        # Basic schema validation
+        for param in self.parameters:
+            jsonschema.validate(param, PARAM_SCHEMA)
+        jsonschema.validate(self.daq or {}, DAQ_SCHEMA)
+
         # Packet name
         if not self.name:
             raise ValueError("Packet must have a name. " + str(self))
@@ -233,3 +207,15 @@ class Packet:
                 raise ValueError("Loop not closed in '{self_name}'".format(
                     self_name=self.name,
                 ))
+
+
+class Argument:
+    def __init__(self, arg_type, optional=False):
+        self.arg_type = arg_type
+        self.optional = optional
+
+    def __repr__(self):
+        return "<Argument {arg_type}, optional={optional}>".format(
+            arg_type=str(self.arg_type),
+            optional=optional
+        )
