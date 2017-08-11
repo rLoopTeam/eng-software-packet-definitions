@@ -78,6 +78,21 @@ PARAM_SCHEMA = {
         "size": {"type": "number"},
         "beginLoop": {"type": "boolean"},
         "endLoop": {"type": "boolean"},
+        "iterate": {
+            "type": "object",
+            "properties": {
+                "start": {
+                    "type": "number",
+                    "description": "Defaults to 0.",
+                },
+                "end": {"type": "number"},
+                "inclusive": {
+                    "type": "boolean",
+                    "description": "Makes the range iterations include the end.",
+                }
+            },
+            "description": "Does range(start, end) and sets variable i in parameter name.",
+        },
     },
     "required": [
         "name",
