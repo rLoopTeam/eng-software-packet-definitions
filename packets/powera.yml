@@ -90,15 +90,16 @@ packets:
         type: 'float32'
       - name: 'Node Temp'
         type: 'float32'
-      # TODO: Pray looping the Module Voltage, BMS ID works instead of the manual way of 1-18.
-      - name: 'Module Voltage'
+      - name: '{i} Module Voltage'
         type: 'float32'
-        beginLoop: true
-        endLoop: true
-      - name: 'BMS ID'
+        iterate:
+          start: 1
+          end: 18
+      - name: '{i} BMS ID'
         type: 'uint8'
-        beginLoop: true
-        endLoop: true
+        iterate:
+          start: 1
+          end: 18
       - name: 'Voltage Updates'
         type: 'uint32'
       - name: 'Temp Scan Count'

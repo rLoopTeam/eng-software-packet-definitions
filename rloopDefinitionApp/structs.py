@@ -1,3 +1,4 @@
+import logging
 from typing import List, Optional, Union
 
 import jsonschema
@@ -6,6 +7,8 @@ from rloopDefinitionApp.schemas import (DAQ_SCHEMA,
                                         PARAM_SCHEMA,
                                         PACKET_SCHEMA)
 from rloopDefinitionApp.utils import get_size
+
+log = logging.getLogger(__name__)
 
 
 class Packet:
@@ -142,7 +145,9 @@ class Packet:
                 * packet["daq"] = False [if not DAQ]
                 * packet["parameters"][param]["units"] = ""
                 * packet["parameters"][param]["size"] = byte size
+                * packet["parameters"][param_i] = param with `i + name` [if param.iterate] 
         """
+        param_iterate = False
 
         # Fill in DAQ sizes if we have a DAQ.
         if self.daq:
@@ -157,6 +162,37 @@ class Packet:
             # Fill in size
             if "size" not in parameter:
                 parameter["size"] = get_size(parameter["type"])
+            
+            # Flag for iteration fixing if we have an iteration.
+            if "iterate" in parameter:
+                param_iterate = True
+        
+        # Iteration fixing
+        original_parameters = self.parameters.copy()
+        self.parameters = []
+        for parameter in original_parameters:
+            if "iterate" not in parameter:
+                self.parameters.append(parameter)
+                continue
+
+            # Set our range start and end from the givens and implicits.
+            range_start = parameter["iterate"].get("start", 0)
+            range_end = parameter["iterate"]["end"] + 1
+
+            # Subtract the end by 1 if we do not want to include the end.
+            if not parameter["iterate"].get("inclusive", True):
+                range_end = range_end - 1
+
+            # Iterate through our range and append the parameter copies to the list.
+            for i in range(range_start, range_end):
+                iter_param = parameter.copy()
+                if "{" not in iter_param["name"] or "}" not in iter_param["name"]:
+                    log.warning("Iteration parameter %s is missing template.", iter_param["name"])
+                iter_param["name"] = iter_param["name"].format(i=i)
+
+                # Remove the iterate key and append.
+                del iter_param["iterate"]
+                self.parameters.append(iter_param)
 
     def validate(self):
         """

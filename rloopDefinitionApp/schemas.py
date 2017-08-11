@@ -88,7 +88,7 @@ PARAM_SCHEMA = {
                 "end": {"type": "number"},
                 "inclusive": {
                     "type": "boolean",
-                    "description": "Makes the range iterations include the end.",
+                    "description": "Makes the range iterations include the end. Defaults to True.",
                 }
             },
             "description": "Does range(start, end) and sets variable i in parameter name.",
