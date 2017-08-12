@@ -281,9 +281,42 @@ packetDefinitions:
   - {Name: Board Temp, size: 4, type: float32, units: ''}
   - {Name: Node Pressure, size: 4, type: float32, units: ''}
   - {Name: Node Temp, size: 4, type: float32, units: ''}
-  - {Name: Module Voltage, beginLoop: true, endLoop: true, size: 4, type: float32,
-    units: ''}
-  - {Name: BMS ID, beginLoop: true, endLoop: true, size: 1, type: uint8, units: ''}
+  - {Name: 1 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 2 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 3 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 4 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 5 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 6 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 7 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 8 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 9 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 10 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 11 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 12 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 13 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 14 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 15 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 16 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 17 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 18 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 1 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 2 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 3 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 4 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 5 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 6 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 7 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 8 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 9 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 10 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 11 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 12 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 13 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 14 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 15 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 16 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 17 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 18 BMS ID, size: 1, type: uint8, units: ''}
   - {Name: Voltage Updates, size: 4, type: uint32, units: ''}
   - {Name: Temp Scan Count, size: 4, type: uint32, units: ''}
   - {Name: Pack Current, size: 4, type: float32, units: ''}
