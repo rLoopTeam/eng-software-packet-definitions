@@ -35,6 +35,11 @@ def clean_test_dir():
         except FileNotFoundError:
             pass
 
+@pytest.fixture(scope="module")
+def packet_defs():
+    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "packetDefinitions.yml")) as f:
+        return yaml.load(f)
+
 def create_test_file(filename: str) -> str:
     test_data = str(random.randint(0, 99999))
     with open(filename, "w") as f:
@@ -63,7 +68,39 @@ def get_packet(defintions, packet_name):
     
     raise ValueError("Packet '%s' does not exist in test defintions. (Possible breakage?)" % (packet_name))
 
-def verify_all_data():
+@pytest.mark.dependency()
+def test_full_app_generate_and_sums(clean_test_dir, caplog):
+    # Create initial hash files.
+    hash_file_1 = md5(create_test_file(TEST_FILE_1))
+    hash_file_2 = md5(create_test_file(TEST_FILE_2))
+
+    # Set the seed to 0 and run the app. This should ensure I_REALLY_LOOKED=50494
+    random.seed(0)
+    run_app()
+
+    # Checkcum test
+    verify_sums(hash_file_1, hash_file_2)
+
+    # Change a file hash and redo the run.
+    hash_file_2 = md5(create_test_file(TEST_FILE_2))
+    run_app()
+    assert all([
+        "for /tmp/_rloop_pytest_fakesource2" in caplog.text,
+        "rerun this script with environment variable" in caplog.text
+    ])
+
+    """"
+    TODO: How to set environ pytest
+    # Redo the run again with the variable set.
+    caplog.handler.records = []
+    os.environ["I_REALLY_LOOKED"] = "50494"
+    print(os.environ)
+    run_app()
+    assert breaker
+    """
+
+@pytest.mark.dependency(depends=["test_full_app_generate_and_sums"])
+def test_full_app_verify_equal_datafiles():
     packet_defs = None
     packet_defs_json = None
     packet_defs_human = None
@@ -84,7 +121,8 @@ def verify_all_data():
     assert packet_defs_human == packet_defs_json
     assert packet_defs == packet_defs_human == packet_defs_json
 
-    # Verify Single Iterated Data
+@pytest.mark.dependency(depends=["test_full_app_generate_and_sums"])
+def test_full_app_packet_single_iterated_data(packet_defs):
     iter_params = get_packet(packet_defs, "Single Iterated Data")["Parameters"]
     assert len(iter_params) == 10
     assert iter_params[0]["Name"] == "Faulty Flags"
@@ -98,7 +136,8 @@ def verify_all_data():
     assert iter_params[8]["Name"] == "Fake Sensor 8"
     assert iter_params[9]["Name"] == "Flotation Device"
 
-    # Verify Group Iterated Data
+@pytest.mark.dependency(depends=["test_full_app_generate_and_sums"])
+def test_full_app_packet_group_iterated_data(packet_defs):
     iter_params = get_packet(packet_defs, "Group Iterated Data")["Parameters"]
     assert len(iter_params) == 8
     assert iter_params[0]["Name"] == "Snowglobes are my life"
@@ -109,34 +148,3 @@ def verify_all_data():
     assert iter_params[5]["Name"] == "Group Y 2"
     assert iter_params[6]["Name"] == "Group Z 2"
     assert iter_params[7]["Name"] == "Placeholder, I swear"
-
-def test_full_app(clean_test_dir, caplog):
-    # Create initial hash files.
-    hash_file_1 = md5(create_test_file(TEST_FILE_1))
-    hash_file_2 = md5(create_test_file(TEST_FILE_2))
-
-    # Set the seed to 0 and run the app. This should ensure I_REALLY_LOOKED=50494
-    random.seed(0)
-    run_app()
-
-    # Actual tests
-    verify_sums(hash_file_1, hash_file_2)
-    verify_all_data()
-
-    # Change a file hash and redo the run.
-    hash_file_2 = md5(create_test_file(TEST_FILE_2))
-    run_app()
-    assert all([
-        "for /tmp/_rloop_pytest_fakesource2" in caplog.text,
-        "rerun this script with environment variable" in caplog.text
-    ])
-
-    """"
-    TODO: How to set environ pytest
-    # Redo the run again with the variable set.
-    caplog.handler.records = []
-    os.environ["I_REALLY_LOOKED"] = "50494"
-    print(os.environ)
-    run_app()
-    assert breaker
-    """
