@@ -67,12 +67,10 @@ def test_full_app(clean_test_dir, caplog):
     # Actual tests
     verify_sums(hash_file_1, hash_file_2)
 
-    # Change the file hashes and redo the run.
-    hash_file_1 = md5(create_test_file(TEST_FILE_1))
+    # Change a file hash and redo the run.
     hash_file_2 = md5(create_test_file(TEST_FILE_2))
     run_app()
     assert all([
-        "for /tmp/_rloop_pytest_fakesource1" in caplog.text,
         "for /tmp/_rloop_pytest_fakesource2" in caplog.text,
         "rerun this script with environment variable" in caplog.text
     ])

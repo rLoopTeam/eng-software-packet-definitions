@@ -20,21 +20,22 @@ class Packet:
             node: str,
             packet_type: int,
             prefix: str,
-            parameters: Optional[dict]=[],
+            parameters: Optional[List[dict]]=None,
             daq: Union[None, dict, bool]=False
     ):
         self.name = name
         self.node = node
         self.packet_type = packet_type
         self.prefix = prefix
-        self.parameters = parameters
+        self.parameters = parameters or []
         self.daq = daq
 
         self.fill_defaults()
         self.validate()
 
     def __repr__(self):
-        template = "<Packet '{packet_name}', type={packet_type}, prefix='{packet_prefix}', params={num_params}, daq={daq}"
+        template = ("<Packet '{packet_name}', type={packet_type}, prefix='{packet_prefix}',"
+                    "params={num_params}, daq={daq}")
         return template.format(
             packet_name=self.name or "",
             packet_type=hex(self.packet_type or 0),
@@ -113,7 +114,7 @@ class Packet:
             yaml_blob.get("daq", False)
         )
 
-    def parameter_hack_for_ground_station(self) -> List[dict]:
+    def parameter_hack_for_ground_station(self) -> dict:
         """
             This is awful but a necessary evil for the current state of the ground station.
             Thing it does
@@ -129,8 +130,8 @@ class Packet:
                     del parameter["name"]
                 elif key.lower() in ("beginloop", "endloop") and key not in ("beginLoop", "endLoop"):
                     # TODO: lol this is awful
-                    realKey = "beginLoop" if key.lower() == "beginloop" else "endLoop"
-                    parameter[realKey] = parameter[key]
+                    real_key = "beginLoop" if key.lower() == "beginloop" else "endLoop"
+                    parameter[real_key] = parameter[key]
                     try:
                         del parameter[key]
                     except KeyError:
@@ -145,7 +146,7 @@ class Packet:
                 * packet["daq"] = False [if not DAQ]
                 * packet["parameters"][param]["units"] = ""
                 * packet["parameters"][param]["size"] = byte size
-                * packet["parameters"][param_i] = param with `i + name` [if param.iterate] 
+                * packet["parameters"][param_i] = param with `i + name` [if param.iterate]
         """
 
         # Fill in DAQ sizes if we have a DAQ.
@@ -161,11 +162,7 @@ class Packet:
             # Fill in size
             if "size" not in parameter:
                 parameter["size"] = get_size(parameter["type"])
-            
-            # Flag for iteration fixing if we have an iteration.
-            if "iterate" in parameter:
-                param_iterate = True
-        
+
         # Iteration fixing
         original_parameters = self.parameters.copy()
         in_group = False
@@ -209,8 +206,8 @@ class Packet:
                 group_params.append(parameter)
                 # TODO: Less copypasta?
                 for i in range(range_start, range_end):
-                    for parameter in group_params:
-                        iter_param = parameter.copy()
+                    for group_parameter in group_params:
+                        iter_param = group_parameter.copy()
                         iter_param["name"] = iter_param["name"].format(i=i)
 
                         # Remove the iterate key and append to group temp or array.
@@ -228,6 +225,7 @@ class Packet:
             raise ValueError("Packet {packet_name} has an unclosed iter group.".format(
                 packet_name=self.name
             ))
+
     def validate(self):
         """
             Validates a packet's keys and raises exceptions and warnings if anything is wrong.
