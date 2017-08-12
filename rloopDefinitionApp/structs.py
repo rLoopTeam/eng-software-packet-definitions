@@ -163,9 +163,9 @@ class Packet:
 
         # Iteration fixing
         original_parameters = self.parameters.copy()
+        self.parameters = []
         in_group = False
         group_params = []
-        self.parameters = []
 
         for parameter in original_parameters:
             if "iterate" not in parameter and not in_group:
@@ -202,27 +202,29 @@ class Packet:
                 continue
             elif group_params:
                 group_params.append(parameter)
-                # TODO: Less copypasta?
                 for i in range(range_start, range_end):
                     for group_parameter in group_params:
-                        iter_param = group_parameter.copy()
-                        iter_param["name"] = iter_param["name"].format(i=i)
-
-                        # Remove the iterate key and append to group temp or array.
-                        self.parameters.append(iter_param)
+                        self.append_parameter(group_parameter, i=i)
                 continue
 
             # Iterate through our range and append the parameter copies to the list.
             for i in range(range_start, range_end):
-                iter_param = parameter.copy()
-                iter_param["name"] = iter_param["name"].format(i=i)
-
-                self.parameters.append(iter_param)
+                self.append_parameter(parameter, i=i)
 
         if in_group:
             raise ValueError("Packet {packet_name} has an unclosed iter group.".format(
                 packet_name=self.name
             ))
+
+    def append_parameter(self, parameter: dict, **kwargs):
+        """
+            Appends a parameter to the packet parameters list.
+            Copying and formatting is for the group function and doesn't hurt general functionality
+            if used elsewhere.
+        """
+        parameter = parameter.copy()
+        parameter["name"] = parameter["name"].format(**kwargs)
+        self.parameters.append(parameter)
 
     def validate(self):
         """
