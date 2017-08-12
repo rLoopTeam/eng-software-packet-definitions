@@ -1657,7 +1657,7 @@
             "Parameters": [
                 {
                     "type": "uint32",
-                    "units": "a",
+                    "units": "A",
                     "size": 4,
                     "Name": "Fault Flags 1"
                 },
@@ -1789,7 +1789,7 @@
                 },
                 {
                     "type": "uint32",
-                    "units": "a",
+                    "units": "A",
                     "size": 4,
                     "Name": "Fault Flags 2"
                 },

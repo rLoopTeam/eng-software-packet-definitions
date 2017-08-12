@@ -171,6 +171,7 @@ class Packet:
         in_group = False
         group_params = []
         self.parameters = []
+
         for parameter in original_parameters:
             if "iterate" not in parameter and not in_group:
                 self.parameters.append(parameter)
@@ -223,6 +224,10 @@ class Packet:
 
                 self.parameters.append(iter_param)
 
+        if in_group:
+            raise ValueError("Packet {packet_name} has an unclosed iter group.".format(
+                packet_name=self.name
+            ))
     def validate(self):
         """
             Validates a packet's keys and raises exceptions and warnings if anything is wrong.
