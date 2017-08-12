@@ -68,17 +68,8 @@ PARAM_SCHEMA = {
     "$schema": "http://json-schema.org/schema#",
     "type": "object",
     "description": "A parameter of a packet.",
-    "properties": {
-        "name": {"type": "string"},
-        "type": {
-            "type": "string",
-            "pattern": TYPES_REGEX,
-        },
-        "units": {"type": "string"},
-        "size": {"type": "number"},
-        "beginLoop": {"type": "boolean"},
-        "endLoop": {"type": "boolean"},
-        "iterate": {
+    "definitions": {
+        "iterProperties": {
             "type": "object",
             "properties": {
                 "start": {
@@ -89,10 +80,24 @@ PARAM_SCHEMA = {
                 "inclusive": {
                     "type": "boolean",
                     "description": "Makes the range iterations include the end. Defaults to True.",
-                }
+                },
+                "beginGroup": {"type": "boolean"},
+                "endGroup": {"type": "boolean"},
             },
-            "description": "Does range(start, end) and sets variable i in parameter name.",
+            "description": "Properties for range(start, end) for single/group parameters..",
         },
+    },
+    "properties": {
+        "name": {"type": "string"},
+        "type": {
+            "type": "string",
+            "pattern": TYPES_REGEX,
+        },
+        "units": {"type": "string"},
+        "size": {"type": "number"},
+        "beginLoop": {"type": "boolean"},
+        "endLoop": {"type": "boolean"},
+        "iterate": {"$ref": "#/definitions/iterProperties"},
     },
     "required": [
         "name",

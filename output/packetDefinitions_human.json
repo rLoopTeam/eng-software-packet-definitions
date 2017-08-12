@@ -1658,136 +1658,266 @@
                 {
                     "type": "uint32",
                     "units": "a",
-                    "beginLoop": true,
                     "size": 4,
-                    "Name": "Fault Flags"
+                    "Name": "Fault Flags 1"
                 },
                 {
                     "units": "mm",
                     "type": "float32",
                     "size": 4,
-                    "Name": "I Beam mm Target"
+                    "Name": "I Beam mm 1 Target"
                 },
                 {
                     "units": "mm",
                     "type": "float32",
                     "size": 4,
-                    "Name": "Lead Screw mm Target"
+                    "Name": "Lead Screw mm 1 Target"
                 },
                 {
                     "units": "um",
                     "type": "uint32",
                     "size": 4,
-                    "Name": "Lead Screw um Target"
+                    "Name": "Lead Screw um 1 Target"
                 },
                 {
                     "units": "mm",
                     "type": "float32",
                     "size": 4,
-                    "Name": "I Beam mm Current"
+                    "Name": "I Beam mm 1 Current"
                 },
                 {
                     "units": "mm",
                     "type": "float32",
                     "size": 4,
-                    "Name": "Lead Screw mm Current"
+                    "Name": "Lead Screw mm 1 Current"
                 },
                 {
                     "units": "mm",
                     "type": "float32",
                     "size": 4,
-                    "Name": "MLP Current"
+                    "Name": "MLP 1 Current"
                 },
                 {
                     "type": "uint32",
                     "units": "",
                     "size": 4,
-                    "Name": "Spare 1"
+                    "Name": "Spare 1_1"
                 },
                 {
                     "type": "uint32",
                     "units": "",
                     "size": 4,
-                    "Name": "Spare 2"
+                    "Name": "Spare 1_2"
                 },
                 {
                     "type": "uint8",
                     "units": "",
                     "size": 1,
-                    "Name": "Limit Extend"
+                    "Name": "Limit Extend 1"
                 },
                 {
                     "type": "uint8",
                     "units": "",
                     "size": 1,
-                    "Name": "Limit Retract"
+                    "Name": "Limit Retract 1"
                 },
                 {
                     "type": "uint8",
                     "units": "",
                     "size": 1,
-                    "Name": "Limit Extend Edge"
+                    "Name": "Limit Extend Edge 1"
                 },
                 {
                     "type": "uint8",
                     "units": "",
                     "size": 1,
-                    "Name": "Limit Retract Edge"
+                    "Name": "Limit Retract Edge 1"
                 },
                 {
                     "type": "uint8",
                     "units": "",
                     "size": 1,
-                    "Name": "SW Error"
+                    "Name": "SW Error 1"
                 },
                 {
                     "type": "uint16",
                     "units": "",
                     "size": 2,
-                    "Name": "ADC Sample"
+                    "Name": "ADC Sample 1"
                 },
                 {
                     "type": "uint16",
                     "units": "",
                     "size": 2,
-                    "Name": "ADC Zero"
+                    "Name": "ADC Zero 1"
                 },
                 {
                     "type": "int32",
                     "units": "",
                     "size": 4,
-                    "Name": "ADC Minus Zero"
+                    "Name": "ADC Minus Zero 1"
                 },
                 {
                     "type": "float32",
                     "units": "",
                     "size": 4,
-                    "Name": "System Span"
+                    "Name": "System Span 1"
                 },
                 {
                     "type": "float32",
                     "units": "",
                     "size": 4,
-                    "Name": "Brake Position"
+                    "Name": "Brake Position 1"
                 },
                 {
                     "type": "int32",
                     "units": "",
                     "size": 4,
-                    "Name": "Linear Velocity"
+                    "Name": "Linear Velocity 1"
                 },
                 {
                     "type": "int32",
                     "units": "",
                     "size": 4,
-                    "Name": "Linear Acceleration"
+                    "Name": "Linear Acceleration 1"
                 },
                 {
                     "type": "int32",
-                    "endLoop": true,
                     "units": "",
                     "size": 4,
-                    "Name": "Current Position"
+                    "Name": "Current Position 1"
+                },
+                {
+                    "type": "uint32",
+                    "units": "a",
+                    "size": 4,
+                    "Name": "Fault Flags 2"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "I Beam mm 2 Target"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "Lead Screw mm 2 Target"
+                },
+                {
+                    "units": "um",
+                    "type": "uint32",
+                    "size": 4,
+                    "Name": "Lead Screw um 2 Target"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "I Beam mm 2 Current"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "Lead Screw mm 2 Current"
+                },
+                {
+                    "units": "mm",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "MLP 2 Current"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Spare 2_1"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Spare 2_2"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Limit Extend 2"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Limit Retract 2"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Limit Extend Edge 2"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Limit Retract Edge 2"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "SW Error 2"
+                },
+                {
+                    "type": "uint16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "ADC Sample 2"
+                },
+                {
+                    "type": "uint16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "ADC Zero 2"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "ADC Minus Zero 2"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "System Span 2"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Brake Position 2"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Linear Velocity 2"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Linear Acceleration 2"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Current Position 2"
                 },
                 {
                     "type": "uint8",

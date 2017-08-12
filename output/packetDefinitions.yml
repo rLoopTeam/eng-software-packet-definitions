@@ -333,28 +333,50 @@ packetDefinitions:
   PacketType: 5122
   ParameterPrefix: 'Brake '
   Parameters:
-  - {Name: Fault Flags, beginLoop: true, size: 4, type: uint32, units: a}
-  - {Name: I Beam mm Target, size: 4, type: float32, units: mm}
-  - {Name: Lead Screw mm Target, size: 4, type: float32, units: mm}
-  - {Name: Lead Screw um Target, size: 4, type: uint32, units: um}
-  - {Name: I Beam mm Current, size: 4, type: float32, units: mm}
-  - {Name: Lead Screw mm Current, size: 4, type: float32, units: mm}
-  - {Name: MLP Current, size: 4, type: float32, units: mm}
-  - {Name: Spare 1, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2, size: 4, type: uint32, units: ''}
-  - {Name: Limit Extend, size: 1, type: uint8, units: ''}
-  - {Name: Limit Retract, size: 1, type: uint8, units: ''}
-  - {Name: Limit Extend Edge, size: 1, type: uint8, units: ''}
-  - {Name: Limit Retract Edge, size: 1, type: uint8, units: ''}
-  - {Name: SW Error, size: 1, type: uint8, units: ''}
-  - {Name: ADC Sample, size: 2, type: uint16, units: ''}
-  - {Name: ADC Zero, size: 2, type: uint16, units: ''}
-  - {Name: ADC Minus Zero, size: 4, type: int32, units: ''}
-  - {Name: System Span, size: 4, type: float32, units: ''}
-  - {Name: Brake Position, size: 4, type: float32, units: ''}
-  - {Name: Linear Velocity, size: 4, type: int32, units: ''}
-  - {Name: Linear Acceleration, size: 4, type: int32, units: ''}
-  - {Name: Current Position, endLoop: true, size: 4, type: int32, units: ''}
+  - {Name: Fault Flags 1, size: 4, type: uint32, units: a}
+  - {Name: I Beam mm 1 Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm 1 Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw um 1 Target, size: 4, type: uint32, units: um}
+  - {Name: I Beam mm 1 Current, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm 1 Current, size: 4, type: float32, units: mm}
+  - {Name: MLP 1 Current, size: 4, type: float32, units: mm}
+  - {Name: Spare 1_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 1_2, size: 4, type: uint32, units: ''}
+  - {Name: Limit Extend 1, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract 1, size: 1, type: uint8, units: ''}
+  - {Name: Limit Extend Edge 1, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract Edge 1, size: 1, type: uint8, units: ''}
+  - {Name: SW Error 1, size: 1, type: uint8, units: ''}
+  - {Name: ADC Sample 1, size: 2, type: uint16, units: ''}
+  - {Name: ADC Zero 1, size: 2, type: uint16, units: ''}
+  - {Name: ADC Minus Zero 1, size: 4, type: int32, units: ''}
+  - {Name: System Span 1, size: 4, type: float32, units: ''}
+  - {Name: Brake Position 1, size: 4, type: float32, units: ''}
+  - {Name: Linear Velocity 1, size: 4, type: int32, units: ''}
+  - {Name: Linear Acceleration 1, size: 4, type: int32, units: ''}
+  - {Name: Current Position 1, size: 4, type: int32, units: ''}
+  - {Name: Fault Flags 2, size: 4, type: uint32, units: a}
+  - {Name: I Beam mm 2 Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm 2 Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw um 2 Target, size: 4, type: uint32, units: um}
+  - {Name: I Beam mm 2 Current, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm 2 Current, size: 4, type: float32, units: mm}
+  - {Name: MLP 2 Current, size: 4, type: float32, units: mm}
+  - {Name: Spare 2_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_2, size: 4, type: uint32, units: ''}
+  - {Name: Limit Extend 2, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract 2, size: 1, type: uint8, units: ''}
+  - {Name: Limit Extend Edge 2, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract Edge 2, size: 1, type: uint8, units: ''}
+  - {Name: SW Error 2, size: 1, type: uint8, units: ''}
+  - {Name: ADC Sample 2, size: 2, type: uint16, units: ''}
+  - {Name: ADC Zero 2, size: 2, type: uint16, units: ''}
+  - {Name: ADC Minus Zero 2, size: 4, type: int32, units: ''}
+  - {Name: System Span 2, size: 4, type: float32, units: ''}
+  - {Name: Brake Position 2, size: 4, type: float32, units: ''}
+  - {Name: Linear Velocity 2, size: 4, type: int32, units: ''}
+  - {Name: Linear Acceleration 2, size: 4, type: int32, units: ''}
+  - {Name: Current Position 2, size: 4, type: int32, units: ''}
   - {Name: State, size: 1, type: uint8, units: ''}
   - {Name: Calibration State, size: 1, type: uint8, units: ''}
 - DAQ: false

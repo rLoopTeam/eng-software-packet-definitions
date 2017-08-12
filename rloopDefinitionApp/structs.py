@@ -147,7 +147,6 @@ class Packet:
                 * packet["parameters"][param]["size"] = byte size
                 * packet["parameters"][param_i] = param with `i + name` [if param.iterate] 
         """
-        param_iterate = False
 
         # Fill in DAQ sizes if we have a DAQ.
         if self.daq:
@@ -169,29 +168,59 @@ class Packet:
         
         # Iteration fixing
         original_parameters = self.parameters.copy()
+        in_group = False
+        group_params = []
         self.parameters = []
         for parameter in original_parameters:
-            if "iterate" not in parameter:
+            if "iterate" not in parameter and not in_group:
                 self.parameters.append(parameter)
                 continue
 
+            # Save meta and delete from parameter.
+            iteration_meta = parameter.get("iterate", {})
+            if "iterate" in parameter:
+                del parameter["iterate"]
+
+            # Put out a warning for names without templating braces.
+            if "{" not in parameter["name"] or "}" not in parameter["name"]:
+                log.warning("Parameter '%s' is missing template braces.", parameter["name"])
+
+            # Set our group variables if we are in a group.
+            if iteration_meta.get("beginGroup", False):
+                group_params = []
+                in_group = True
+            elif iteration_meta.get("endGroup", False):
+                in_group = False
+
             # Set our range start and end from the givens and implicits.
-            range_start = parameter["iterate"].get("start", 0)
-            range_end = parameter["iterate"]["end"] + 1
+            range_start = iteration_meta.get("start", 0)
+            range_end = iteration_meta.get("end", 1) + 1
 
             # Subtract the end by 1 if we do not want to include the end.
-            if not parameter["iterate"].get("inclusive", True):
+            if not iteration_meta.get("inclusive", True):
                 range_end = range_end - 1
+
+            # Do special group logic if we are in a group or the group params is filled.
+            if in_group:
+                group_params.append(parameter)
+                continue
+            elif group_params:
+                group_params.append(parameter)
+                # TODO: Less copypasta?
+                for i in range(range_start, range_end):
+                    for parameter in group_params:
+                        iter_param = parameter.copy()
+                        iter_param["name"] = iter_param["name"].format(i=i)
+
+                        # Remove the iterate key and append to group temp or array.
+                        self.parameters.append(iter_param)
+                continue
 
             # Iterate through our range and append the parameter copies to the list.
             for i in range(range_start, range_end):
                 iter_param = parameter.copy()
-                if "{" not in iter_param["name"] or "}" not in iter_param["name"]:
-                    log.warning("Iteration parameter %s is missing template.", iter_param["name"])
                 iter_param["name"] = iter_param["name"].format(i=i)
 
-                # Remove the iterate key and append.
-                del iter_param["iterate"]
                 self.parameters.append(iter_param)
 
     def validate(self):
@@ -253,5 +282,5 @@ class Argument:
     def __repr__(self):
         return "<Argument {arg_type}, optional={optional}>".format(
             arg_type=str(self.arg_type),
-            optional=optional
+            optional=self.optional
         )
