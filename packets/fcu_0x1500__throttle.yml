@@ -19,18 +19,21 @@ packets:
       - name: 'AMC Fault Flags'
         type: 'uint32'
 
-      - name: 'Requested RPM'
+      - name: 'Requested RPM {i}'
         type: 'uint16'
-        beginLoop: true
-        endLoop: true
-      - name: 'Current RPM'
+        iterate:
+          start: 1
+          end: 8
+      - name: 'Current RPM {i}'
         type: 'uint16'
-        beginLoop: true
-        endLoop: true
-      - name: 'ASI RPM'
+        iterate:
+          start: 1
+          end: 8
+      - name: 'ASI RPM {i}'
         type: 'uint16'
-        beginLoop: true
-        endLoop: true
+        iterate:
+          start: 1
+          end: 8
 
       - name: 'State'
         type: 'uint8'

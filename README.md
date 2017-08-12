@@ -59,14 +59,37 @@ podSources:
 packets:
   # Normal Packet
   - packetName: 'Imaginary {nodeName} Moon Distance'
-    prefix: 'Imaginary {nodeName} Moon ' # Prefix for parameters
     packetType: 0x1337 # Aqquired from pod code
+    prefix: 'Imaginary {nodeName} Moon ' # Prefix for parameters
+    # TODO: NOT_IMPLEMENTED
+    description: 'An optional description of this packet.'
+    # TODO: NOT_IMPLEMENTED
+    friendlyName: 'Imaginary {nodeName} Moon Distance' # Defaults to packetName if not set.
+    # TODO: NOT_IMPLEMENTED
+    senders: # List of senders of this packet.
+      - IN
+    # TODO: NOT_IMPLEMENTED
+    receivers: # List of recievers of this packet.
+      - GS
     parameters:
       - name: 'Distance'
         type: 'int64' # [u]int[8,16,32,64], float[32,64]
         units: 'km' # Units to show on the frontend, defaults to ''
+
+        # Ground Station specific loop:
+        # Only for use at the end of packets.
         beginLoop: false # optional, defaults to false
         endLoop: false # optional, defaults to false
+
+        # Generator specific iteration settings
+        # Sets variable {i} in templates to the iteration count.
+        # Iterates from (start, end) inclusive unless flagged.
+        iterate:
+          start: 0 # defaults to 0
+          end: 8 # required, end of iteration
+          inclusive: false # defaults to true
+          beginGroup: true # optional, marks the start of a packet group
+          endGroup: false # optional, marks the end of a packet group
 
   # DAQ Packet
   - packetName: 'IMAGINARY DAQ {nodeName} DISTANCE'

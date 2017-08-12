@@ -5,11 +5,11 @@ import random
 import sys
 from typing import Optional, Union
 
-import yaml
 import jsonschema
+import yaml
 
-from rloopDefinitionApp.structs import Packet
 from rloopDefinitionApp.schemas import PACKET_LIST_SCHEMA
+from rloopDefinitionApp.structs import Packet
 from rloopDefinitionApp.utils import get_packet_files, md5
 
 logging.basicConfig(level=logging.INFO)
@@ -67,12 +67,10 @@ class DefinitionGenerator:
                             self.sums[full_source_path] = filehash
                         elif full_source_path not in self.already_warned:
                             log.warning(
-                                "Hash has changed for {full_source_path}\n"
-                                "new={filehash}, old={oldhash}".format(
-                                    full_source_path=full_source_path,
-                                    filehash=filehash,
-                                    oldhash=self.sums[full_source_path]
-                                )
+                                "Hash has changed for %s\nnew=%s, old=%s",
+                                full_source_path,
+                                filehash,
+                                self.sums[full_source_path]
                             )
                             self.already_warned.add(full_source_path)
                             self.md5_ok = False
@@ -93,12 +91,16 @@ class DefinitionGenerator:
 
                     # Duplicate ID warning
                     if parsed_packet.packet_type in self.packet_ids:
-                        other_usages = [_["Name"] for _ in self.packets["packetDefinitions"] if _["PacketType"] == parsed_packet.packet_type]
-                        log.warning("'{parsed_name}' is reusing {reused_id}. {other_usages}".format(
-                            parsed_name=parsed_packet.name,
-                            reused_id=hex(parsed_packet.packet_type),
-                            other_usages=other_usages
-                        ))
+                        other_usages = [
+                            _["Name"] for _ in self.packets["packetDefinitions"]
+                            if _["PacketType"] == parsed_packet.packet_type
+                        ]
+                        log.warning(
+                            "'%s' is reusing %s. %s",
+                            parsed_packet.name,
+                            hex(parsed_packet.packet_type),
+                            other_usages
+                        )
 
                     # Append packet to lists.
                     self.packets["packetDefinitions"].append(parsed_packet.to_gs_dict())
@@ -148,8 +150,7 @@ class DefinitionGenerator:
         else:
             log.warning("Not saving updated checksums to disk.")
             log.warning(
-                "Please review the recent changes for those files and rerun this script with environment " \
-                "variable I_REALLY_LOOKED={md5_force} if you would like to save checksums to disk.".format(
-                     md5_force=self.sums["I_REALLY_LOOKED"]
-                )
+                "Please review the recent changes for those files and rerun this script with environment "
+                "variable I_REALLY_LOOKED=%s if you would like to save checksums to disk.",
+                self.sums["I_REALLY_LOOKED"]
             )

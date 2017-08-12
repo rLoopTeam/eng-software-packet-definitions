@@ -1,11 +1,12 @@
+import logging
 from typing import List, Optional, Union
 
 import jsonschema
 
-from rloopDefinitionApp.schemas import (DAQ_SCHEMA,
-                                        PARAM_SCHEMA,
-                                        PACKET_SCHEMA)
+from rloopDefinitionApp.schemas import DAQ_SCHEMA, PACKET_SCHEMA, PARAM_SCHEMA
 from rloopDefinitionApp.utils import get_size
+
+log = logging.getLogger(__name__)
 
 
 class Packet:
@@ -17,21 +18,22 @@ class Packet:
             node: str,
             packet_type: int,
             prefix: str,
-            parameters: Optional[dict]=[],
+            parameters: Optional[List[dict]]=None,
             daq: Union[None, dict, bool]=False
     ):
         self.name = name
         self.node = node
         self.packet_type = packet_type
         self.prefix = prefix
-        self.parameters = parameters
+        self.parameters = parameters or []
         self.daq = daq
 
         self.fill_defaults()
         self.validate()
 
     def __repr__(self):
-        template = "<Packet '{packet_name}', type={packet_type}, prefix='{packet_prefix}', params={num_params}, daq={daq}"
+        template = ("<Packet '{packet_name}', type={packet_type}, prefix='{packet_prefix}',"
+                    "params={num_params}, daq={daq}")
         return template.format(
             packet_name=self.name or "",
             packet_type=hex(self.packet_type or 0),
@@ -110,7 +112,7 @@ class Packet:
             yaml_blob.get("daq", False)
         )
 
-    def parameter_hack_for_ground_station(self) -> List[dict]:
+    def parameter_hack_for_ground_station(self) -> dict:
         """
             This is awful but a necessary evil for the current state of the ground station.
             Thing it does
@@ -126,8 +128,8 @@ class Packet:
                     del parameter["name"]
                 elif key.lower() in ("beginloop", "endloop") and key not in ("beginLoop", "endLoop"):
                     # TODO: lol this is awful
-                    realKey = "beginLoop" if key.lower() == "beginloop" else "endLoop"
-                    parameter[realKey] = parameter[key]
+                    real_key = "beginLoop" if key.lower() == "beginloop" else "endLoop"
+                    parameter[real_key] = parameter[key]
                     try:
                         del parameter[key]
                     except KeyError:
@@ -142,6 +144,7 @@ class Packet:
                 * packet["daq"] = False [if not DAQ]
                 * packet["parameters"][param]["units"] = ""
                 * packet["parameters"][param]["size"] = byte size
+                * packet["parameters"][param_i] = param with `i + name` [if param.iterate]
         """
 
         # Fill in DAQ sizes if we have a DAQ.
@@ -157,6 +160,71 @@ class Packet:
             # Fill in size
             if "size" not in parameter:
                 parameter["size"] = get_size(parameter["type"])
+
+        # Iteration fixing
+        original_parameters = self.parameters.copy()
+        self.parameters = []
+        in_group = False
+        group_params = []
+
+        for parameter in original_parameters:
+            if "iterate" not in parameter and not in_group:
+                self.parameters.append(parameter)
+                continue
+
+            # Save meta and delete from parameter.
+            iteration_meta = parameter.get("iterate", {})
+            if "iterate" in parameter:
+                del parameter["iterate"]
+
+            # Put out a warning for names without templating braces.
+            if "{" not in parameter["name"] or "}" not in parameter["name"]:
+                log.warning("Parameter '%s' is missing template braces.", parameter["name"])
+
+            # Set our group variables if we are in a group.
+            if iteration_meta.get("beginGroup", False):
+                group_params = []
+                in_group = True
+            elif iteration_meta.get("endGroup", False):
+                in_group = False
+
+            # Set our range start and end from the givens and implicits.
+            range_start = iteration_meta.get("start", 0)
+            range_end = iteration_meta.get("end", 1) + 1
+
+            # Subtract the end by 1 if we do not want to include the end.
+            if not iteration_meta.get("inclusive", True):
+                range_end = range_end - 1
+
+            # Do special group logic if we are in a group or the group params is filled.
+            if in_group:
+                group_params.append(parameter)
+                continue
+            elif group_params:
+                group_params.append(parameter)
+                for i in range(range_start, range_end):
+                    for group_parameter in group_params:
+                        self.append_parameter(group_parameter, i=i)
+                continue
+
+            # Iterate through our range and append the parameter copies to the list.
+            for i in range(range_start, range_end):
+                self.append_parameter(parameter, i=i)
+
+        if in_group:
+            raise ValueError("Packet {packet_name} has an unclosed iter group.".format(
+                packet_name=self.name
+            ))
+
+    def append_parameter(self, parameter: dict, **kwargs):
+        """
+            Appends a parameter to the packet parameters list.
+            Copying and formatting is for the group function and doesn't hurt general functionality
+            if used elsewhere.
+        """
+        parameter = parameter.copy()
+        parameter["name"] = parameter["name"].format(**kwargs)
+        self.parameters.append(parameter)
 
     def validate(self):
         """
@@ -217,5 +285,5 @@ class Argument:
     def __repr__(self):
         return "<Argument {arg_type}, optional={optional}>".format(
             arg_type=str(self.arg_type),
-            optional=optional
+            optional=self.optional
         )

@@ -15,116 +15,116 @@ packetDefinitions:
   - {Name: Rising Count, size: 2, type: uint16, units: ''}
   - {Name: Falling Count, size: 2, type: uint16, units: ''}
   - {Name: Max Stripes, size: 2, type: uint16, units: ''}
-  - {Name: Rise_00, size: 8, type: uint64, units: ns}
-  - {Name: Rise_01, size: 8, type: uint64, units: ns}
-  - {Name: Rise_02, size: 8, type: uint64, units: ns}
-  - {Name: Rise_03, size: 8, type: uint64, units: ns}
-  - {Name: Rise_04, size: 8, type: uint64, units: ns}
-  - {Name: Rise_05, size: 8, type: uint64, units: ns}
-  - {Name: Rise_06, size: 8, type: uint64, units: ns}
-  - {Name: Rise_07, size: 8, type: uint64, units: ns}
-  - {Name: Rise_08, size: 8, type: uint64, units: ns}
-  - {Name: Rise_09, size: 8, type: uint64, units: ns}
-  - {Name: Rise_10, size: 8, type: uint64, units: ns}
-  - {Name: Rise_11, size: 8, type: uint64, units: ns}
-  - {Name: Rise_12, size: 8, type: uint64, units: ns}
-  - {Name: Rise_13, size: 8, type: uint64, units: ns}
-  - {Name: Rise_14, size: 8, type: uint64, units: ns}
-  - {Name: Rise_15, size: 8, type: uint64, units: ns}
-  - {Name: Rise_16, size: 8, type: uint64, units: ns}
-  - {Name: Rise_17, size: 8, type: uint64, units: ns}
-  - {Name: Rise_18, size: 8, type: uint64, units: ns}
-  - {Name: Rise_19, size: 8, type: uint64, units: ns}
-  - {Name: Rise_20, size: 8, type: uint64, units: ns}
-  - {Name: Rise_21, size: 8, type: uint64, units: ns}
-  - {Name: Rise_22, size: 8, type: uint64, units: ns}
-  - {Name: Rise_23, size: 8, type: uint64, units: ns}
-  - {Name: Rise_24, size: 8, type: uint64, units: ns}
-  - {Name: Rise_25, size: 8, type: uint64, units: ns}
-  - {Name: Rise_26, size: 8, type: uint64, units: ns}
-  - {Name: Rise_27, size: 8, type: uint64, units: ns}
-  - {Name: Rise_28, size: 8, type: uint64, units: ns}
-  - {Name: Rise_29, size: 8, type: uint64, units: ns}
-  - {Name: Rise_30, size: 8, type: uint64, units: ns}
-  - {Name: Rise_31, size: 8, type: uint64, units: ns}
-  - {Name: Rise_32, size: 8, type: uint64, units: ns}
-  - {Name: Rise_33, size: 8, type: uint64, units: ns}
-  - {Name: Rise_34, size: 8, type: uint64, units: ns}
-  - {Name: Rise_35, size: 8, type: uint64, units: ns}
-  - {Name: Rise_36, size: 8, type: uint64, units: ns}
-  - {Name: Rise_37, size: 8, type: uint64, units: ns}
-  - {Name: Rise_38, size: 8, type: uint64, units: ns}
-  - {Name: Rise_39, size: 8, type: uint64, units: ns}
-  - {Name: Rise_40, size: 8, type: uint64, units: ns}
-  - {Name: Rise_41, size: 8, type: uint64, units: ns}
-  - {Name: Rise_42, size: 8, type: uint64, units: ns}
-  - {Name: Rise_43, size: 8, type: uint64, units: ns}
-  - {Name: Rise_44, size: 8, type: uint64, units: ns}
-  - {Name: Rise_45, size: 8, type: uint64, units: ns}
-  - {Name: Rise_46, size: 8, type: uint64, units: ns}
-  - {Name: Rise_47, size: 8, type: uint64, units: ns}
-  - {Name: Rise_48, size: 8, type: uint64, units: ns}
-  - {Name: Rise_49, size: 8, type: uint64, units: ns}
-  - {Name: Rise_50, size: 8, type: uint64, units: ns}
-  - {Name: Rise_51, size: 8, type: uint64, units: ns}
-  - {Name: Rise_52, size: 8, type: uint64, units: ns}
-  - {Name: Rise_53, size: 8, type: uint64, units: ns}
-  - {Name: Rise_54, size: 8, type: uint64, units: ns}
-  - {Name: Fall_00, size: 8, type: uint64, units: ns}
-  - {Name: Fall_01, size: 8, type: uint64, units: ns}
-  - {Name: Fall_02, size: 8, type: uint64, units: ns}
-  - {Name: Fall_03, size: 8, type: uint64, units: ns}
-  - {Name: Fall_04, size: 8, type: uint64, units: ns}
-  - {Name: Fall_05, size: 8, type: uint64, units: ns}
-  - {Name: Fall_06, size: 8, type: uint64, units: ns}
-  - {Name: Fall_07, size: 8, type: uint64, units: ns}
-  - {Name: Fall_08, size: 8, type: uint64, units: ns}
-  - {Name: Fall_09, size: 8, type: uint64, units: ns}
-  - {Name: Fall_10, size: 8, type: uint64, units: ns}
-  - {Name: Fall_11, size: 8, type: uint64, units: ns}
-  - {Name: Fall_12, size: 8, type: uint64, units: ns}
-  - {Name: Fall_13, size: 8, type: uint64, units: ns}
-  - {Name: Fall_14, size: 8, type: uint64, units: ns}
-  - {Name: Fall_15, size: 8, type: uint64, units: ns}
-  - {Name: Fall_16, size: 8, type: uint64, units: ns}
-  - {Name: Fall_17, size: 8, type: uint64, units: ns}
-  - {Name: Fall_18, size: 8, type: uint64, units: ns}
-  - {Name: Fall_19, size: 8, type: uint64, units: ns}
-  - {Name: Fall_20, size: 8, type: uint64, units: ns}
-  - {Name: Fall_21, size: 8, type: uint64, units: ns}
-  - {Name: Fall_22, size: 8, type: uint64, units: ns}
-  - {Name: Fall_23, size: 8, type: uint64, units: ns}
-  - {Name: Fall_24, size: 8, type: uint64, units: ns}
-  - {Name: Fall_25, size: 8, type: uint64, units: ns}
-  - {Name: Fall_26, size: 8, type: uint64, units: ns}
-  - {Name: Fall_27, size: 8, type: uint64, units: ns}
-  - {Name: Fall_28, size: 8, type: uint64, units: ns}
-  - {Name: Fall_29, size: 8, type: uint64, units: ns}
-  - {Name: Fall_30, size: 8, type: uint64, units: ns}
-  - {Name: Fall_31, size: 8, type: uint64, units: ns}
-  - {Name: Fall_32, size: 8, type: uint64, units: ns}
-  - {Name: Fall_33, size: 8, type: uint64, units: ns}
-  - {Name: Fall_34, size: 8, type: uint64, units: ns}
-  - {Name: Fall_35, size: 8, type: uint64, units: ns}
-  - {Name: Fall_36, size: 8, type: uint64, units: ns}
-  - {Name: Fall_37, size: 8, type: uint64, units: ns}
-  - {Name: Fall_38, size: 8, type: uint64, units: ns}
-  - {Name: Fall_39, size: 8, type: uint64, units: ns}
-  - {Name: Fall_40, size: 8, type: uint64, units: ns}
-  - {Name: Fall_41, size: 8, type: uint64, units: ns}
-  - {Name: Fall_42, size: 8, type: uint64, units: ns}
-  - {Name: Fall_43, size: 8, type: uint64, units: ns}
-  - {Name: Fall_44, size: 8, type: uint64, units: ns}
-  - {Name: Fall_45, size: 8, type: uint64, units: ns}
-  - {Name: Fall_46, size: 8, type: uint64, units: ns}
-  - {Name: Fall_47, size: 8, type: uint64, units: ns}
-  - {Name: Fall_48, size: 8, type: uint64, units: ns}
-  - {Name: Fall_49, size: 8, type: uint64, units: ns}
-  - {Name: Fall_50, size: 8, type: uint64, units: ns}
-  - {Name: Fall_51, size: 8, type: uint64, units: ns}
-  - {Name: Fall_52, size: 8, type: uint64, units: ns}
-  - {Name: Fall_53, size: 8, type: uint64, units: ns}
-  - {Name: Fall_54, size: 8, type: uint64, units: ns}
+  - {Name: Rise 0, size: 8, type: uint64, units: ns}
+  - {Name: Rise 1, size: 8, type: uint64, units: ns}
+  - {Name: Rise 2, size: 8, type: uint64, units: ns}
+  - {Name: Rise 3, size: 8, type: uint64, units: ns}
+  - {Name: Rise 4, size: 8, type: uint64, units: ns}
+  - {Name: Rise 5, size: 8, type: uint64, units: ns}
+  - {Name: Rise 6, size: 8, type: uint64, units: ns}
+  - {Name: Rise 7, size: 8, type: uint64, units: ns}
+  - {Name: Rise 8, size: 8, type: uint64, units: ns}
+  - {Name: Rise 9, size: 8, type: uint64, units: ns}
+  - {Name: Rise 10, size: 8, type: uint64, units: ns}
+  - {Name: Rise 11, size: 8, type: uint64, units: ns}
+  - {Name: Rise 12, size: 8, type: uint64, units: ns}
+  - {Name: Rise 13, size: 8, type: uint64, units: ns}
+  - {Name: Rise 14, size: 8, type: uint64, units: ns}
+  - {Name: Rise 15, size: 8, type: uint64, units: ns}
+  - {Name: Rise 16, size: 8, type: uint64, units: ns}
+  - {Name: Rise 17, size: 8, type: uint64, units: ns}
+  - {Name: Rise 18, size: 8, type: uint64, units: ns}
+  - {Name: Rise 19, size: 8, type: uint64, units: ns}
+  - {Name: Rise 20, size: 8, type: uint64, units: ns}
+  - {Name: Rise 21, size: 8, type: uint64, units: ns}
+  - {Name: Rise 22, size: 8, type: uint64, units: ns}
+  - {Name: Rise 23, size: 8, type: uint64, units: ns}
+  - {Name: Rise 24, size: 8, type: uint64, units: ns}
+  - {Name: Rise 25, size: 8, type: uint64, units: ns}
+  - {Name: Rise 26, size: 8, type: uint64, units: ns}
+  - {Name: Rise 27, size: 8, type: uint64, units: ns}
+  - {Name: Rise 28, size: 8, type: uint64, units: ns}
+  - {Name: Rise 29, size: 8, type: uint64, units: ns}
+  - {Name: Rise 30, size: 8, type: uint64, units: ns}
+  - {Name: Rise 31, size: 8, type: uint64, units: ns}
+  - {Name: Rise 32, size: 8, type: uint64, units: ns}
+  - {Name: Rise 33, size: 8, type: uint64, units: ns}
+  - {Name: Rise 34, size: 8, type: uint64, units: ns}
+  - {Name: Rise 35, size: 8, type: uint64, units: ns}
+  - {Name: Rise 36, size: 8, type: uint64, units: ns}
+  - {Name: Rise 37, size: 8, type: uint64, units: ns}
+  - {Name: Rise 38, size: 8, type: uint64, units: ns}
+  - {Name: Rise 39, size: 8, type: uint64, units: ns}
+  - {Name: Rise 40, size: 8, type: uint64, units: ns}
+  - {Name: Rise 41, size: 8, type: uint64, units: ns}
+  - {Name: Rise 42, size: 8, type: uint64, units: ns}
+  - {Name: Rise 43, size: 8, type: uint64, units: ns}
+  - {Name: Rise 44, size: 8, type: uint64, units: ns}
+  - {Name: Rise 45, size: 8, type: uint64, units: ns}
+  - {Name: Rise 46, size: 8, type: uint64, units: ns}
+  - {Name: Rise 47, size: 8, type: uint64, units: ns}
+  - {Name: Rise 48, size: 8, type: uint64, units: ns}
+  - {Name: Rise 49, size: 8, type: uint64, units: ns}
+  - {Name: Rise 50, size: 8, type: uint64, units: ns}
+  - {Name: Rise 51, size: 8, type: uint64, units: ns}
+  - {Name: Rise 52, size: 8, type: uint64, units: ns}
+  - {Name: Rise 53, size: 8, type: uint64, units: ns}
+  - {Name: Rise 54, size: 8, type: uint64, units: ns}
+  - {Name: Fall 0, size: 8, type: uint64, units: ns}
+  - {Name: Fall 1, size: 8, type: uint64, units: ns}
+  - {Name: Fall 2, size: 8, type: uint64, units: ns}
+  - {Name: Fall 3, size: 8, type: uint64, units: ns}
+  - {Name: Fall 4, size: 8, type: uint64, units: ns}
+  - {Name: Fall 5, size: 8, type: uint64, units: ns}
+  - {Name: Fall 6, size: 8, type: uint64, units: ns}
+  - {Name: Fall 7, size: 8, type: uint64, units: ns}
+  - {Name: Fall 8, size: 8, type: uint64, units: ns}
+  - {Name: Fall 9, size: 8, type: uint64, units: ns}
+  - {Name: Fall 10, size: 8, type: uint64, units: ns}
+  - {Name: Fall 11, size: 8, type: uint64, units: ns}
+  - {Name: Fall 12, size: 8, type: uint64, units: ns}
+  - {Name: Fall 13, size: 8, type: uint64, units: ns}
+  - {Name: Fall 14, size: 8, type: uint64, units: ns}
+  - {Name: Fall 15, size: 8, type: uint64, units: ns}
+  - {Name: Fall 16, size: 8, type: uint64, units: ns}
+  - {Name: Fall 17, size: 8, type: uint64, units: ns}
+  - {Name: Fall 18, size: 8, type: uint64, units: ns}
+  - {Name: Fall 19, size: 8, type: uint64, units: ns}
+  - {Name: Fall 20, size: 8, type: uint64, units: ns}
+  - {Name: Fall 21, size: 8, type: uint64, units: ns}
+  - {Name: Fall 22, size: 8, type: uint64, units: ns}
+  - {Name: Fall 23, size: 8, type: uint64, units: ns}
+  - {Name: Fall 24, size: 8, type: uint64, units: ns}
+  - {Name: Fall 25, size: 8, type: uint64, units: ns}
+  - {Name: Fall 26, size: 8, type: uint64, units: ns}
+  - {Name: Fall 27, size: 8, type: uint64, units: ns}
+  - {Name: Fall 28, size: 8, type: uint64, units: ns}
+  - {Name: Fall 29, size: 8, type: uint64, units: ns}
+  - {Name: Fall 30, size: 8, type: uint64, units: ns}
+  - {Name: Fall 31, size: 8, type: uint64, units: ns}
+  - {Name: Fall 32, size: 8, type: uint64, units: ns}
+  - {Name: Fall 33, size: 8, type: uint64, units: ns}
+  - {Name: Fall 34, size: 8, type: uint64, units: ns}
+  - {Name: Fall 35, size: 8, type: uint64, units: ns}
+  - {Name: Fall 36, size: 8, type: uint64, units: ns}
+  - {Name: Fall 37, size: 8, type: uint64, units: ns}
+  - {Name: Fall 38, size: 8, type: uint64, units: ns}
+  - {Name: Fall 39, size: 8, type: uint64, units: ns}
+  - {Name: Fall 40, size: 8, type: uint64, units: ns}
+  - {Name: Fall 41, size: 8, type: uint64, units: ns}
+  - {Name: Fall 42, size: 8, type: uint64, units: ns}
+  - {Name: Fall 43, size: 8, type: uint64, units: ns}
+  - {Name: Fall 44, size: 8, type: uint64, units: ns}
+  - {Name: Fall 45, size: 8, type: uint64, units: ns}
+  - {Name: Fall 46, size: 8, type: uint64, units: ns}
+  - {Name: Fall 47, size: 8, type: uint64, units: ns}
+  - {Name: Fall 48, size: 8, type: uint64, units: ns}
+  - {Name: Fall 49, size: 8, type: uint64, units: ns}
+  - {Name: Fall 50, size: 8, type: uint64, units: ns}
+  - {Name: Fall 51, size: 8, type: uint64, units: ns}
+  - {Name: Fall 52, size: 8, type: uint64, units: ns}
+  - {Name: Fall 53, size: 8, type: uint64, units: ns}
+  - {Name: Fall 54, size: 8, type: uint64, units: ns}
 - {DAQ: true, Name: FCU DAQ CPU LOAD, Node: Flight Control, PacketType: 16384, dataSize: 1,
   dataType: uint8}
 - {DAQ: true, Name: FCU DAQ ACCEL 0 X, Node: Flight Control, PacketType: 16385, dataSize: 2,
@@ -159,9 +159,30 @@ packetDefinitions:
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
   - {Name: AMC Fault Flags, size: 4, type: uint32, units: ''}
-  - {Name: Requested RPM, beginLoop: true, endLoop: true, size: 2, type: uint16, units: ''}
-  - {Name: Current RPM, beginLoop: true, endLoop: true, size: 2, type: uint16, units: ''}
-  - {Name: ASI RPM, beginLoop: true, endLoop: true, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 1, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 2, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 3, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 4, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 5, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 6, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 7, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 8, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 1, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 2, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 3, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 4, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 5, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 6, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 7, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 8, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 1, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 2, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 3, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 4, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 5, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 6, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 7, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 8, size: 2, type: uint16, units: ''}
   - {Name: State, size: 1, type: uint8, units: ''}
   - {Name: Current Index, size: 1, type: uint8, units: ''}
   - {Name: AMC State, size: 1, type: uint8, units: ''}
@@ -260,9 +281,42 @@ packetDefinitions:
   - {Name: Board Temp, size: 4, type: float32, units: ''}
   - {Name: Node Pressure, size: 4, type: float32, units: ''}
   - {Name: Node Temp, size: 4, type: float32, units: ''}
-  - {Name: Module Voltage, beginLoop: true, endLoop: true, size: 4, type: float32,
-    units: ''}
-  - {Name: BMS ID, beginLoop: true, endLoop: true, size: 1, type: uint8, units: ''}
+  - {Name: 1 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 2 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 3 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 4 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 5 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 6 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 7 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 8 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 9 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 10 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 11 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 12 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 13 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 14 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 15 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 16 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 17 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 18 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 1 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 2 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 3 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 4 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 5 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 6 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 7 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 8 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 9 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 10 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 11 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 12 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 13 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 14 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 15 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 16 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 17 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 18 BMS ID, size: 1, type: uint8, units: ''}
   - {Name: Voltage Updates, size: 4, type: uint32, units: ''}
   - {Name: Temp Scan Count, size: 4, type: uint32, units: ''}
   - {Name: Pack Current, size: 4, type: float32, units: ''}
@@ -279,28 +333,50 @@ packetDefinitions:
   PacketType: 5122
   ParameterPrefix: 'Brake '
   Parameters:
-  - {Name: Fault Flags, beginLoop: true, size: 4, type: uint32, units: a}
-  - {Name: I Beam mm Target, size: 4, type: float32, units: mm}
-  - {Name: Lead Screw mm Target, size: 4, type: float32, units: mm}
-  - {Name: Lead Screw um Target, size: 4, type: uint32, units: um}
-  - {Name: I Beam mm Current, size: 4, type: float32, units: mm}
-  - {Name: Lead Screw mm Current, size: 4, type: float32, units: mm}
-  - {Name: MLP Current, size: 4, type: float32, units: mm}
-  - {Name: Spare 1, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2, size: 4, type: uint32, units: ''}
-  - {Name: Limit Extend, size: 1, type: uint8, units: ''}
-  - {Name: Limit Retract, size: 1, type: uint8, units: ''}
-  - {Name: Limit Extend Edge, size: 1, type: uint8, units: ''}
-  - {Name: Limit Retract Edge, size: 1, type: uint8, units: ''}
-  - {Name: SW Error, size: 1, type: uint8, units: ''}
-  - {Name: ADC Sample, size: 2, type: uint16, units: ''}
-  - {Name: ADC Zero, size: 2, type: uint16, units: ''}
-  - {Name: ADC Minus Zero, size: 4, type: int32, units: ''}
-  - {Name: System Span, size: 4, type: float32, units: ''}
-  - {Name: Brake Position, size: 4, type: float32, units: ''}
-  - {Name: Linear Velocity, size: 4, type: int32, units: ''}
-  - {Name: Linear Acceleration, size: 4, type: int32, units: ''}
-  - {Name: Current Position, endLoop: true, size: 4, type: int32, units: ''}
+  - {Name: Fault Flags 1, size: 4, type: uint32, units: A}
+  - {Name: I Beam mm 1 Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm 1 Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw um 1 Target, size: 4, type: uint32, units: um}
+  - {Name: I Beam mm 1 Current, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm 1 Current, size: 4, type: float32, units: mm}
+  - {Name: MLP 1 Current, size: 4, type: float32, units: mm}
+  - {Name: Spare 1_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 1_2, size: 4, type: uint32, units: ''}
+  - {Name: Limit Extend 1, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract 1, size: 1, type: uint8, units: ''}
+  - {Name: Limit Extend Edge 1, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract Edge 1, size: 1, type: uint8, units: ''}
+  - {Name: SW Error 1, size: 1, type: uint8, units: ''}
+  - {Name: ADC Sample 1, size: 2, type: uint16, units: ''}
+  - {Name: ADC Zero 1, size: 2, type: uint16, units: ''}
+  - {Name: ADC Minus Zero 1, size: 4, type: int32, units: ''}
+  - {Name: System Span 1, size: 4, type: float32, units: ''}
+  - {Name: Brake Position 1, size: 4, type: float32, units: ''}
+  - {Name: Linear Velocity 1, size: 4, type: int32, units: ''}
+  - {Name: Linear Acceleration 1, size: 4, type: int32, units: ''}
+  - {Name: Current Position 1, size: 4, type: int32, units: ''}
+  - {Name: Fault Flags 2, size: 4, type: uint32, units: A}
+  - {Name: I Beam mm 2 Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm 2 Target, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw um 2 Target, size: 4, type: uint32, units: um}
+  - {Name: I Beam mm 2 Current, size: 4, type: float32, units: mm}
+  - {Name: Lead Screw mm 2 Current, size: 4, type: float32, units: mm}
+  - {Name: MLP 2 Current, size: 4, type: float32, units: mm}
+  - {Name: Spare 2_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_2, size: 4, type: uint32, units: ''}
+  - {Name: Limit Extend 2, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract 2, size: 1, type: uint8, units: ''}
+  - {Name: Limit Extend Edge 2, size: 1, type: uint8, units: ''}
+  - {Name: Limit Retract Edge 2, size: 1, type: uint8, units: ''}
+  - {Name: SW Error 2, size: 1, type: uint8, units: ''}
+  - {Name: ADC Sample 2, size: 2, type: uint16, units: ''}
+  - {Name: ADC Zero 2, size: 2, type: uint16, units: ''}
+  - {Name: ADC Minus Zero 2, size: 4, type: int32, units: ''}
+  - {Name: System Span 2, size: 4, type: float32, units: ''}
+  - {Name: Brake Position 2, size: 4, type: float32, units: ''}
+  - {Name: Linear Velocity 2, size: 4, type: int32, units: ''}
+  - {Name: Linear Acceleration 2, size: 4, type: int32, units: ''}
+  - {Name: Current Position 2, size: 4, type: int32, units: ''}
   - {Name: State, size: 1, type: uint8, units: ''}
   - {Name: Calibration State, size: 1, type: uint8, units: ''}
 - DAQ: false
@@ -363,9 +439,42 @@ packetDefinitions:
   - {Name: Board Temp, size: 4, type: float32, units: ''}
   - {Name: Node Pressure, size: 4, type: float32, units: ''}
   - {Name: Node Temp, size: 4, type: float32, units: ''}
-  - {Name: Module Voltage, beginLoop: true, endLoop: true, size: 4, type: float32,
-    units: ''}
-  - {Name: BMS ID, beginLoop: true, endLoop: true, size: 1, type: uint8, units: ''}
+  - {Name: 1 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 2 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 3 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 4 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 5 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 6 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 7 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 8 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 9 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 10 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 11 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 12 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 13 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 14 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 15 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 16 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 17 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 18 Module Voltage, size: 4, type: float32, units: ''}
+  - {Name: 1 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 2 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 3 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 4 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 5 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 6 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 7 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 8 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 9 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 10 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 11 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 12 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 13 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 14 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 15 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 16 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 17 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 18 BMS ID, size: 1, type: uint8, units: ''}
   - {Name: Voltage Updates, size: 4, type: uint32, units: ''}
   - {Name: Temp Scan Count, size: 4, type: uint32, units: ''}
   - {Name: Pack Current, size: 4, type: float32, units: ''}

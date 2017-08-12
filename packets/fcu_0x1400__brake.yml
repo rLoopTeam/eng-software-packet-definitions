@@ -14,67 +14,69 @@ packets:
     prefix: 'Brake'
     packetType: 0x1402
     parameters:
-      - name: 'Fault Flags'
+      - name: 'Fault Flags {i}'
         type: 'uint32'
-        units: 'a'
-        beginLoop: true
-
-      - name: 'I Beam mm Target'
+        units: 'A'
+        iterate:
+          {start: 1, end: 2, beginGroup: true}
+          
+      - name: 'I Beam mm {i} Target'
         units: 'mm'
         type: 'float32'
-      - name: 'Lead Screw mm Target'
+      - name: 'Lead Screw mm {i} Target'
         units: 'mm'
         type: 'float32'
-      - name: 'Lead Screw um Target'
+      - name: 'Lead Screw um {i} Target'
         units: 'um'
         type: 'uint32'
 
-      - name: 'I Beam mm Current'
+      - name: 'I Beam mm {i} Current'
         units: 'mm'
         type: 'float32'
-      - name: 'Lead Screw mm Current'
+      - name: 'Lead Screw mm {i} Current'
         units: 'mm'
         type: 'float32'
-      - name: 'MLP Current'
+      - name: 'MLP {i} Current'
         units: 'mm'
         type: 'float32'
 
       # Spare packet slots
-      - name: 'Spare 1'
+      - name: 'Spare {i}_1'
         type: 'uint32'
-      - name: 'Spare 2'
+      - name: 'Spare {i}_2'
         type: 'uint32'
 
       # fcu__brakes__ethernet.c:146
-      - name: 'Limit Extend'
+      - name: 'Limit Extend {i}'
         type: 'uint8'
-      - name: 'Limit Retract'
+      - name: 'Limit Retract {i}'
         type: 'uint8'
-      - name: 'Limit Extend Edge'
+      - name: 'Limit Extend Edge {i}'
         type: 'uint8'
-      - name: 'Limit Retract Edge'
+      - name: 'Limit Retract Edge {i}'
         type: 'uint8'
-      - name: 'SW Error'
+      - name: 'SW Error {i}'
         type: 'uint8'
 
-      - name: 'ADC Sample'
+      - name: 'ADC Sample {i}'
         type: 'uint16'
-      - name: 'ADC Zero'
+      - name: 'ADC Zero {i}'
         type: 'uint16'
-      - name: 'ADC Minus Zero'
+      - name: 'ADC Minus Zero {i}'
         type: 'int32'
-      - name: 'System Span'
+      - name: 'System Span {i}'
         type: 'float32'
-      - name: 'Brake Position'
+      - name: 'Brake Position {i}'
         type: 'float32'
 
-      - name: 'Linear Velocity'
+      - name: 'Linear Velocity {i}'
         type: 'int32'
-      - name: 'Linear Acceleration'
+      - name: 'Linear Acceleration {i}'
         type: 'int32'
-      - name: 'Current Position'
+      - name: 'Current Position {i}'
         type: 'int32'
-        endLoop: true
+        iterate:
+          {start: 1, end: 2, endGroup: true}
 
       - name: 'State'
         type: 'uint8'
