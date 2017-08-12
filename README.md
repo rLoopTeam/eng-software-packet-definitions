@@ -82,7 +82,7 @@ packets:
         endLoop: false # optional, defaults to false
 
         # Generator specific iteration settings
-        # Sets variable {i} in templates to the iteration cunt.
+        # Sets variable {i} in templates to the iteration count.
         # Iterates from (start, end) inclusive unless flagged.
         iterate:
           start: 0 # defaults to 0
