@@ -3,9 +3,7 @@ from typing import List, Optional, Union
 
 import jsonschema
 
-from rloopDefinitionApp.schemas import (DAQ_SCHEMA,
-                                        PARAM_SCHEMA,
-                                        PACKET_SCHEMA)
+from rloopDefinitionApp.schemas import DAQ_SCHEMA, PACKET_SCHEMA, PARAM_SCHEMA
 from rloopDefinitionApp.utils import get_size
 
 log = logging.getLogger(__name__)

@@ -1,9 +1,11 @@
+import json
 import os
 import random
-import pytest
 import shutil
-import json
+
+import pytest
 import yaml
+
 from rloopDefinitionApp import DefinitionGenerator
 from rloopDefinitionApp.utils import md5
 

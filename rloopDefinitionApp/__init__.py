@@ -5,11 +5,11 @@ import random
 import sys
 from typing import Optional, Union
 
-import yaml
 import jsonschema
+import yaml
 
-from rloopDefinitionApp.structs import Packet
 from rloopDefinitionApp.schemas import PACKET_LIST_SCHEMA
+from rloopDefinitionApp.structs import Packet
 from rloopDefinitionApp.utils import get_packet_files, md5
 
 logging.basicConfig(level=logging.INFO)

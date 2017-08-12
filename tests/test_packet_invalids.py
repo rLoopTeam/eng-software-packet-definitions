@@ -1,5 +1,7 @@
 import pytest
+
 from rloopDefinitionApp.structs import Packet
+
 
 # Blanks
 def test_blank_name():
