@@ -6,5 +6,5 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     setup_requires=["pytest-runner"],
-    tests_require=["pytest"],
+    tests_require=["pytest", "pytest-catchlog", "pytest-runner"],
 )
