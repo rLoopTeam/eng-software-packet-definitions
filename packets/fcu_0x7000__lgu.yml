@@ -1,0 +1,74 @@
+---
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # LGU status data.
+  - FIRMWARE/PROJECT_CODE/LCCM667__RLOOP__LGU/ETHERNET/lgu__ethernet.c
+
+packets:
+  - packetName: 'LGU Status'
+    prefix: 'LGU'
+    packetType: 0x7002
+    parameters:
+      - name: 'Fault Flags Root'
+        type: 'uint32'
+
+      - name: 'Fault Flags {i}'
+        type: 'uint32'
+        iterate:
+          beginGroup: true
+      - name: 'ADC Value {i}'
+        type: 'uint16'
+      - name: 'Actual Extension {i}'
+        type: 'int32'
+      - name: 'Computed Height {i}'
+        type: 'int32'
+      - name: 'Switch Extend {i}'
+        type: 'uint8'
+      - name: 'Switch Retract {i}'
+        type: 'uint8'
+      - name: 'Spare 1_{i}'
+        type: 'uint32'
+      - name: 'Spare 2_{i}'
+        type: 'uint32'
+      - name: 'Spare 3_{i}'
+        type: 'uint32'
+      - name: 'Spare 4_{i}'
+        type: 'uint32'
+        iterate:
+          start: 1
+          end: 4 # C_LGU__NUM_ACTUATORS = 4U
+          endGroup: true
+
+  - packetName: 'LGU ADC Calibration'
+    prefix: 'ADC'
+    packetType: 0x7002
+    parameters:
+      - name: 'Value {i}'
+        type: 'uint16'
+        iterate:
+          beginGroup: true
+      - name: 'Zero {i}'
+        type: 'int32'
+      - name: 'Span {i}'
+        type: 'float32'
+      - name: 'Actual Extension {i}'
+        type: 'int32'
+      - name: 'Switch Extend {i}'
+        type: 'uint8'
+      - name: 'Switch Retract {i}'
+        type: 'uint8'
+      - name: 'Spare 1_{i}'
+        type: 'uint32'
+      - name: 'Spare 2_{i}'
+        type: 'uint32'
+      - name: 'Spare 3_{i}'
+        type: 'uint32'
+      - name: 'Spare 4_{i}'
+        type: 'uint32'
+        iterate:
+          start: 1
+          end: 4 # C_LGU__NUM_ACTUATORS = 4U
+          endGroup: true
