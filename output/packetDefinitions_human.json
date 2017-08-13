@@ -2387,7 +2387,7 @@
                     "type": "float32",
                     "units": "",
                     "size": 4,
-                    "Name": "Brake Position 1"
+                    "Name": "Position 1"
                 },
                 {
                     "type": "int32",
@@ -2519,7 +2519,7 @@
                     "type": "float32",
                     "units": "",
                     "size": 4,
-                    "Name": "Brake Position 2"
+                    "Name": "Position 2"
                 },
                 {
                     "type": "int32",

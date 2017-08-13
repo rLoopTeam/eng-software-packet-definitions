@@ -472,7 +472,7 @@ packetDefinitions:
   - {Name: ADC Zero 1, size: 2, type: uint16, units: ''}
   - {Name: ADC Minus Zero 1, size: 4, type: int32, units: ''}
   - {Name: System Span 1, size: 4, type: float32, units: ''}
-  - {Name: Brake Position 1, size: 4, type: float32, units: ''}
+  - {Name: Position 1, size: 4, type: float32, units: ''}
   - {Name: Linear Velocity 1, size: 4, type: int32, units: ''}
   - {Name: Linear Acceleration 1, size: 4, type: int32, units: ''}
   - {Name: Current Position 1, size: 4, type: int32, units: ''}
@@ -494,7 +494,7 @@ packetDefinitions:
   - {Name: ADC Zero 2, size: 2, type: uint16, units: ''}
   - {Name: ADC Minus Zero 2, size: 4, type: int32, units: ''}
   - {Name: System Span 2, size: 4, type: float32, units: ''}
-  - {Name: Brake Position 2, size: 4, type: float32, units: ''}
+  - {Name: Position 2, size: 4, type: float32, units: ''}
   - {Name: Linear Velocity 2, size: 4, type: int32, units: ''}
   - {Name: Linear Acceleration 2, size: 4, type: int32, units: ''}
   - {Name: Current Position 2, size: 4, type: int32, units: ''}
