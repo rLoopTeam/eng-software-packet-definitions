@@ -1,0 +1,34 @@
+---
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # Pusher status data.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/PUSHER/fcu__pusher__ethernet.c
+
+packets:
+  - packetName: 'Pusher Data'
+    prefix: 'Pusher'
+    packetType: 0x1801
+    parameters:
+      - name: 'Fault Flags'
+        type: 'uint32'
+
+      - name: 'Status'
+        type: 'uint8'
+
+      - name: 'Edge Flag 1'
+        type: 'uint8'
+
+      - name: 'Edge Flag 2'
+        type: 'uint8'
+
+      - name: 'Switch State 1'
+        type: 'uint8'
+
+      - name: 'Switch State 2'
+        type: 'uint8'
+
+      - name: 'Switch Timer'
+        type: 'uint32'
