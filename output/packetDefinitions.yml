@@ -330,7 +330,7 @@ packetDefinitions:
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
   - {Name: Distance, size: 4, type: int32, units: mm}
-  - {Name: Precious Distance, size: 4, type: int32, units: mm}
+  - {Name: Previous Distance, size: 4, type: int32, units: mm}
   - {Name: Velocity, size: 4, type: int32, units: ''}
   - {Name: Distance Raw, size: 4, type: int32, units: ''}
   - {Name: Acceleration, size: 4, type: int32, units: ''}

@@ -1718,7 +1718,7 @@
                     "units": "mm",
                     "type": "int32",
                     "size": 4,
-                    "Name": "Precious Distance"
+                    "Name": "Previous Distance"
                 },
                 {
                     "type": "int32",

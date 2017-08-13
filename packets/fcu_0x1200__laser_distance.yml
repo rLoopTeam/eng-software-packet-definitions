@@ -19,7 +19,7 @@ packets:
       - name: 'Distance'
         units: 'mm'
         type: 'int32'
-      - name: 'Precious Distance'
+      - name: 'Previous Distance'
         units: 'mm'
         type: 'int32'
       - name: 'Velocity'
