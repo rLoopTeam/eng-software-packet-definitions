@@ -1,0 +1,38 @@
+---
+node: 'Flight Control'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # ASI status data.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/ASI_RS485/fcu__asi__ethernet.c
+
+packets:
+  - packetName: 'ASI Data'
+    prefix: 'ASI'
+    packetType: 0x1701
+    parameters:
+      - name: 'Fault Flags Root'
+        type: 'uint32'
+
+      - name: 'State'
+        type: 'uint8'
+
+      - name: 'Scan Index'
+        type: 'uint8'
+
+      - name: 'Current Command'
+        type: 'uint16'
+
+      - name: 'Controller Fault'
+        type: 'uint16'
+        beginLoop: true
+      - name: 'Temperature'
+        type: 'float32'
+      - name: 'Motor Current'
+        type: 'float32'
+      - name: 'HE RPM'
+        type: 'uint16'
+      - name: 'Throttle V'
+        type: 'float32'
+        endLoop: true
