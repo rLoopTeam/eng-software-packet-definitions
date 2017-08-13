@@ -38,6 +38,7 @@ packets:
       - name: 'Spare 4_{i}'
         type: 'uint32'
         iterate:
+          start: 1
           end: 4 # C_LGU__NUM_ACTUATORS = 4U
           endGroup: true
 
@@ -68,5 +69,6 @@ packets:
       - name: 'Spare 4_{i}'
         type: 'uint32'
         iterate:
+          start: 1
           end: 4 # C_LGU__NUM_ACTUATORS = 4U
           endGroup: true
