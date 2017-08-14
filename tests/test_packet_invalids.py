@@ -1,6 +1,6 @@
 import pytest
 
-from rloopDefinitionApp.structs import Packet
+from rloopDefinitionApp.model.packet import Packet
 
 
 # Blanks

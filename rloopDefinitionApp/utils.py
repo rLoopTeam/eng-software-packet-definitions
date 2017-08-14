@@ -2,7 +2,7 @@ import hashlib
 import os
 from typing import List, Union
 
-from rloopDefinitionApp.schemas import PACKET_SIZES
+from rloopDefinitionApp.model.schemas import PACKET_SIZES
 
 
 def md5(content: str, filehash: bool=False) -> Union[str, None]:

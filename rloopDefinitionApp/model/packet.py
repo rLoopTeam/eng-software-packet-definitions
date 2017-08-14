@@ -3,7 +3,8 @@ from typing import List, Optional, Union
 
 import jsonschema
 
-from rloopDefinitionApp.schemas import DAQ_SCHEMA, PACKET_SCHEMA, PARAM_SCHEMA
+from rloopDefinitionApp.model.schemas import (DAQ_SCHEMA, PACKET_SCHEMA,
+                                              PARAM_SCHEMA)
 from rloopDefinitionApp.utils import get_size
 
 log = logging.getLogger(__name__)
@@ -41,33 +42,6 @@ class Packet:
             num_params=len(self.parameters) or 0,
             daq=self.daq.get("type", "") if self.daq else "",
         )
-
-    def to_gs_dict(self):
-        output = {
-            "Name": self.name,
-            "PacketType": self.packet_type,
-            "Node": self.node,
-            "DAQ": False,
-        }
-
-        if self.prefix:
-            output.update({
-                "ParameterPrefix": self.prefix + " ",
-            })
-
-        if self.daq:
-            output.update({
-                "DAQ": True,
-                "dataType": self.daq["type"],
-                "dataSize": self.daq["size"],
-            })
-
-        if self.parameters:
-            output.update({
-                "Parameters": self.parameter_hack_for_ground_station(),
-            })
-
-        return output
 
     @classmethod
     def from_yaml(cls, node: str, yaml_blob: dict, file_vars: Optional[dict]=None):

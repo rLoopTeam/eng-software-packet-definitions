@@ -31,10 +31,10 @@ packets/ # Node folder container
   node.yml # Packet definitions split by node
 
 output/ # Persistent data folder
-  fileSums.json # Checksums of pod files.
-  packetDefinitions.json # Machine friendly combined defintions file.
-  packetDefinitions_human.json # Human friendly combined defintions file.
-  packetDefinitions.yml # Final combined defintions file.
+  file_sums.json # Checksums of pod files.
+  packet_definitions_v2.json # Machine friendly combined defintions file.
+  packet_definitions_human_readable_v2.json # Human friendly combined defintions file.
+  packet_definitions_v2.yml # Final combined defintions file.
 ```
 
 ## Packet definition example
@@ -47,7 +47,7 @@ vars:
 node: 'Imaginary Node {nodeName}'
 
 # Source code files that correspond to packet transmissions.
-# These files checksums will be calculated and saved to fileSums.json in the output folder.
+# These files checksums will be calculated and saved to file_sums.json in the output folder.
 # This is so we can automate the process of knowing if anything in the transmission code has changed.
 podSources: 
   # Imaginary packet types are in here.
