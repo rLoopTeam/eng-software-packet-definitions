@@ -1,4 +1,3 @@
----
 packetDefinitions:
 - DAQ: false
   Name: Pusher Data

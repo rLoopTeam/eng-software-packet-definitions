@@ -1,15 +1,14 @@
 import json
 import logging
 import os
-import random
-import sys
 from typing import Optional, Union
 
 import jsonschema
 import yaml
 
-from rloopDefinitionApp.schemas import PACKET_LIST_SCHEMA
-from rloopDefinitionApp.structs import Packet
+from rloopDefinitionApp.exporters import ALL_EXPORTERS
+from rloopDefinitionApp.model.packet import Packet
+from rloopDefinitionApp.model.schemas import PACKET_LIST_SCHEMA
 from rloopDefinitionApp.utils import get_packet_files, md5
 
 logging.basicConfig(level=logging.INFO)
@@ -19,7 +18,7 @@ log = logging.getLogger(__name__)
 class DefinitionGenerator:
     def __init__(self, input_folder: str="packets/", output_folder: str="output/"):
         # Data holding
-        self.packets = {"packetDefinitions": []}
+        self.packets = []
         self.packet_ids = set()
         self.packet_names = set()
         self.sums = {}
@@ -31,10 +30,7 @@ class DefinitionGenerator:
         # Paths
         self.input_folder = input_folder
         self.output_folder = output_folder
-        self.packet_definitions_yaml = os.path.join(self.output_folder, "packetDefinitions.yml")
-        self.packet_definitions_json = os.path.join(self.output_folder, "packetDefinitions.json")
-        self.packet_definitions_human_json = os.path.join(self.output_folder, "packetDefinitions_human.json")
-        self.file_sums_json = os.path.join(self.output_folder, "fileSums.json")
+        self.file_sums_json = os.path.join(self.output_folder, "file_sums.json")
 
     def load(self, file_name: str) -> None:
         """
@@ -92,8 +88,8 @@ class DefinitionGenerator:
                     # Duplicate ID warning
                     if parsed_packet.packet_type in self.packet_ids:
                         other_usages = [
-                            _["Name"] for _ in self.packets["packetDefinitions"]
-                            if _["PacketType"] == parsed_packet.packet_type
+                            _.name for _ in self.packets
+                            if _.packet_type == parsed_packet.packet_type
                         ]
                         log.warning(
                             "'%s' is reusing %s. %s",
@@ -103,7 +99,7 @@ class DefinitionGenerator:
                         )
 
                     # Append packet to lists.
-                    self.packets["packetDefinitions"].append(parsed_packet.to_gs_dict())
+                    self.packets.append(parsed_packet)
                     self.packet_names.add(parsed_packet.name)
                     self.packet_ids.add(parsed_packet.packet_type)
 
@@ -130,27 +126,5 @@ class DefinitionGenerator:
         if not os.path.exists(self.output_folder):
             os.makedirs(self.output_folder)
 
-        with open(self.packet_definitions_yaml, "w") as f:
-            yaml.dump(self.packets, f, explicit_start=True)
-
-        with open(self.packet_definitions_json, "w") as f:
-            json.dump(self.packets, f)
-
-        with open(self.packet_definitions_human_json, "w") as f:
-            json.dump(self.packets, f, indent=4)
-
-        if self.md5_ok:
-            # Did you really look at the code or did you not? ;)
-            self.sums.update({
-                "I_REALLY_LOOKED": random.randint(0, 65535),
-            })
-
-            with open(self.file_sums_json, "w") as f:
-                json.dump(self.sums, f, indent=4)
-        else:
-            log.warning("Not saving updated checksums to disk.")
-            log.warning(
-                "Please review the recent changes for those files and rerun this script with environment "
-                "variable I_REALLY_LOOKED=%s if you would like to save checksums to disk.",
-                self.sums["I_REALLY_LOOKED"]
-            )
+        for exporter in ALL_EXPORTERS:
+            exporter(self.packets, self.output_folder, self).export()

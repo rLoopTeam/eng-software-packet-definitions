@@ -39,7 +39,7 @@ def clean_test_dir():
 
 @pytest.fixture(scope="module")
 def packet_defs():
-    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "packetDefinitions.yml")) as f:
+    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "gs_definitions.yml")) as f:
         return yaml.load(f)
 
 def create_test_file(filename: str) -> str:
@@ -49,7 +49,7 @@ def create_test_file(filename: str) -> str:
         return test_data
 
 def verify_sums(hash1, hash2):
-    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "fileSums.json"), "r") as f:
+    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "file_sums.json"), "r") as f:
         hashes = json.load(f)
 
     assert hashes[TEST_FILE_1] == hash1
@@ -108,14 +108,19 @@ def test_full_app_verify_equal_datafiles():
     packet_defs_human = None
 
     # Load all definitions.
-    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "packetDefinitions.yml")) as f:
+    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "packet_defintions_v2.yml")) as f:
         packet_defs = yaml.load(f)
 
-    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "packetDefinitions.json")) as f:
+    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "packet_defintions_v2.json")) as f:
         packet_defs_json = json.load(f)
 
-    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "packetDefinitions_human.json")) as f:
+    with open(os.path.join(TEST_OUTPUT_DIRECTORY, "packet_defintions_human_readable_v2.json")) as f:
         packet_defs_human = json.load(f)
+
+    # Clear the gentime from the packets.
+    del packet_defs["_gentime"]
+    del packet_defs_json["_gentime"]
+    del packet_defs_human["_gentime"]
 
     # If any this is inequal, something has gone wrong writing one of the files.
     assert packet_defs == packet_defs_human
