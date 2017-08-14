@@ -230,7 +230,7 @@ packetDefinitions:
   - {Name: Previous Displacement, endLoop: true, size: 4, type: int32, units: ''}
 - DAQ: false
   Name: LGU Status
-  Node: Flight Control
+  Node: Landing Gear
   PacketType: 28674
   ParameterPrefix: 'LGU '
   Parameters:
@@ -277,7 +277,7 @@ packetDefinitions:
   - {Name: Spare 4_4, size: 4, type: uint32, units: ''}
 - DAQ: false
   Name: LGU ADC Calibration
-  Node: Flight Control
+  Node: Landing Gear
   PacketType: 28674
   ParameterPrefix: 'ADC '
   Parameters:
@@ -340,7 +340,7 @@ packetDefinitions:
   - {Name: Error Code, size: 4, type: uint32, units: ''}
 - DAQ: false
   Name: ASI Data
-  Node: Flight Control
+  Node: ASI Monitor System
   PacketType: 5889
   ParameterPrefix: 'ASI '
   Parameters:

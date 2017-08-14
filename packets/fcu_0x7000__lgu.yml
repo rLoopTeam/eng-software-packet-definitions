@@ -1,5 +1,5 @@
 ---
-node: 'Flight Control'
+node: 'Landing Gear'
 
 podSources:
   # FCU packet types are in here.
