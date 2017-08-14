@@ -117,6 +117,11 @@ def test_full_app_verify_equal_datafiles():
     with open(os.path.join(TEST_OUTPUT_DIRECTORY, "packet_defintions_human_readable_v2.json")) as f:
         packet_defs_human = json.load(f)
 
+    # Clear the gentime from the packets.
+    del packet_defs["_gentime"]
+    del packet_defs_json["_gentime"]
+    del packet_defs_human["_gentime"]
+
     # If any this is inequal, something has gone wrong writing one of the files.
     assert packet_defs == packet_defs_human
     assert packet_defs == packet_defs_json
