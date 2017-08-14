@@ -1,0 +1,16 @@
+---
+node: 'Aux Prop Controller'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # AuxProp file.
+  - FIRMWARE/PROJECT_CODE/LCCM720__RLOOP__AUXPROP/ETHERNET/auxprop__ethernet.c
+
+packets:
+  - packetName: 'AuxProp Data'
+    prefix: 'AuxProp'
+    packetType: 0x2103
+    parameters:
+      - name: 'Fault Flags'
+        type: 'uint32'

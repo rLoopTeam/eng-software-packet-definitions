@@ -13,6 +13,99 @@ packetDefinitions:
   - {Name: Switch State 2, size: 1, type: uint8, units: ''}
   - {Name: Switch Timer, size: 4, type: uint32, units: ''}
 - DAQ: false
+  Name: LGU Status
+  Node: Landing Gear
+  PacketType: 28674
+  ParameterPrefix: 'LGU '
+  Parameters:
+  - {Name: Fault Flags Root, size: 4, type: uint32, units: ''}
+  - {Name: Fault Flags 1, size: 4, type: uint32, units: ''}
+  - {Name: ADC Value 1, size: 2, type: uint16, units: ''}
+  - {Name: Actual Extension 1, size: 4, type: int32, units: ''}
+  - {Name: Computed Height 1, size: 4, type: int32, units: ''}
+  - {Name: Switch Extend 1, size: 1, type: uint8, units: ''}
+  - {Name: Switch Retract 1, size: 1, type: uint8, units: ''}
+  - {Name: Spare 1_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 3_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 4_1, size: 4, type: uint32, units: ''}
+  - {Name: Fault Flags 2, size: 4, type: uint32, units: ''}
+  - {Name: ADC Value 2, size: 2, type: uint16, units: ''}
+  - {Name: Actual Extension 2, size: 4, type: int32, units: ''}
+  - {Name: Computed Height 2, size: 4, type: int32, units: ''}
+  - {Name: Switch Extend 2, size: 1, type: uint8, units: ''}
+  - {Name: Switch Retract 2, size: 1, type: uint8, units: ''}
+  - {Name: Spare 1_2, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_2, size: 4, type: uint32, units: ''}
+  - {Name: Spare 3_2, size: 4, type: uint32, units: ''}
+  - {Name: Spare 4_2, size: 4, type: uint32, units: ''}
+  - {Name: Fault Flags 3, size: 4, type: uint32, units: ''}
+  - {Name: ADC Value 3, size: 2, type: uint16, units: ''}
+  - {Name: Actual Extension 3, size: 4, type: int32, units: ''}
+  - {Name: Computed Height 3, size: 4, type: int32, units: ''}
+  - {Name: Switch Extend 3, size: 1, type: uint8, units: ''}
+  - {Name: Switch Retract 3, size: 1, type: uint8, units: ''}
+  - {Name: Spare 1_3, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_3, size: 4, type: uint32, units: ''}
+  - {Name: Spare 3_3, size: 4, type: uint32, units: ''}
+  - {Name: Spare 4_3, size: 4, type: uint32, units: ''}
+  - {Name: Fault Flags 4, size: 4, type: uint32, units: ''}
+  - {Name: ADC Value 4, size: 2, type: uint16, units: ''}
+  - {Name: Actual Extension 4, size: 4, type: int32, units: ''}
+  - {Name: Computed Height 4, size: 4, type: int32, units: ''}
+  - {Name: Switch Extend 4, size: 1, type: uint8, units: ''}
+  - {Name: Switch Retract 4, size: 1, type: uint8, units: ''}
+  - {Name: Spare 1_4, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_4, size: 4, type: uint32, units: ''}
+  - {Name: Spare 3_4, size: 4, type: uint32, units: ''}
+  - {Name: Spare 4_4, size: 4, type: uint32, units: ''}
+- DAQ: false
+  Name: LGU ADC Calibration
+  Node: Landing Gear
+  PacketType: 28674
+  ParameterPrefix: 'ADC '
+  Parameters:
+  - {Name: Value 1, size: 2, type: uint16, units: ''}
+  - {Name: Zero 1, size: 4, type: int32, units: ''}
+  - {Name: Span 1, size: 4, type: float32, units: ''}
+  - {Name: Actual Extension 1, size: 4, type: int32, units: ''}
+  - {Name: Switch Extend 1, size: 1, type: uint8, units: ''}
+  - {Name: Switch Retract 1, size: 1, type: uint8, units: ''}
+  - {Name: Spare 1_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 3_1, size: 4, type: uint32, units: ''}
+  - {Name: Spare 4_1, size: 4, type: uint32, units: ''}
+  - {Name: Value 2, size: 2, type: uint16, units: ''}
+  - {Name: Zero 2, size: 4, type: int32, units: ''}
+  - {Name: Span 2, size: 4, type: float32, units: ''}
+  - {Name: Actual Extension 2, size: 4, type: int32, units: ''}
+  - {Name: Switch Extend 2, size: 1, type: uint8, units: ''}
+  - {Name: Switch Retract 2, size: 1, type: uint8, units: ''}
+  - {Name: Spare 1_2, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_2, size: 4, type: uint32, units: ''}
+  - {Name: Spare 3_2, size: 4, type: uint32, units: ''}
+  - {Name: Spare 4_2, size: 4, type: uint32, units: ''}
+  - {Name: Value 3, size: 2, type: uint16, units: ''}
+  - {Name: Zero 3, size: 4, type: int32, units: ''}
+  - {Name: Span 3, size: 4, type: float32, units: ''}
+  - {Name: Actual Extension 3, size: 4, type: int32, units: ''}
+  - {Name: Switch Extend 3, size: 1, type: uint8, units: ''}
+  - {Name: Switch Retract 3, size: 1, type: uint8, units: ''}
+  - {Name: Spare 1_3, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_3, size: 4, type: uint32, units: ''}
+  - {Name: Spare 3_3, size: 4, type: uint32, units: ''}
+  - {Name: Spare 4_3, size: 4, type: uint32, units: ''}
+  - {Name: Value 4, size: 2, type: uint16, units: ''}
+  - {Name: Zero 4, size: 4, type: int32, units: ''}
+  - {Name: Span 4, size: 4, type: float32, units: ''}
+  - {Name: Actual Extension 4, size: 4, type: int32, units: ''}
+  - {Name: Switch Extend 4, size: 1, type: uint8, units: ''}
+  - {Name: Switch Retract 4, size: 1, type: uint8, units: ''}
+  - {Name: Spare 1_4, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2_4, size: 4, type: uint32, units: ''}
+  - {Name: Spare 3_4, size: 4, type: uint32, units: ''}
+  - {Name: Spare 4_4, size: 4, type: uint32, units: ''}
+- DAQ: false
   Name: Laser Contrast 0
   Node: Flight Control
   PacketType: 4865
@@ -229,99 +322,6 @@ packetDefinitions:
   - {Name: Current Displacement, size: 4, type: int32, units: ''}
   - {Name: Previous Displacement, endLoop: true, size: 4, type: int32, units: ''}
 - DAQ: false
-  Name: LGU Status
-  Node: Landing Gear
-  PacketType: 28674
-  ParameterPrefix: 'LGU '
-  Parameters:
-  - {Name: Fault Flags Root, size: 4, type: uint32, units: ''}
-  - {Name: Fault Flags 1, size: 4, type: uint32, units: ''}
-  - {Name: ADC Value 1, size: 2, type: uint16, units: ''}
-  - {Name: Actual Extension 1, size: 4, type: int32, units: ''}
-  - {Name: Computed Height 1, size: 4, type: int32, units: ''}
-  - {Name: Switch Extend 1, size: 1, type: uint8, units: ''}
-  - {Name: Switch Retract 1, size: 1, type: uint8, units: ''}
-  - {Name: Spare 1_1, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2_1, size: 4, type: uint32, units: ''}
-  - {Name: Spare 3_1, size: 4, type: uint32, units: ''}
-  - {Name: Spare 4_1, size: 4, type: uint32, units: ''}
-  - {Name: Fault Flags 2, size: 4, type: uint32, units: ''}
-  - {Name: ADC Value 2, size: 2, type: uint16, units: ''}
-  - {Name: Actual Extension 2, size: 4, type: int32, units: ''}
-  - {Name: Computed Height 2, size: 4, type: int32, units: ''}
-  - {Name: Switch Extend 2, size: 1, type: uint8, units: ''}
-  - {Name: Switch Retract 2, size: 1, type: uint8, units: ''}
-  - {Name: Spare 1_2, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2_2, size: 4, type: uint32, units: ''}
-  - {Name: Spare 3_2, size: 4, type: uint32, units: ''}
-  - {Name: Spare 4_2, size: 4, type: uint32, units: ''}
-  - {Name: Fault Flags 3, size: 4, type: uint32, units: ''}
-  - {Name: ADC Value 3, size: 2, type: uint16, units: ''}
-  - {Name: Actual Extension 3, size: 4, type: int32, units: ''}
-  - {Name: Computed Height 3, size: 4, type: int32, units: ''}
-  - {Name: Switch Extend 3, size: 1, type: uint8, units: ''}
-  - {Name: Switch Retract 3, size: 1, type: uint8, units: ''}
-  - {Name: Spare 1_3, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2_3, size: 4, type: uint32, units: ''}
-  - {Name: Spare 3_3, size: 4, type: uint32, units: ''}
-  - {Name: Spare 4_3, size: 4, type: uint32, units: ''}
-  - {Name: Fault Flags 4, size: 4, type: uint32, units: ''}
-  - {Name: ADC Value 4, size: 2, type: uint16, units: ''}
-  - {Name: Actual Extension 4, size: 4, type: int32, units: ''}
-  - {Name: Computed Height 4, size: 4, type: int32, units: ''}
-  - {Name: Switch Extend 4, size: 1, type: uint8, units: ''}
-  - {Name: Switch Retract 4, size: 1, type: uint8, units: ''}
-  - {Name: Spare 1_4, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2_4, size: 4, type: uint32, units: ''}
-  - {Name: Spare 3_4, size: 4, type: uint32, units: ''}
-  - {Name: Spare 4_4, size: 4, type: uint32, units: ''}
-- DAQ: false
-  Name: LGU ADC Calibration
-  Node: Landing Gear
-  PacketType: 28674
-  ParameterPrefix: 'ADC '
-  Parameters:
-  - {Name: Value 1, size: 2, type: uint16, units: ''}
-  - {Name: Zero 1, size: 4, type: int32, units: ''}
-  - {Name: Span 1, size: 4, type: float32, units: ''}
-  - {Name: Actual Extension 1, size: 4, type: int32, units: ''}
-  - {Name: Switch Extend 1, size: 1, type: uint8, units: ''}
-  - {Name: Switch Retract 1, size: 1, type: uint8, units: ''}
-  - {Name: Spare 1_1, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2_1, size: 4, type: uint32, units: ''}
-  - {Name: Spare 3_1, size: 4, type: uint32, units: ''}
-  - {Name: Spare 4_1, size: 4, type: uint32, units: ''}
-  - {Name: Value 2, size: 2, type: uint16, units: ''}
-  - {Name: Zero 2, size: 4, type: int32, units: ''}
-  - {Name: Span 2, size: 4, type: float32, units: ''}
-  - {Name: Actual Extension 2, size: 4, type: int32, units: ''}
-  - {Name: Switch Extend 2, size: 1, type: uint8, units: ''}
-  - {Name: Switch Retract 2, size: 1, type: uint8, units: ''}
-  - {Name: Spare 1_2, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2_2, size: 4, type: uint32, units: ''}
-  - {Name: Spare 3_2, size: 4, type: uint32, units: ''}
-  - {Name: Spare 4_2, size: 4, type: uint32, units: ''}
-  - {Name: Value 3, size: 2, type: uint16, units: ''}
-  - {Name: Zero 3, size: 4, type: int32, units: ''}
-  - {Name: Span 3, size: 4, type: float32, units: ''}
-  - {Name: Actual Extension 3, size: 4, type: int32, units: ''}
-  - {Name: Switch Extend 3, size: 1, type: uint8, units: ''}
-  - {Name: Switch Retract 3, size: 1, type: uint8, units: ''}
-  - {Name: Spare 1_3, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2_3, size: 4, type: uint32, units: ''}
-  - {Name: Spare 3_3, size: 4, type: uint32, units: ''}
-  - {Name: Spare 4_3, size: 4, type: uint32, units: ''}
-  - {Name: Value 4, size: 2, type: uint16, units: ''}
-  - {Name: Zero 4, size: 4, type: int32, units: ''}
-  - {Name: Span 4, size: 4, type: float32, units: ''}
-  - {Name: Actual Extension 4, size: 4, type: int32, units: ''}
-  - {Name: Switch Extend 4, size: 1, type: uint8, units: ''}
-  - {Name: Switch Retract 4, size: 1, type: uint8, units: ''}
-  - {Name: Spare 1_4, size: 4, type: uint32, units: ''}
-  - {Name: Spare 2_4, size: 4, type: uint32, units: ''}
-  - {Name: Spare 3_4, size: 4, type: uint32, units: ''}
-  - {Name: Spare 4_4, size: 4, type: uint32, units: ''}
-- DAQ: false
   Name: Forward Laser Distance Sensor
   Node: Flight Control
   PacketType: 4609
@@ -338,21 +338,6 @@ packetDefinitions:
   - {Name: Missed Start, size: 4, type: uint32, units: ''}
   - {Name: Bad Distance, size: 4, type: uint32, units: ''}
   - {Name: Error Code, size: 4, type: uint32, units: ''}
-- DAQ: false
-  Name: ASI Data
-  Node: ASI Monitor System
-  PacketType: 5889
-  ParameterPrefix: 'ASI '
-  Parameters:
-  - {Name: Fault Flags Root, size: 4, type: uint32, units: ''}
-  - {Name: State, size: 1, type: uint8, units: ''}
-  - {Name: Scan Index, size: 1, type: uint8, units: ''}
-  - {Name: Current Command, size: 2, type: uint16, units: ''}
-  - {Name: Controller Fault, beginLoop: true, size: 2, type: uint16, units: ''}
-  - {Name: Temperature, size: 4, type: float32, units: ''}
-  - {Name: Motor Current, size: 4, type: float32, units: ''}
-  - {Name: HE RPM, size: 2, type: uint16, units: ''}
-  - {Name: Throttle V, endLoop: true, size: 4, type: float32, units: ''}
 - DAQ: false
   Name: Power B Current Temps
   Node: Power Node B
@@ -445,6 +430,13 @@ packetDefinitions:
   Node: Power Node B
   PacketType: 13825
   ParameterPrefix: 'Power B Cooling '
+  Parameters:
+  - {Name: Fault Flags, size: 4, type: uint32, units: ''}
+- DAQ: false
+  Name: AuxProp Data
+  Node: Aux Prop Controller
+  PacketType: 8451
+  ParameterPrefix: 'AuxProp '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
 - DAQ: false
@@ -610,6 +602,21 @@ packetDefinitions:
   ParameterPrefix: 'Power A Cooling '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
+- DAQ: false
+  Name: ASI Data
+  Node: ASI Monitor System
+  PacketType: 5889
+  ParameterPrefix: 'ASI '
+  Parameters:
+  - {Name: Fault Flags Root, size: 4, type: uint32, units: ''}
+  - {Name: State, size: 1, type: uint8, units: ''}
+  - {Name: Scan Index, size: 1, type: uint8, units: ''}
+  - {Name: Current Command, size: 2, type: uint16, units: ''}
+  - {Name: Controller Fault, beginLoop: true, size: 2, type: uint16, units: ''}
+  - {Name: Temperature, size: 4, type: float32, units: ''}
+  - {Name: Motor Current, size: 4, type: float32, units: ''}
+  - {Name: HE RPM, size: 2, type: uint16, units: ''}
+  - {Name: Throttle V, endLoop: true, size: 4, type: float32, units: ''}
 - DAQ: false
   Name: Auto-sequence test
   Node: Flight Control

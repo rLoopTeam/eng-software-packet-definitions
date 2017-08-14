@@ -44,7 +44,7 @@ packets:
 
   - packetName: 'LGU ADC Calibration'
     prefix: 'ADC'
-    packetType: 0x7002
+    packetType: 0x7003
     parameters:
       - name: 'Value {i}'
         type: 'uint16'
