@@ -32,6 +32,7 @@ packets/ # Node folder container
 
 output/ # Persistent data folder
   file_sums.json # Checksums of pod files.
+  gs_definitions.yml # Formatted file for the ground station.
   packet_definitions_v2.json # Machine friendly combined defintions file.
   packet_definitions_human_readable_v2.json # Human friendly combined defintions file.
   packet_definitions_v2.yml # Final combined defintions file.
