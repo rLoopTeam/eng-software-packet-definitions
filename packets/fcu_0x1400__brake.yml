@@ -87,17 +87,22 @@ packets:
     prefix: 'Motor'
     packetType: 0x1406
     parameters:
-      - name: 'Microstep Resolution'
+      - name: 'Microstep Resolution {i}'
         type: 'uint32'
-        beginLoop: true
-      - name: 'Max Acceleration'
+        iterate:
+          start: 1
+          beginGroup: true
+      - name: 'Max Acceleration {i}'
         type: 'int32'
-      - name: 'Microns per Revolution'
+      - name: 'Microns per Revolution {i}'
         type: 'int32'
-      - name: 'Steps per Revolution'
+      - name: 'Steps per Revolution {i}'
         type: 'uint32'
-      - name: 'Max Angular Velocity'
+      - name: 'Max Angular Velocity {i}'
         type: 'int32'
-        endLoop: true
+        iterate:
+          start: 1
+          end: 2
+          endGroup: true
       - name: 'Compare Timer'
         type: 'uint8'

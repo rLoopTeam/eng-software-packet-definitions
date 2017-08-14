@@ -505,11 +505,16 @@ packetDefinitions:
   PacketType: 5126
   ParameterPrefix: 'Motor '
   Parameters:
-  - {Name: Microstep Resolution, beginLoop: true, size: 4, type: uint32, units: ''}
-  - {Name: Max Acceleration, size: 4, type: int32, units: ''}
-  - {Name: Microns per Revolution, size: 4, type: int32, units: ''}
-  - {Name: Steps per Revolution, size: 4, type: uint32, units: ''}
-  - {Name: Max Angular Velocity, endLoop: true, size: 4, type: int32, units: ''}
+  - {Name: Microstep Resolution 1, size: 4, type: uint32, units: ''}
+  - {Name: Max Acceleration 1, size: 4, type: int32, units: ''}
+  - {Name: Microns per Revolution 1, size: 4, type: int32, units: ''}
+  - {Name: Steps per Revolution 1, size: 4, type: uint32, units: ''}
+  - {Name: Max Angular Velocity 1, size: 4, type: int32, units: ''}
+  - {Name: Microstep Resolution 2, size: 4, type: uint32, units: ''}
+  - {Name: Max Acceleration 2, size: 4, type: int32, units: ''}
+  - {Name: Microns per Revolution 2, size: 4, type: int32, units: ''}
+  - {Name: Steps per Revolution 2, size: 4, type: uint32, units: ''}
+  - {Name: Max Angular Velocity 2, size: 4, type: int32, units: ''}
   - {Name: Compare Timer, size: 1, type: uint8, units: ''}
 - DAQ: false
   Name: Power A Current Temps
