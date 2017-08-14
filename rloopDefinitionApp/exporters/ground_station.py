@@ -1,3 +1,4 @@
+import json
 import yaml
 
 from rloopDefinitionApp.exporters.base import Exporter
@@ -35,3 +36,5 @@ class GroundStation(Exporter):
         formatted_packets = [self.create_gs_dict(packet) for packet in self.packets]
         with self.yield_file("gs_definitions.yml") as f:
             yaml.dump({"packetDefinitions": formatted_packets}, f)
+        with self.yield_file("gs_definitions.json") as f:
+            json.dump({"packetDefinitions": formatted_packets}, f, indent=4)
