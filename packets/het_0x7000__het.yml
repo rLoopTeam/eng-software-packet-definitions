@@ -1,0 +1,64 @@
+---
+node: 'HE Thermal Monitor'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+  # HE Therm packet
+  - FIRMWARE/PROJECT_CODE/LCCM721__RLOOP__HE_THERM/ETHERNET/he_therm__ethernet.c
+
+packets:
+  - packetName: 'HE Data'
+    prefix: 'HE'
+    packetType: 0x6001
+    parameters:
+      - name: 'Fault Flags'
+        type: 'uint32'
+      - name: 'Solenoid Faults'
+        type: 'uint32'
+      - name: 'DS2482 1 Fault Flags'
+        type: 'uint32'
+      - name: 'DS2482 2 Fault Flags'
+        type: 'uint32'
+      - name: 'DS18B20 Fault Flags'
+        type: 'uint32'
+      - name: 'Sensors Count'
+        type: 'uint8'
+
+      - name: '{i} Temperature'
+        type: 'float32'
+        iterate:
+          beginGroup: true
+      - name: '{i} ROM ID Hi'
+        type: 'uint16'
+      - name: '{i} ROM ID Low'
+        type: 'uint16'
+        iterate:
+          start: 1
+          end: 32
+          endGroup: true
+
+      - name: 'Left Highest Sensor Index'
+        type: 'uint16'
+      - name: 'Right Highest Sensor Index'
+        type: 'uint16'
+      - name: 'Brake Motor Highest Sensor Index'
+        type: 'uint16'
+      - name: 'Left Highest Temp'
+        type: 'float32'
+      - name: 'Right Highest Temp'
+        type: 'float32'
+      - name: 'Brake Motor Highest Temp'
+        type: 'float32'
+      - name: 'Left Average Temp'
+        type: 'float32'
+      - name: 'Right Average Temp'
+        type: 'float32'
+      - name: 'Brake Motor Average Temp'
+        type: 'float32'
+      - name: 'Left Overtemp State'
+        type: 'uint8'
+      - name: 'Right Overtemp State'
+        type: 'uint8'
+      - name: 'Brake Motor Overtemp State'
+        type: 'uint8'

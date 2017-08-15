@@ -53,7 +53,6 @@ packets:
     parameters:
       - name: 'Index'
         type: 'uint32'
-      # TODO: Why is this split by Hi, Lo instead of the entire ROM ID?
       - name: 'Hi'
         type: 'uint16'
       - name: 'Lo'
