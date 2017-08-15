@@ -694,18 +694,12 @@ Power A BMS:
   node: Power Node A
   parameters:
   - {Name: Faults, size: 4, type: uint32, units: ''}
-  - {Name: Temp State, size: 1, type: uint8, units: ''}
-  - {Name: Charger State, size: 1, type: uint8, units: ''}
-  - {Name: Num Temp Sensors, size: 2, type: uint16, units: ''}
-  - {Name: Highest Sensor Value, size: 4, type: float32, units: ''}
-  - {Name: Average Temp, size: 4, type: float32, units: ''}
-  - {Name: Highest Sensor Index, size: 2, type: uint16, units: ''}
+  - {Name: Device Faults 1, size: 4, type: uint32, units: ''}
+  - {Name: Device Faults 2, size: 4, type: uint32, units: ''}
+  - {Name: Device Faults 3, size: 4, type: uint32, units: ''}
   - {Name: Pack Volts, size: 4, type: float32, units: ''}
   - {Name: Highest Cell Volts, size: 4, type: float32, units: ''}
   - {Name: Lowest Cell Volts, size: 4, type: float32, units: ''}
-  - {Name: Board Temp, size: 4, type: float32, units: ''}
-  - {Name: Node Pressure, size: 4, type: float32, units: ''}
-  - {Name: Node Temp, size: 4, type: float32, units: ''}
   - {Name: 1 Module Voltage, size: 4, type: float32, units: ''}
   - {Name: 2 Module Voltage, size: 4, type: float32, units: ''}
   - {Name: 3 Module Voltage, size: 4, type: float32, units: ''}
@@ -724,29 +718,55 @@ Power A BMS:
   - {Name: 16 Module Voltage, size: 4, type: float32, units: ''}
   - {Name: 17 Module Voltage, size: 4, type: float32, units: ''}
   - {Name: 18 Module Voltage, size: 4, type: float32, units: ''}
-  - {Name: 1 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 2 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 3 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 4 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 5 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 6 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 7 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 8 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 9 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 10 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 11 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 12 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 13 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 14 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 15 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 16 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 17 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 18 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 1 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 2 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 3 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 4 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 5 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 6 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 7 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 8 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 9 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 10 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 11 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 12 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 13 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 14 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 15 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 16 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 17 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 18 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 1 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 2 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 3 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 4 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 5 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 6 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 7 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 8 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 9 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 10 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 11 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 12 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 13 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 14 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 15 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 16 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 17 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 18 Module Resistor, size: 4, type: float32, units: ''}
   - {Name: Voltage Updates, size: 4, type: uint32, units: ''}
+  - {Name: Battery Spare, size: 4, type: uint32, units: ''}
+  - {Name: Charger State, size: 1, type: uint8, units: ''}
+  - {Name: Temp State, size: 1, type: uint8, units: ''}
+  - {Name: Num Temp Sensors, size: 2, type: uint16, units: ''}
+  - {Name: Highest Sensor Value, size: 4, type: float32, units: ''}
+  - {Name: Average Temp, size: 4, type: float32, units: ''}
+  - {Name: Highest Sensor Index, size: 2, type: uint16, units: ''}
   - {Name: Temp Scan Count, size: 4, type: uint32, units: ''}
-  - {Name: Pack Current, size: 4, type: float32, units: ''}
+  - {Name: Node Pressure, size: 4, type: float32, units: ''}
+  - {Name: Node Temp, size: 4, type: float32, units: ''}
   prefix: Power A BMS
-  type: 0x3405
+  type: 0x3401
 Power A Cooling:
   node: Power Node A
   parameters:
@@ -783,18 +803,12 @@ Power B BMS:
   node: Power Node B
   parameters:
   - {Name: Faults, size: 4, type: uint32, units: ''}
-  - {Name: Temp State, size: 1, type: uint8, units: ''}
-  - {Name: Charger State, size: 1, type: uint8, units: ''}
-  - {Name: Num Temp Sensors, size: 2, type: uint16, units: ''}
-  - {Name: Highest Sensor Value, size: 4, type: float32, units: ''}
-  - {Name: Average Temp, size: 4, type: float32, units: ''}
-  - {Name: Highest Sensor Index, size: 2, type: uint16, units: ''}
+  - {Name: Device Faults 1, size: 4, type: uint32, units: ''}
+  - {Name: Device Faults 2, size: 4, type: uint32, units: ''}
+  - {Name: Device Faults 3, size: 4, type: uint32, units: ''}
   - {Name: Pack Volts, size: 4, type: float32, units: ''}
   - {Name: Highest Cell Volts, size: 4, type: float32, units: ''}
   - {Name: Lowest Cell Volts, size: 4, type: float32, units: ''}
-  - {Name: Board Temp, size: 4, type: float32, units: ''}
-  - {Name: Node Pressure, size: 4, type: float32, units: ''}
-  - {Name: Node Temp, size: 4, type: float32, units: ''}
   - {Name: 1 Module Voltage, size: 4, type: float32, units: ''}
   - {Name: 2 Module Voltage, size: 4, type: float32, units: ''}
   - {Name: 3 Module Voltage, size: 4, type: float32, units: ''}
@@ -813,29 +827,55 @@ Power B BMS:
   - {Name: 16 Module Voltage, size: 4, type: float32, units: ''}
   - {Name: 17 Module Voltage, size: 4, type: float32, units: ''}
   - {Name: 18 Module Voltage, size: 4, type: float32, units: ''}
-  - {Name: 1 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 2 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 3 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 4 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 5 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 6 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 7 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 8 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 9 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 10 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 11 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 12 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 13 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 14 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 15 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 16 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 17 BMS ID, size: 1, type: uint8, units: ''}
-  - {Name: 18 BMS ID, size: 1, type: uint8, units: ''}
+  - {Name: 1 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 2 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 3 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 4 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 5 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 6 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 7 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 8 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 9 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 10 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 11 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 12 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 13 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 14 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 15 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 16 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 17 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 18 Module Spare, size: 4, type: float32, units: ''}
+  - {Name: 1 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 2 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 3 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 4 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 5 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 6 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 7 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 8 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 9 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 10 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 11 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 12 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 13 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 14 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 15 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 16 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 17 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 18 Module Resistor, size: 4, type: float32, units: ''}
   - {Name: Voltage Updates, size: 4, type: uint32, units: ''}
+  - {Name: Battery Spare, size: 4, type: uint32, units: ''}
+  - {Name: Charger State, size: 1, type: uint8, units: ''}
+  - {Name: Temp State, size: 1, type: uint8, units: ''}
+  - {Name: Num Temp Sensors, size: 2, type: uint16, units: ''}
+  - {Name: Highest Sensor Value, size: 4, type: float32, units: ''}
+  - {Name: Average Temp, size: 4, type: float32, units: ''}
+  - {Name: Highest Sensor Index, size: 2, type: uint16, units: ''}
   - {Name: Temp Scan Count, size: 4, type: uint32, units: ''}
-  - {Name: Pack Current, size: 4, type: float32, units: ''}
+  - {Name: Node Pressure, size: 4, type: float32, units: ''}
+  - {Name: Node Temp, size: 4, type: float32, units: ''}
   prefix: Power B BMS
-  type: 0x3405
+  type: 0x3401
 Power B Cooling:
   node: Power Node B
   parameters:
@@ -916,5 +956,5 @@ Throttle Parameters:
   type: 0x1503
 _comment: This file was automatically generated by eng-software-packet-definitions.
   All changes you intend to make to this file should be made into that project instead.
-_gentime: '2017-08-15T05:27:46.095573'
+_gentime: '2017-08-15T07:35:58.129866'
 _version: 2

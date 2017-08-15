@@ -3330,7 +3330,7 @@
         },
         {
             "Name": "Power B BMS",
-            "PacketType": 13317,
+            "PacketType": 13313,
             "Node": "Power Node B",
             "DAQ": false,
             "ParameterPrefix": "Power B BMS ",
@@ -3342,40 +3342,22 @@
                     "Name": "Faults"
                 },
                 {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Temp State"
-                },
-                {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Charger State"
-                },
-                {
-                    "type": "uint16",
-                    "units": "",
-                    "size": 2,
-                    "Name": "Num Temp Sensors"
-                },
-                {
-                    "type": "float32",
+                    "type": "uint32",
                     "units": "",
                     "size": 4,
-                    "Name": "Highest Sensor Value"
+                    "Name": "Device Faults 1"
                 },
                 {
-                    "type": "float32",
+                    "type": "uint32",
                     "units": "",
                     "size": 4,
-                    "Name": "Average Temp"
+                    "Name": "Device Faults 2"
                 },
                 {
-                    "type": "uint16",
+                    "type": "uint32",
                     "units": "",
-                    "size": 2,
-                    "Name": "Highest Sensor Index"
+                    "size": 4,
+                    "Name": "Device Faults 3"
                 },
                 {
                     "type": "float32",
@@ -3394,24 +3376,6 @@
                     "units": "",
                     "size": 4,
                     "Name": "Lowest Cell Volts"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Board Temp"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Node Pressure"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Node Temp"
                 },
                 {
                     "type": "float32",
@@ -3522,112 +3486,220 @@
                     "Name": "18 Module Voltage"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "1 BMS ID"
+                    "size": 4,
+                    "Name": "1 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "2 BMS ID"
+                    "size": 4,
+                    "Name": "2 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "3 BMS ID"
+                    "size": 4,
+                    "Name": "3 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "4 BMS ID"
+                    "size": 4,
+                    "Name": "4 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "5 BMS ID"
+                    "size": 4,
+                    "Name": "5 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "6 BMS ID"
+                    "size": 4,
+                    "Name": "6 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "7 BMS ID"
+                    "size": 4,
+                    "Name": "7 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "8 BMS ID"
+                    "size": 4,
+                    "Name": "8 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "9 BMS ID"
+                    "size": 4,
+                    "Name": "9 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "10 BMS ID"
+                    "size": 4,
+                    "Name": "10 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "11 BMS ID"
+                    "size": 4,
+                    "Name": "11 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "12 BMS ID"
+                    "size": 4,
+                    "Name": "12 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "13 BMS ID"
+                    "size": 4,
+                    "Name": "13 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "14 BMS ID"
+                    "size": 4,
+                    "Name": "14 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "15 BMS ID"
+                    "size": 4,
+                    "Name": "15 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "16 BMS ID"
+                    "size": 4,
+                    "Name": "16 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "17 BMS ID"
+                    "size": 4,
+                    "Name": "17 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "18 BMS ID"
+                    "size": 4,
+                    "Name": "18 Module Spare"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "1 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "2 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "3 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "4 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "5 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "6 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "7 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "8 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "9 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "10 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "11 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "12 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "13 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "14 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "15 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "16 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "17 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "18 Module Resistor"
                 },
                 {
                     "type": "uint32",
@@ -3639,13 +3711,61 @@
                     "type": "uint32",
                     "units": "",
                     "size": 4,
+                    "Name": "Battery Spare"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Charger State"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Temp State"
+                },
+                {
+                    "type": "uint16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "Num Temp Sensors"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Highest Sensor Value"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Average Temp"
+                },
+                {
+                    "type": "uint16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "Highest Sensor Index"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
                     "Name": "Temp Scan Count"
                 },
                 {
                     "type": "float32",
                     "units": "",
                     "size": 4,
-                    "Name": "Pack Current"
+                    "Name": "Node Pressure"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Node Temp"
                 }
             ]
         },
@@ -4123,7 +4243,7 @@
         },
         {
             "Name": "Power A BMS",
-            "PacketType": 13317,
+            "PacketType": 13313,
             "Node": "Power Node A",
             "DAQ": false,
             "ParameterPrefix": "Power A BMS ",
@@ -4135,40 +4255,22 @@
                     "Name": "Faults"
                 },
                 {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Temp State"
-                },
-                {
-                    "type": "uint8",
-                    "units": "",
-                    "size": 1,
-                    "Name": "Charger State"
-                },
-                {
-                    "type": "uint16",
-                    "units": "",
-                    "size": 2,
-                    "Name": "Num Temp Sensors"
-                },
-                {
-                    "type": "float32",
+                    "type": "uint32",
                     "units": "",
                     "size": 4,
-                    "Name": "Highest Sensor Value"
+                    "Name": "Device Faults 1"
                 },
                 {
-                    "type": "float32",
+                    "type": "uint32",
                     "units": "",
                     "size": 4,
-                    "Name": "Average Temp"
+                    "Name": "Device Faults 2"
                 },
                 {
-                    "type": "uint16",
+                    "type": "uint32",
                     "units": "",
-                    "size": 2,
-                    "Name": "Highest Sensor Index"
+                    "size": 4,
+                    "Name": "Device Faults 3"
                 },
                 {
                     "type": "float32",
@@ -4187,24 +4289,6 @@
                     "units": "",
                     "size": 4,
                     "Name": "Lowest Cell Volts"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Board Temp"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Node Pressure"
-                },
-                {
-                    "type": "float32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Node Temp"
                 },
                 {
                     "type": "float32",
@@ -4315,112 +4399,220 @@
                     "Name": "18 Module Voltage"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "1 BMS ID"
+                    "size": 4,
+                    "Name": "1 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "2 BMS ID"
+                    "size": 4,
+                    "Name": "2 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "3 BMS ID"
+                    "size": 4,
+                    "Name": "3 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "4 BMS ID"
+                    "size": 4,
+                    "Name": "4 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "5 BMS ID"
+                    "size": 4,
+                    "Name": "5 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "6 BMS ID"
+                    "size": 4,
+                    "Name": "6 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "7 BMS ID"
+                    "size": 4,
+                    "Name": "7 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "8 BMS ID"
+                    "size": 4,
+                    "Name": "8 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "9 BMS ID"
+                    "size": 4,
+                    "Name": "9 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "10 BMS ID"
+                    "size": 4,
+                    "Name": "10 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "11 BMS ID"
+                    "size": 4,
+                    "Name": "11 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "12 BMS ID"
+                    "size": 4,
+                    "Name": "12 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "13 BMS ID"
+                    "size": 4,
+                    "Name": "13 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "14 BMS ID"
+                    "size": 4,
+                    "Name": "14 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "15 BMS ID"
+                    "size": 4,
+                    "Name": "15 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "16 BMS ID"
+                    "size": 4,
+                    "Name": "16 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "17 BMS ID"
+                    "size": 4,
+                    "Name": "17 Module Spare"
                 },
                 {
-                    "type": "uint8",
+                    "type": "float32",
                     "units": "",
-                    "size": 1,
-                    "Name": "18 BMS ID"
+                    "size": 4,
+                    "Name": "18 Module Spare"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "1 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "2 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "3 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "4 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "5 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "6 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "7 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "8 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "9 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "10 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "11 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "12 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "13 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "14 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "15 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "16 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "17 Module Resistor"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "18 Module Resistor"
                 },
                 {
                     "type": "uint32",
@@ -4432,13 +4624,61 @@
                     "type": "uint32",
                     "units": "",
                     "size": 4,
+                    "Name": "Battery Spare"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Charger State"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Temp State"
+                },
+                {
+                    "type": "uint16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "Num Temp Sensors"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Highest Sensor Value"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Average Temp"
+                },
+                {
+                    "type": "uint16",
+                    "units": "",
+                    "size": 2,
+                    "Name": "Highest Sensor Index"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
                     "Name": "Temp Scan Count"
                 },
                 {
                     "type": "float32",
                     "units": "",
                     "size": 4,
-                    "Name": "Pack Current"
+                    "Name": "Node Pressure"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Node Temp"
                 }
             ]
         },

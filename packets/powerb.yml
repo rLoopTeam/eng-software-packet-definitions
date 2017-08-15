@@ -61,13 +61,44 @@ packets:
 
   - packetName: 'Power {nodeName} BMS'
     prefix: 'Power {nodeName} BMS'
-    packetType: 0x3405
+    packetType: 0x3401
     parameters:
       - name: 'Faults'
         type: 'uint32'
-      - name: 'Temp State'
-        type: 'uint8'
+      - name: 'Device Faults 1'
+        type: 'uint32'
+      - name: 'Device Faults 2'
+        type: 'uint32'
+      - name: 'Device Faults 3'
+        type: 'uint32'
+      - name: 'Pack Volts'
+        type: 'float32'
+      - name: 'Highest Cell Volts'
+        type: 'float32'
+      - name: 'Lowest Cell Volts'
+        type: 'float32'
+      - name: '{i} Module Voltage'
+        type: 'float32'
+        iterate:
+          start: 1
+          end: 18
+      - name: '{i} Module Spare'
+        type: 'float32'
+        iterate:
+          start: 1
+          end: 18
+      - name: '{i} Module Resistor'
+        type: 'float32'
+        iterate:
+          start: 1
+          end: 18
+      - name: 'Voltage Updates'
+        type: 'uint32'
+      - name: 'Battery Spare'
+        type: 'uint32'
       - name: 'Charger State'
+        type: 'uint8'
+      - name: 'Temp State'
         type: 'uint8'
       - name: 'Num Temp Sensors'
         type: 'uint16'
@@ -78,34 +109,14 @@ packets:
         type: 'float32'
       - name: 'Highest Sensor Index'
         type: 'uint16'
-      - name: 'Pack Volts'
-        type: 'float32'
-      - name: 'Highest Cell Volts'
-        type: 'float32'
-      - name: 'Lowest Cell Volts'
-        type: 'float32'
-      - name: 'Board Temp'
-        type: 'float32'
+      - name: 'Temp Scan Count'
+        type: 'uint32'
       - name: 'Node Pressure'
         type: 'float32'
       - name: 'Node Temp'
         type: 'float32'
-      - name: '{i} Module Voltage'
-        type: 'float32'
-        iterate:
-          start: 1
-          end: 18
-      - name: '{i} BMS ID'
-        type: 'uint8'
-        iterate:
-          start: 1
-          end: 18
-      - name: 'Voltage Updates'
-        type: 'uint32'
-      - name: 'Temp Scan Count'
-        type: 'uint32'
-      - name: 'Pack Current'
-        type: 'float32'
+      # - name: 'Pack Current'
+      #   type: 'float32'
 
   # Cooling code files are missing?
   - packetName: 'Power {nodeName} Cooling'
