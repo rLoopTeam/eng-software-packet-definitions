@@ -554,30 +554,48 @@ packetDefinitions:
   PacketType: 0x1001
   ParameterPrefix: 'Accel '
   Parameters:
-  - {Name: Flags, beginLoop: true, size: 4, type: uint32, units: ''}
-  - {Name: X Raw, size: 2, type: int16, units: ''}
-  - {Name: Y Raw, size: 2, type: int16, units: ''}
-  - {Name: Z Raw, endLoop: true, size: 2, type: int16, units: ''}
+  - {Name: 1 Flags, size: 4, type: uint32, units: ''}
+  - {Name: 1 X Raw, size: 2, type: int16, units: ''}
+  - {Name: 1 Y Raw, size: 2, type: int16, units: ''}
+  - {Name: 1 Z Raw, size: 2, type: int16, units: ''}
+  - {Name: 2 Flags, size: 4, type: uint32, units: ''}
+  - {Name: 2 X Raw, size: 2, type: int16, units: ''}
+  - {Name: 2 Y Raw, size: 2, type: int16, units: ''}
+  - {Name: 2 Z Raw, size: 2, type: int16, units: ''}
 - DAQ: false
   Name: Accel Data Full
   Node: Flight Control
   PacketType: 0x1003
   ParameterPrefix: 'Accel '
   Parameters:
-  - {Name: Flags, beginLoop: true, size: 4, type: uint32, units: ''}
-  - {Name: X Raw, size: 2, type: int16, units: ''}
-  - {Name: Y Raw, size: 2, type: int16, units: ''}
-  - {Name: Z Raw, size: 2, type: int16, units: ''}
-  - {Name: X Gs, size: 4, type: float32, units: ''}
-  - {Name: Y Gs, size: 4, type: float32, units: ''}
-  - {Name: Z Gs, size: 4, type: float32, units: ''}
-  - {Name: Pitch, size: 4, type: float32, units: ''}
-  - {Name: Roll, size: 4, type: float32, units: ''}
-  - {Name: Current Accel, size: 4, type: int32, units: ''}
-  - {Name: Current Velocity, size: 4, type: int32, units: ''}
-  - {Name: Previous Velocity, size: 4, type: int32, units: ''}
-  - {Name: Current Displacement, size: 4, type: int32, units: ''}
-  - {Name: Previous Displacement, endLoop: true, size: 4, type: int32, units: ''}
+  - {Name: 1 Flags, size: 4, type: uint32, units: ''}
+  - {Name: 1 X Raw, size: 2, type: int16, units: ''}
+  - {Name: 1 Y Raw, size: 2, type: int16, units: ''}
+  - {Name: 1 Z Raw, size: 2, type: int16, units: ''}
+  - {Name: 1 X Gs, size: 4, type: float32, units: ''}
+  - {Name: 1 Y Gs, size: 4, type: float32, units: ''}
+  - {Name: 1 Z Gs, size: 4, type: float32, units: ''}
+  - {Name: 1 Pitch, size: 4, type: float32, units: ''}
+  - {Name: 1 Roll, size: 4, type: float32, units: ''}
+  - {Name: 1 Current Accel, size: 4, type: int32, units: ''}
+  - {Name: 1 Current Velocity, size: 4, type: int32, units: ''}
+  - {Name: 1 Previous Velocity, size: 4, type: int32, units: ''}
+  - {Name: 1 Current Displacement, size: 4, type: int32, units: ''}
+  - {Name: 1 Previous Displacement, size: 4, type: int32, units: ''}
+  - {Name: 2 Flags, size: 4, type: uint32, units: ''}
+  - {Name: 2 X Raw, size: 2, type: int16, units: ''}
+  - {Name: 2 Y Raw, size: 2, type: int16, units: ''}
+  - {Name: 2 Z Raw, size: 2, type: int16, units: ''}
+  - {Name: 2 X Gs, size: 4, type: float32, units: ''}
+  - {Name: 2 Y Gs, size: 4, type: float32, units: ''}
+  - {Name: 2 Z Gs, size: 4, type: float32, units: ''}
+  - {Name: 2 Pitch, size: 4, type: float32, units: ''}
+  - {Name: 2 Roll, size: 4, type: float32, units: ''}
+  - {Name: 2 Current Accel, size: 4, type: int32, units: ''}
+  - {Name: 2 Current Velocity, size: 4, type: int32, units: ''}
+  - {Name: 2 Previous Velocity, size: 4, type: int32, units: ''}
+  - {Name: 2 Current Displacement, size: 4, type: int32, units: ''}
+  - {Name: 2 Previous Displacement, size: 4, type: int32, units: ''}
 - DAQ: false
   Name: Forward Laser Distance Sensor
   Node: Flight Control

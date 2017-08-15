@@ -15,48 +15,56 @@ packets:
     prefix: 'Accel'
     packetType: 0x1001
     parameters:
-      - name: 'Flags'
+      - name: '{i} Flags'
         type: 'uint32'
-        beginLoop: true
-      - name: 'X Raw'
+        iterate:
+          beginGroup: true
+      - name: '{i} X Raw'
         type: 'int16'
-      - name: 'Y Raw'
+      - name: '{i} Y Raw'
         type: 'int16'
-      - name: 'Z Raw'
+      - name: '{i} Z Raw'
         type: 'int16'
-        endLoop: true
+        iterate:
+          start: 1
+          end: 2
+          endGroup: true
 
   - packetName: 'Accel Data Full'
     prefix: 'Accel'
     packetType: 0x1003
     parameters:
-      - name: 'Flags'
+      - name: '{i} Flags'
         type: 'uint32'
-        beginLoop: true
-      - name: 'X Raw'
+        iterate:
+          beginGroup: true
+      - name: '{i} X Raw'
         type: 'int16'
-      - name: 'Y Raw'
+      - name: '{i} Y Raw'
         type: 'int16'
-      - name: 'Z Raw'
+      - name: '{i} Z Raw'
         type: 'int16'
-      - name: 'X Gs'
+      - name: '{i} X Gs'
         type: 'float32'
-      - name: 'Y Gs'
+      - name: '{i} Y Gs'
         type: 'float32'
-      - name: 'Z Gs'
+      - name: '{i} Z Gs'
         type: 'float32'
-      - name: 'Pitch'
+      - name: '{i} Pitch'
         type: 'float32'
-      - name: 'Roll'
+      - name: '{i} Roll'
         type: 'float32'
-      - name: 'Current Accel'
+      - name: '{i} Current Accel'
         type: 'int32'
-      - name: 'Current Velocity'
+      - name: '{i} Current Velocity'
         type: 'int32'
-      - name: 'Previous Velocity'
+      - name: '{i} Previous Velocity'
         type: 'int32'
-      - name: 'Current Displacement'
+      - name: '{i} Current Displacement'
         type: 'int32'
-      - name: 'Previous Displacement'
+      - name: '{i} Previous Displacement'
         type: 'int32'
-        endLoop: true
+        iterate:
+          start: 1
+          end: 2
+          endGroup: true
