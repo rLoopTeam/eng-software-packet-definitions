@@ -308,7 +308,7 @@
         },
         {
             "Name": "LGU ADC Calibration",
-            "PacketType": 28674,
+            "PacketType": 28675,
             "Node": "Landing Gear",
             "DAQ": false,
             "ParameterPrefix": "ADC ",
@@ -1566,6 +1566,21 @@
             ]
         },
         {
+            "Name": "AuxProp Data",
+            "PacketType": 8451,
+            "Node": "Aux Prop Controller",
+            "DAQ": false,
+            "ParameterPrefix": "AuxProp ",
+            "Parameters": [
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Fault Flags"
+                }
+            ]
+        },
+        {
             "Name": "Accel Cal Full",
             "PacketType": 4097,
             "Node": "Flight Control",
@@ -2194,21 +2209,6 @@
             "Node": "Power Node B",
             "DAQ": false,
             "ParameterPrefix": "Power B Cooling ",
-            "Parameters": [
-                {
-                    "type": "uint32",
-                    "units": "",
-                    "size": 4,
-                    "Name": "Fault Flags"
-                }
-            ]
-        },
-        {
-            "Name": "AuxProp Data",
-            "PacketType": 8451,
-            "Node": "Aux Prop Controller",
-            "DAQ": false,
-            "ParameterPrefix": "AuxProp ",
             "Parameters": [
                 {
                     "type": "uint32",

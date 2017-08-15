@@ -1,0 +1,2 @@
+class HexInt(int):
+    pass

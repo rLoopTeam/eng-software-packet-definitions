@@ -11,7 +11,7 @@ ASI Data:
   - {Name: HE RPM, size: 2, type: uint16, units: ''}
   - {Name: Throttle V, endLoop: true, size: 4, type: float32, units: ''}
   prefix: ASI
-  type: 5889
+  type: 0x1701
 Accel Cal Full:
   node: Flight Control
   parameters:
@@ -20,7 +20,7 @@ Accel Cal Full:
   - {Name: Y Raw, size: 2, type: int16, units: ''}
   - {Name: Z Raw, endLoop: true, size: 2, type: int16, units: ''}
   prefix: Accel
-  type: 4097
+  type: 0x1001
 Accel Data Full:
   node: Flight Control
   parameters:
@@ -39,20 +39,20 @@ Accel Data Full:
   - {Name: Current Displacement, size: 4, type: int32, units: ''}
   - {Name: Previous Displacement, endLoop: true, size: 4, type: int32, units: ''}
   prefix: Accel
-  type: 4099
+  type: 0x1003
 Auto-sequence test:
   node: Flight Control
   parameters:
   - {Name: State, size: 4, type: uint32, units: ''}
   - {Name: Status, size: 1, type: uint8, units: ''}
   prefix: Auto-test
-  type: 6401
+  type: 0x1901
 AuxProp Data:
   node: Aux Prop Controller
   parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
   prefix: AuxProp
-  type: 8451
+  type: 0x2103
 Brake Data:
   node: Flight Control
   parameters:
@@ -103,85 +103,85 @@ Brake Data:
   - {Name: State, size: 1, type: uint8, units: ''}
   - {Name: Calibration State, size: 1, type: uint8, units: ''}
   prefix: Brake
-  type: 5122
+  type: 0x1402
 FCU DAQ ACCEL 0 ACCEL:
   daq: {type: int32}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16391
+  type: 0x4007
 FCU DAQ ACCEL 0 DISPLACEMENT:
   daq: {type: int32}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16393
+  type: 0x4009
 FCU DAQ ACCEL 0 VELOCITY:
   daq: {type: int32}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16392
+  type: 0x4008
 FCU DAQ ACCEL 0 X:
   daq: {type: int16}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16385
+  type: 0x4001
 FCU DAQ ACCEL 0 Y:
   daq: {type: int16}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16386
+  type: 0x4002
 FCU DAQ ACCEL 0 Z:
   daq: {type: int16}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16387
+  type: 0x4003
 FCU DAQ ACCEL 1 ACCEL:
   daq: {type: int32}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16394
+  type: 0x400a
 FCU DAQ ACCEL 1 DISPLACEMENT:
   daq: {type: int32}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16397
+  type: 0x400d
 FCU DAQ ACCEL 1 VELOCITY:
   daq: {type: int32}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16396
+  type: 0x400c
 FCU DAQ ACCEL 1 X:
   daq: {type: int16}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16388
+  type: 0x4004
 FCU DAQ ACCEL 1 Y:
   daq: {type: int16}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16389
+  type: 0x4005
 FCU DAQ ACCEL 1 Z:
   daq: {type: int16}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16390
+  type: 0x4006
 FCU DAQ CPU LOAD:
   daq: {type: uint8}
   node: Flight Control
   parameters: []
   prefix: ''
-  type: 16384
+  type: 0x4000
 Forward Laser Distance Sensor:
   node: Flight Control
   parameters:
@@ -197,7 +197,7 @@ Forward Laser Distance Sensor:
   - {Name: Bad Distance, size: 4, type: uint32, units: ''}
   - {Name: Error Code, size: 4, type: uint32, units: ''}
   prefix: ForwardLaser
-  type: 4609
+  type: 0x1201
 LGU ADC Calibration:
   node: Landing Gear
   parameters:
@@ -242,7 +242,7 @@ LGU ADC Calibration:
   - {Name: Spare 3_4, size: 4, type: uint32, units: ''}
   - {Name: Spare 4_4, size: 4, type: uint32, units: ''}
   prefix: ADC
-  type: 28674
+  type: 0x7003
 LGU Status:
   node: Landing Gear
   parameters:
@@ -288,7 +288,7 @@ LGU Status:
   - {Name: Spare 3_4, size: 4, type: uint32, units: ''}
   - {Name: Spare 4_4, size: 4, type: uint32, units: ''}
   prefix: LGU
-  type: 28674
+  type: 0x7002
 Laser Contrast 0:
   node: Flight Control
   parameters:
@@ -412,7 +412,7 @@ Laser Contrast 0:
   - {Name: Fall 53, size: 8, type: uint64, units: ns}
   - {Name: Fall 54, size: 8, type: uint64, units: ns}
   prefix: LaserContrast0
-  type: 4865
+  type: 0x1301
 Laser Opto Sensor:
   node: Flight Control
   parameters:
@@ -425,7 +425,7 @@ Laser Opto Sensor:
   - {Name: Filtered value, size: 4, type: float32, units: ''}
   - {Name: Spare, endLoop: true, size: 4, type: uint32, units: ''}
   prefix: LaserOpto
-  type: 4353
+  type: 0x1101
 Motor Parameters:
   node: Flight Control
   parameters:
@@ -441,7 +441,7 @@ Motor Parameters:
   - {Name: Max Angular Velocity 2, size: 4, type: int32, units: ''}
   - {Name: Compare Timer, size: 1, type: uint8, units: ''}
   prefix: Motor
-  type: 5126
+  type: 0x1406
 Power A BMS:
   node: Power Node A
   parameters:
@@ -498,13 +498,13 @@ Power A BMS:
   - {Name: Temp Scan Count, size: 4, type: uint32, units: ''}
   - {Name: Pack Current, size: 4, type: float32, units: ''}
   prefix: Power A BMS
-  type: 13317
+  type: 0x3405
 Power A Cooling:
   node: Power Node A
   parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
   prefix: Power A Cooling
-  type: 13825
+  type: 0x3601
 Power A Current Temps:
   node: Power Node A
   parameters:
@@ -512,7 +512,7 @@ Power A Current Temps:
   - {Name: Spare, size: 2, type: uint16, units: RAW}
   - {Name: Temperature, beginLoop: true, endLoop: true, size: 4, type: float32, units: C}
   prefix: Power A Temps
-  type: 12801
+  type: 0x3201
 Power A ROM ID:
   node: Power Node A
   parameters:
@@ -520,7 +520,7 @@ Power A ROM ID:
   - {Name: Hi, size: 2, type: uint16, units: ''}
   - {Name: Lo, size: 2, type: uint16, units: ''}
   prefix: Power A ROM
-  type: 12805
+  type: 0x3205
 Power A Temps Locations:
   node: Power Node A
   parameters:
@@ -530,7 +530,7 @@ Power A Temps Locations:
   - {Name: Resolution, size: 1, type: uint8, units: ''}
   - {Name: Bus Index, endLoop: true, size: 1, type: uint8, units: ''}
   prefix: Power A Temps Loc
-  type: 12803
+  type: 0x3203
 Power B BMS:
   node: Power Node B
   parameters:
@@ -587,13 +587,13 @@ Power B BMS:
   - {Name: Temp Scan Count, size: 4, type: uint32, units: ''}
   - {Name: Pack Current, size: 4, type: float32, units: ''}
   prefix: Power B BMS
-  type: 13317
+  type: 0x3405
 Power B Cooling:
   node: Power Node B
   parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
   prefix: Power B Cooling
-  type: 13825
+  type: 0x3601
 Power B Current Temps:
   node: Power Node B
   parameters:
@@ -601,7 +601,7 @@ Power B Current Temps:
   - {Name: Spare, size: 2, type: uint16, units: RAW}
   - {Name: Temperature, beginLoop: true, endLoop: true, size: 4, type: float32, units: C}
   prefix: Power B Temps
-  type: 12801
+  type: 0x3201
 Power B ROM ID:
   node: Power Node B
   parameters:
@@ -609,7 +609,7 @@ Power B ROM ID:
   - {Name: Hi, size: 2, type: uint16, units: ''}
   - {Name: Lo, size: 2, type: uint16, units: ''}
   prefix: Power B ROM
-  type: 12805
+  type: 0x3205
 Power B Temps Locations:
   node: Power Node B
   parameters:
@@ -619,7 +619,7 @@ Power B Temps Locations:
   - {Name: Resolution, size: 1, type: uint8, units: ''}
   - {Name: Bus Index, endLoop: true, size: 1, type: uint8, units: ''}
   prefix: Power B Temps Loc
-  type: 12803
+  type: 0x3203
 Pusher Data:
   node: Flight Control
   parameters:
@@ -631,7 +631,7 @@ Pusher Data:
   - {Name: Switch State 2, size: 1, type: uint8, units: ''}
   - {Name: Switch Timer, size: 4, type: uint32, units: ''}
   prefix: Pusher
-  type: 6145
+  type: 0x1801
 Throttle Parameters:
   node: Flight Control
   parameters:
@@ -665,8 +665,8 @@ Throttle Parameters:
   - {Name: Current Index, size: 1, type: uint8, units: ''}
   - {Name: AMC State, size: 1, type: uint8, units: ''}
   prefix: Throttle
-  type: 5379
+  type: 0x1503
 _comment: This file was automatically generated by eng-software-packet-definitions.
   All changes you intend to make to this file should be made into that project instead.
-_gentime: '2017-08-14T11:30:47.659637'
+_gentime: '2017-08-15T04:19:37.229886'
 _version: 2

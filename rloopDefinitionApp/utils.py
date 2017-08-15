@@ -50,3 +50,10 @@ def get_size(packet_type: str) -> int:
         ))
 
     return PACKET_SIZES[packet_type.lower()]
+
+
+def dump_hexint(dumper, data):
+    """
+        Dumps a HexInt integer into YAML hex.
+    """
+    return dumper.represent_int(hex(data))

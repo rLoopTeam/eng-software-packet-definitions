@@ -5,6 +5,7 @@ import jsonschema
 
 from rloopDefinitionApp.model.schemas import (DAQ_SCHEMA, PACKET_SCHEMA,
                                               PARAM_SCHEMA)
+from rloopDefinitionApp.model.types import HexInt
 from rloopDefinitionApp.utils import get_size
 
 log = logging.getLogger(__name__)
@@ -24,7 +25,7 @@ class Packet:
     ):
         self.name = name
         self.node = node
-        self.packet_type = packet_type
+        self.packet_type = HexInt(packet_type)
         self.prefix = prefix
         self.parameters = parameters or []
         self.daq = daq

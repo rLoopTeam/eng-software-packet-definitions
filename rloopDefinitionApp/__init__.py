@@ -9,7 +9,8 @@ import yaml
 from rloopDefinitionApp.exporters import ALL_EXPORTERS
 from rloopDefinitionApp.model.packet import Packet
 from rloopDefinitionApp.model.schemas import PACKET_LIST_SCHEMA
-from rloopDefinitionApp.utils import get_packet_files, md5
+from rloopDefinitionApp.model.types import HexInt
+from rloopDefinitionApp.utils import dump_hexint, get_packet_files, md5
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -31,6 +32,12 @@ class DefinitionGenerator:
         self.input_folder = input_folder
         self.output_folder = output_folder
         self.file_sums_json = os.path.join(self.output_folder, "file_sums.json")
+
+        # Setup logic
+        self.before_work()
+
+    def before_work(self):
+        yaml.add_representer(HexInt, dump_hexint)
 
     def load(self, file_name: str) -> None:
         """

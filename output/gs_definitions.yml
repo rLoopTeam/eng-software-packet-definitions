@@ -2,7 +2,7 @@ packetDefinitions:
 - DAQ: false
   Name: Pusher Data
   Node: Flight Control
-  PacketType: 6145
+  PacketType: 0x1801
   ParameterPrefix: 'Pusher '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
@@ -15,7 +15,7 @@ packetDefinitions:
 - DAQ: false
   Name: LGU Status
   Node: Landing Gear
-  PacketType: 28674
+  PacketType: 0x7002
   ParameterPrefix: 'LGU '
   Parameters:
   - {Name: Fault Flags Root, size: 4, type: uint32, units: ''}
@@ -62,7 +62,7 @@ packetDefinitions:
 - DAQ: false
   Name: LGU ADC Calibration
   Node: Landing Gear
-  PacketType: 28674
+  PacketType: 0x7003
   ParameterPrefix: 'ADC '
   Parameters:
   - {Name: Value 1, size: 2, type: uint16, units: ''}
@@ -108,7 +108,7 @@ packetDefinitions:
 - DAQ: false
   Name: Laser Contrast 0
   Node: Flight Control
-  PacketType: 4865
+  PacketType: 0x1301
   ParameterPrefix: 'LaserContrast0 '
   Parameters:
   - {Name: System Fault Flags, size: 4, type: uint32, units: ''}
@@ -230,36 +230,36 @@ packetDefinitions:
   - {Name: Fall 52, size: 8, type: uint64, units: ns}
   - {Name: Fall 53, size: 8, type: uint64, units: ns}
   - {Name: Fall 54, size: 8, type: uint64, units: ns}
-- {DAQ: true, Name: FCU DAQ CPU LOAD, Node: Flight Control, PacketType: 16384, dataSize: 1,
+- {DAQ: true, Name: FCU DAQ CPU LOAD, Node: Flight Control, PacketType: 0x4000, dataSize: 1,
   dataType: uint8}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 X, Node: Flight Control, PacketType: 16385, dataSize: 2,
+- {DAQ: true, Name: FCU DAQ ACCEL 0 X, Node: Flight Control, PacketType: 0x4001, dataSize: 2,
   dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 Y, Node: Flight Control, PacketType: 16386, dataSize: 2,
+- {DAQ: true, Name: FCU DAQ ACCEL 0 Y, Node: Flight Control, PacketType: 0x4002, dataSize: 2,
   dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 Z, Node: Flight Control, PacketType: 16387, dataSize: 2,
+- {DAQ: true, Name: FCU DAQ ACCEL 0 Z, Node: Flight Control, PacketType: 0x4003, dataSize: 2,
   dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 X, Node: Flight Control, PacketType: 16388, dataSize: 2,
+- {DAQ: true, Name: FCU DAQ ACCEL 1 X, Node: Flight Control, PacketType: 0x4004, dataSize: 2,
   dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 Y, Node: Flight Control, PacketType: 16389, dataSize: 2,
+- {DAQ: true, Name: FCU DAQ ACCEL 1 Y, Node: Flight Control, PacketType: 0x4005, dataSize: 2,
   dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 Z, Node: Flight Control, PacketType: 16390, dataSize: 2,
+- {DAQ: true, Name: FCU DAQ ACCEL 1 Z, Node: Flight Control, PacketType: 0x4006, dataSize: 2,
   dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 ACCEL, Node: Flight Control, PacketType: 16391,
+- {DAQ: true, Name: FCU DAQ ACCEL 0 ACCEL, Node: Flight Control, PacketType: 0x4007,
   dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 VELOCITY, Node: Flight Control, PacketType: 16392,
+- {DAQ: true, Name: FCU DAQ ACCEL 0 VELOCITY, Node: Flight Control, PacketType: 0x4008,
   dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 DISPLACEMENT, Node: Flight Control, PacketType: 16393,
+- {DAQ: true, Name: FCU DAQ ACCEL 0 DISPLACEMENT, Node: Flight Control, PacketType: 0x4009,
   dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 ACCEL, Node: Flight Control, PacketType: 16394,
+- {DAQ: true, Name: FCU DAQ ACCEL 1 ACCEL, Node: Flight Control, PacketType: 0x400a,
   dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 VELOCITY, Node: Flight Control, PacketType: 16396,
+- {DAQ: true, Name: FCU DAQ ACCEL 1 VELOCITY, Node: Flight Control, PacketType: 0x400c,
   dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 DISPLACEMENT, Node: Flight Control, PacketType: 16397,
+- {DAQ: true, Name: FCU DAQ ACCEL 1 DISPLACEMENT, Node: Flight Control, PacketType: 0x400d,
   dataSize: 4, dataType: int32}
 - DAQ: false
   Name: Throttle Parameters
   Node: Flight Control
-  PacketType: 5379
+  PacketType: 0x1503
   ParameterPrefix: 'Throttle '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
@@ -292,9 +292,16 @@ packetDefinitions:
   - {Name: Current Index, size: 1, type: uint8, units: ''}
   - {Name: AMC State, size: 1, type: uint8, units: ''}
 - DAQ: false
+  Name: AuxProp Data
+  Node: Aux Prop Controller
+  PacketType: 0x2103
+  ParameterPrefix: 'AuxProp '
+  Parameters:
+  - {Name: Fault Flags, size: 4, type: uint32, units: ''}
+- DAQ: false
   Name: Accel Cal Full
   Node: Flight Control
-  PacketType: 4097
+  PacketType: 0x1001
   ParameterPrefix: 'Accel '
   Parameters:
   - {Name: Flags, beginLoop: true, size: 4, type: uint32, units: ''}
@@ -304,7 +311,7 @@ packetDefinitions:
 - DAQ: false
   Name: Accel Data Full
   Node: Flight Control
-  PacketType: 4099
+  PacketType: 0x1003
   ParameterPrefix: 'Accel '
   Parameters:
   - {Name: Flags, beginLoop: true, size: 4, type: uint32, units: ''}
@@ -324,7 +331,7 @@ packetDefinitions:
 - DAQ: false
   Name: Forward Laser Distance Sensor
   Node: Flight Control
-  PacketType: 4609
+  PacketType: 0x1201
   ParameterPrefix: 'ForwardLaser '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
@@ -341,7 +348,7 @@ packetDefinitions:
 - DAQ: false
   Name: Power B Current Temps
   Node: Power Node B
-  PacketType: 12801
+  PacketType: 0x3201
   ParameterPrefix: 'Power B Temps '
   Parameters:
   - {Name: Count, size: 2, type: uint16, units: ''}
@@ -350,7 +357,7 @@ packetDefinitions:
 - DAQ: false
   Name: Power B Temps Locations
   Node: Power Node B
-  PacketType: 12803
+  PacketType: 0x3203
   ParameterPrefix: 'Power B Temps Loc '
   Parameters:
   - {Name: Number of Temps, size: 2, type: uint16, units: ''}
@@ -361,7 +368,7 @@ packetDefinitions:
 - DAQ: false
   Name: Power B ROM ID
   Node: Power Node B
-  PacketType: 12805
+  PacketType: 0x3205
   ParameterPrefix: 'Power B ROM '
   Parameters:
   - {Name: Index, size: 4, type: uint32, units: ''}
@@ -370,7 +377,7 @@ packetDefinitions:
 - DAQ: false
   Name: Power B BMS
   Node: Power Node B
-  PacketType: 13317
+  PacketType: 0x3405
   ParameterPrefix: 'Power B BMS '
   Parameters:
   - {Name: Faults, size: 4, type: uint32, units: ''}
@@ -428,21 +435,14 @@ packetDefinitions:
 - DAQ: false
   Name: Power B Cooling
   Node: Power Node B
-  PacketType: 13825
+  PacketType: 0x3601
   ParameterPrefix: 'Power B Cooling '
-  Parameters:
-  - {Name: Fault Flags, size: 4, type: uint32, units: ''}
-- DAQ: false
-  Name: AuxProp Data
-  Node: Aux Prop Controller
-  PacketType: 8451
-  ParameterPrefix: 'AuxProp '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
 - DAQ: false
   Name: Brake Data
   Node: Flight Control
-  PacketType: 5122
+  PacketType: 0x1402
   ParameterPrefix: 'Brake '
   Parameters:
   - {Name: Fault Flags 1, size: 4, type: uint32, units: A}
@@ -494,7 +494,7 @@ packetDefinitions:
 - DAQ: false
   Name: Motor Parameters
   Node: Flight Control
-  PacketType: 5126
+  PacketType: 0x1406
   ParameterPrefix: 'Motor '
   Parameters:
   - {Name: Microstep Resolution 1, size: 4, type: uint32, units: ''}
@@ -511,7 +511,7 @@ packetDefinitions:
 - DAQ: false
   Name: Power A Current Temps
   Node: Power Node A
-  PacketType: 12801
+  PacketType: 0x3201
   ParameterPrefix: 'Power A Temps '
   Parameters:
   - {Name: Count, size: 2, type: uint16, units: ''}
@@ -520,7 +520,7 @@ packetDefinitions:
 - DAQ: false
   Name: Power A Temps Locations
   Node: Power Node A
-  PacketType: 12803
+  PacketType: 0x3203
   ParameterPrefix: 'Power A Temps Loc '
   Parameters:
   - {Name: Number of Temps, size: 2, type: uint16, units: ''}
@@ -531,7 +531,7 @@ packetDefinitions:
 - DAQ: false
   Name: Power A ROM ID
   Node: Power Node A
-  PacketType: 12805
+  PacketType: 0x3205
   ParameterPrefix: 'Power A ROM '
   Parameters:
   - {Name: Index, size: 4, type: uint32, units: ''}
@@ -540,7 +540,7 @@ packetDefinitions:
 - DAQ: false
   Name: Power A BMS
   Node: Power Node A
-  PacketType: 13317
+  PacketType: 0x3405
   ParameterPrefix: 'Power A BMS '
   Parameters:
   - {Name: Faults, size: 4, type: uint32, units: ''}
@@ -598,14 +598,14 @@ packetDefinitions:
 - DAQ: false
   Name: Power A Cooling
   Node: Power Node A
-  PacketType: 13825
+  PacketType: 0x3601
   ParameterPrefix: 'Power A Cooling '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
 - DAQ: false
   Name: ASI Data
   Node: ASI Monitor System
-  PacketType: 5889
+  PacketType: 0x1701
   ParameterPrefix: 'ASI '
   Parameters:
   - {Name: Fault Flags Root, size: 4, type: uint32, units: ''}
@@ -620,7 +620,7 @@ packetDefinitions:
 - DAQ: false
   Name: Auto-sequence test
   Node: Flight Control
-  PacketType: 6401
+  PacketType: 0x1901
   ParameterPrefix: 'Auto-test '
   Parameters:
   - {Name: State, size: 4, type: uint32, units: ''}
@@ -628,7 +628,7 @@ packetDefinitions:
 - DAQ: false
   Name: Laser Opto Sensor
   Node: Flight Control
-  PacketType: 4353
+  PacketType: 0x1101
   ParameterPrefix: 'LaserOpto '
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
