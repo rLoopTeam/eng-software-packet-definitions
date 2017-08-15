@@ -728,6 +728,16 @@ packetDefinitions:
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
 - DAQ: false
+  Name: FCU Data
+  Node: Flight Control
+  PacketType: 0x200
+  ParameterPrefix: ''
+  Parameters:
+  - {Name: All Flags, size: 4, type: uint32, units: ''}
+  - {Name: Mission State, size: 2, type: uint16, units: ''}
+  - {Name: Mission TrackDB, size: 1, type: uint8, units: ''}
+  - {Name: Pod Health Fault Flags, size: 4, type: uint32, units: ''}
+- DAQ: false
   Name: All Fault Flags
   Node: Flight Control
   PacketType: 0x300

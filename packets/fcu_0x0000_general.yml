@@ -8,6 +8,8 @@ podSources:
   - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/fcu_core__enums.h
   # 0x000 TX_ALL_FAULT_FLAGS
   - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/FAULTS/fcu__faults__ethernet.c
+  # FCU Data
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/FLIGHT_CONTROLLER/ETHERNET/fcu__fctl__ethernet.c
   # Lone pod health file
   - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/POD_HEALTH/fcu__pod_health.c
   # All fault flag files :o
@@ -46,6 +48,19 @@ podSources:
   - FIRMWARE/COMMON_CODE/RM4/LCCM219__RM4__SYSTEM/rm4_system__fault_flags.h
 
 packets:
+  - packetName: 'FCU Data'
+    prefix: ''
+    packetType: 0x0200
+    parameters:
+      - name: 'All Flags'
+        type: 'uint32'
+      - name: 'Mission State'
+        type: 'uint16'
+      - name: 'Mission TrackDB'
+        type: 'uint8'
+      - name: 'Pod Health Fault Flags'
+        type: 'uint32'
+
   - packetName: 'All Fault Flags'
     prefix: ''
     packetType: 0x0300
