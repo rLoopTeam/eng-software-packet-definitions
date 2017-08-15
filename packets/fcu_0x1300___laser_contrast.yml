@@ -47,3 +47,81 @@ packets:
         iterate:
           end: 55
           inclusive: false
+
+  - packetName: 'Laser Contrast 1'
+    prefix: 'LaserContrast1'
+    packetType: 0x1302
+    parameters:
+      - name: 'System Fault Flags'
+        type: 'uint32'
+      - name: 'Spare 1'
+        type: 'uint32'
+      - name: 'Spare 2'
+        type: 'uint32'
+      - name: 'Spare 3'
+        type: 'uint32'
+      - name: 'Spare 4'
+        type: 'uint32'
+
+      - name: 'Laser Fault Flags'
+        type: 'uint32'
+
+      - name: 'Rising Count'
+        type: 'uint16'
+      - name: 'Falling Count'
+        type: 'uint16'
+      - name: 'Max Stripes'
+        type: 'uint16'
+
+      # 55 stripes
+      - name: 'Rise {i}'
+        type: 'uint64'
+        units: 'ns'
+        iterate:
+          end: 55
+          inclusive: false
+      - name: 'Fall {i}'
+        type: 'uint64'
+        units: 'ns'
+        iterate:
+          end: 55
+          inclusive: false
+
+  - packetName: 'Laser Contrast 2'
+    prefix: 'LaserContrast2'
+    packetType: 0x1303
+    parameters:
+      - name: 'System Fault Flags'
+        type: 'uint32'
+      - name: 'Spare 1'
+        type: 'uint32'
+      - name: 'Spare 2'
+        type: 'uint32'
+      - name: 'Spare 3'
+        type: 'uint32'
+      - name: 'Spare 4'
+        type: 'uint32'
+
+      - name: 'Laser Fault Flags'
+        type: 'uint32'
+
+      - name: 'Rising Count'
+        type: 'uint16'
+      - name: 'Falling Count'
+        type: 'uint16'
+      - name: 'Max Stripes'
+        type: 'uint16'
+
+      # 55 stripes
+      - name: 'Rise {i}'
+        type: 'uint64'
+        units: 'ns'
+        iterate:
+          end: 55
+          inclusive: false
+      - name: 'Fall {i}'
+        type: 'uint64'
+        units: 'ns'
+        iterate:
+          end: 55
+          inclusive: false
