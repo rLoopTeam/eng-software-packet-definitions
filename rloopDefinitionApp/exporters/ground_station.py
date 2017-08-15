@@ -17,6 +17,10 @@ class GroundStation(Exporter):
             output.update({
                 "ParameterPrefix": packet.prefix + " ",
             })
+        elif not packet.daq and packet.prefix == "":
+            output.update({
+                "ParameterPrefix": "",
+            })
 
         if packet.daq:
             output.update({

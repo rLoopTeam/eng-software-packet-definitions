@@ -728,6 +728,49 @@ packetDefinitions:
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
 - DAQ: false
+  Name: All Fault Flags
+  Node: Flight Control
+  PacketType: 0x300
+  ParameterPrefix: ''
+  Parameters:
+  - {Name: All Flags, size: 4, type: uint32, units: ''}
+  - {Name: Accel Flags, size: 4, type: uint32, units: ''}
+  - {Name: Accel 1 Flags, size: 4, type: uint32, units: ''}
+  - {Name: Accel 2 Flags, size: 4, type: uint32, units: ''}
+  - {Name: SC16 1 Flags, size: 4, type: uint32, units: ''}
+  - {Name: SC16 2 Flags, size: 4, type: uint32, units: ''}
+  - {Name: SC16 3 Flags, size: 4, type: uint32, units: ''}
+  - {Name: SC16 4 Flags, size: 4, type: uint32, units: ''}
+  - {Name: SC16 5 Flags, size: 4, type: uint32, units: ''}
+  - {Name: SC16 6 Flags, size: 4, type: uint32, units: ''}
+  - {Name: SC16 7 Flags, size: 4, type: uint32, units: ''}
+  - {Name: SC16 8 Flags, size: 4, type: uint32, units: ''}
+  - {Name: ASI Fault Flags Root, size: 4, type: uint32, units: ''}
+  - {Name: Brake Fault Flags 1, size: 4, type: uint32, units: ''}
+  - {Name: DAQ Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserContrast0 System Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserContrast0 Laser Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserContrast1 Laser Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserContrast2 Laser Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: ForwardLaser Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserOpto Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserOpto 1 Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserOpto 2 Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserOpto 3 Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserOpto 4 Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserOpto 5 Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: LaserOpto 6 Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Networking Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Pusher Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Throttle AMC Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Throttle Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Pod Health Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Spare 1 Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Spare 2 Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Spare 3 Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: FCU Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: TrackDB Fault Flags, size: 4, type: uint32, units: ''}
+- DAQ: false
   Name: Brake Data
   Node: Flight Control
   PacketType: 0x1402
