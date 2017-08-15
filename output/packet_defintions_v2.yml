@@ -736,24 +736,24 @@ Power A BMS:
   - {Name: 16 Module Spare, size: 4, type: float32, units: ''}
   - {Name: 17 Module Spare, size: 4, type: float32, units: ''}
   - {Name: 18 Module Spare, size: 4, type: float32, units: ''}
-  - {Name: 1 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 2 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 3 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 4 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 5 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 6 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 7 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 8 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 9 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 10 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 11 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 12 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 13 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 14 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 15 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 16 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 17 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 18 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 1 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 2 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 3 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 4 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 5 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 6 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 7 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 8 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 9 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 10 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 11 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 12 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 13 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 14 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 15 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 16 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 17 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 18 Module Resistor, size: 1, type: uint8, units: ''}
   - {Name: Voltage Updates, size: 4, type: uint32, units: ''}
   - {Name: Battery Spare, size: 4, type: uint32, units: ''}
   - {Name: Charger State, size: 1, type: uint8, units: ''}
@@ -845,24 +845,24 @@ Power B BMS:
   - {Name: 16 Module Spare, size: 4, type: float32, units: ''}
   - {Name: 17 Module Spare, size: 4, type: float32, units: ''}
   - {Name: 18 Module Spare, size: 4, type: float32, units: ''}
-  - {Name: 1 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 2 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 3 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 4 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 5 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 6 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 7 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 8 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 9 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 10 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 11 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 12 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 13 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 14 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 15 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 16 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 17 Module Resistor, size: 4, type: float32, units: ''}
-  - {Name: 18 Module Resistor, size: 4, type: float32, units: ''}
+  - {Name: 1 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 2 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 3 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 4 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 5 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 6 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 7 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 8 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 9 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 10 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 11 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 12 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 13 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 14 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 15 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 16 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 17 Module Resistor, size: 1, type: uint8, units: ''}
+  - {Name: 18 Module Resistor, size: 1, type: uint8, units: ''}
   - {Name: Voltage Updates, size: 4, type: uint32, units: ''}
   - {Name: Battery Spare, size: 4, type: uint32, units: ''}
   - {Name: Charger State, size: 1, type: uint8, units: ''}
@@ -956,5 +956,5 @@ Throttle Parameters:
   type: 0x1503
 _comment: This file was automatically generated by eng-software-packet-definitions.
   All changes you intend to make to this file should be made into that project instead.
-_gentime: '2017-08-15T07:35:58.129866'
+_gentime: '2017-08-15T07:44:15.550834'
 _version: 2
