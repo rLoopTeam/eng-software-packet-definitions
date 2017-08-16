@@ -33,6 +33,6 @@ packets:
         type: 'float32'
       - name: 'HE RPM'
         type: 'uint16'
-      - name: 'Throttle V'
+      - name: 'Throttle Voltage'
         type: 'float32'
         endLoop: true

@@ -5819,7 +5819,7 @@
                     "endLoop": true,
                     "units": "",
                     "size": 4,
-                    "Name": "Throttle V"
+                    "Name": "Throttle Voltage"
                 }
             ]
         },

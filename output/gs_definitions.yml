@@ -1097,7 +1097,7 @@ packetDefinitions:
   - {Name: Temperature, size: 4, type: float32, units: ''}
   - {Name: Motor Current, size: 4, type: float32, units: ''}
   - {Name: HE RPM, size: 2, type: uint16, units: ''}
-  - {Name: Throttle V, endLoop: true, size: 4, type: float32, units: ''}
+  - {Name: Throttle Voltage, endLoop: true, size: 4, type: float32, units: ''}
 - DAQ: false
   Name: Auto-sequence test
   Node: Flight Control
