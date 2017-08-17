@@ -15,9 +15,9 @@ def test_blank_node():
     assert 'must have a node' in str(excinfo.value)
 
 def test_blank_type_and_0x00():
-    with pytest.raises(ValueError) as excblank:
+    with pytest.raises(TypeError) as excblank:
         Packet("Packet Name", "Node", None, "", [], False)
-    assert 'must have a type' in str(excblank.value)
+    assert 'int() argument must be a' in str(excblank.value)
 
     with pytest.raises(ValueError) as exczero:
         Packet("Packet Name", "Node", 0x00, "", [], False)
