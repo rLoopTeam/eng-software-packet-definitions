@@ -1,0 +1,26 @@
+---
+node: 'IPS Charger'
+
+podSources:
+  # FCU packet types are in here.
+  - FIRMWARE/PROJECT_CODE/LCCM655__RLOOP__FCU_CORE/NETWORKING/fcu_core__net__packet_types.h
+
+packets:
+  - packetName: 'IPS Charger'
+    prefix: 'IPS Charger'
+    packetType: 0x9125
+    parameters:
+      - name: 'Current V'
+        type: 'float32'
+      - name: 'Current I'
+        type: 'float32'
+      - name: 'Float V SP'
+        type: 'float32'
+      - name: 'Bost V SP'
+        type: 'float32'
+      - name: 'Max Current SP'
+        type: 'float32'
+      - name: 'Boost to Float Current SP'
+        type: 'float32'
+      - name: 'Float to Boost Current SP'
+        type: 'float32'

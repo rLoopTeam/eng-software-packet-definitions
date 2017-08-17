@@ -1084,6 +1084,19 @@ packetDefinitions:
   Parameters:
   - {Name: Fault Flags, size: 4, type: uint32, units: ''}
 - DAQ: false
+  Name: IPS Charger
+  Node: IPS Charger
+  PacketType: 0x9125
+  ParameterPrefix: 'IPS Charger '
+  Parameters:
+  - {Name: Current V, size: 4, type: float32, units: ''}
+  - {Name: Current I, size: 4, type: float32, units: ''}
+  - {Name: Float V SP, size: 4, type: float32, units: ''}
+  - {Name: Bost V SP, size: 4, type: float32, units: ''}
+  - {Name: Max Current SP, size: 4, type: float32, units: ''}
+  - {Name: Boost to Float Current SP, size: 4, type: float32, units: ''}
+  - {Name: Float to Boost Current SP, size: 4, type: float32, units: ''}
+- DAQ: false
   Name: ASI Data
   Node: ASI Monitor System
   PacketType: 0x1701

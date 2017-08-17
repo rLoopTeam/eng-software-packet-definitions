@@ -5759,6 +5759,57 @@
             ]
         },
         {
+            "Name": "IPS Charger",
+            "PacketType": 37157,
+            "Node": "IPS Charger",
+            "DAQ": false,
+            "ParameterPrefix": "IPS Charger ",
+            "Parameters": [
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Current V"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Current I"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Float V SP"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Bost V SP"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Max Current SP"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Boost to Float Current SP"
+                },
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Float to Boost Current SP"
+                }
+            ]
+        },
+        {
             "Name": "ASI Data",
             "PacketType": 5889,
             "Node": "ASI Monitor System",
