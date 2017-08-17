@@ -480,6 +480,67 @@ packetDefinitions:
   - {Name: Fall 52, size: 8, type: uint64, units: ns}
   - {Name: Fall 53, size: 8, type: uint64, units: ns}
   - {Name: Fall 54, size: 8, type: uint64, units: ns}
+- {DAQ: true, Name: FCU DAQ CPU LOAD, Node: Flight Control, PacketType: 0x4000, dataSize: 1,
+  dataType: uint8}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 X, Node: Flight Control, PacketType: 0x4001, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 Y, Node: Flight Control, PacketType: 0x4002, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 Z, Node: Flight Control, PacketType: 0x4003, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 X, Node: Flight Control, PacketType: 0x4004, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 Y, Node: Flight Control, PacketType: 0x4005, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 Z, Node: Flight Control, PacketType: 0x4006, dataSize: 2,
+  dataType: int16}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 ACCEL, Node: Flight Control, PacketType: 0x4007,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 VELOCITY, Node: Flight Control, PacketType: 0x4008,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 0 DISPLACEMENT, Node: Flight Control, PacketType: 0x4009,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 ACCEL, Node: Flight Control, PacketType: 0x400a,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 VELOCITY, Node: Flight Control, PacketType: 0x400c,
+  dataSize: 4, dataType: int32}
+- {DAQ: true, Name: FCU DAQ ACCEL 1 DISPLACEMENT, Node: Flight Control, PacketType: 0x400d,
+  dataSize: 4, dataType: int32}
+- DAQ: false
+  Name: Throttle Parameters
+  Node: Flight Control
+  PacketType: 0x1503
+  ParameterPrefix: 'Throttle '
+  Parameters:
+  - {Name: Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: AMC Fault Flags, size: 4, type: uint32, units: ''}
+  - {Name: Requested RPM 1, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 2, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 3, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 4, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 5, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 6, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 7, size: 2, type: uint16, units: ''}
+  - {Name: Requested RPM 8, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 1, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 2, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 3, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 4, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 5, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 6, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 7, size: 2, type: uint16, units: ''}
+  - {Name: Current RPM 8, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 1, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 2, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 3, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 4, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 5, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 6, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 7, size: 2, type: uint16, units: ''}
+  - {Name: ASI RPM 8, size: 2, type: uint16, units: ''}
+  - {Name: State, size: 1, type: uint8, units: ''}
+  - {Name: Current Index, size: 1, type: uint8, units: ''}
+  - {Name: AMC State, size: 1, type: uint8, units: ''}
 - DAQ: false
   Name: HE Data
   Node: HE Thermal Monitor
@@ -600,67 +661,6 @@ packetDefinitions:
   - {Name: Left Overtemp State, size: 1, type: uint8, units: ''}
   - {Name: Right Overtemp State, size: 1, type: uint8, units: ''}
   - {Name: Brake Motor Overtemp State, size: 1, type: uint8, units: ''}
-- {DAQ: true, Name: FCU DAQ CPU LOAD, Node: Flight Control, PacketType: 0x4000, dataSize: 1,
-  dataType: uint8}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 X, Node: Flight Control, PacketType: 0x4001, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 Y, Node: Flight Control, PacketType: 0x4002, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 Z, Node: Flight Control, PacketType: 0x4003, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 X, Node: Flight Control, PacketType: 0x4004, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 Y, Node: Flight Control, PacketType: 0x4005, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 Z, Node: Flight Control, PacketType: 0x4006, dataSize: 2,
-  dataType: int16}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 ACCEL, Node: Flight Control, PacketType: 0x4007,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 VELOCITY, Node: Flight Control, PacketType: 0x4008,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 0 DISPLACEMENT, Node: Flight Control, PacketType: 0x4009,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 ACCEL, Node: Flight Control, PacketType: 0x400a,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 VELOCITY, Node: Flight Control, PacketType: 0x400c,
-  dataSize: 4, dataType: int32}
-- {DAQ: true, Name: FCU DAQ ACCEL 1 DISPLACEMENT, Node: Flight Control, PacketType: 0x400d,
-  dataSize: 4, dataType: int32}
-- DAQ: false
-  Name: Throttle Parameters
-  Node: Flight Control
-  PacketType: 0x1503
-  ParameterPrefix: 'Throttle '
-  Parameters:
-  - {Name: Fault Flags, size: 4, type: uint32, units: ''}
-  - {Name: AMC Fault Flags, size: 4, type: uint32, units: ''}
-  - {Name: Requested RPM 1, size: 2, type: uint16, units: ''}
-  - {Name: Requested RPM 2, size: 2, type: uint16, units: ''}
-  - {Name: Requested RPM 3, size: 2, type: uint16, units: ''}
-  - {Name: Requested RPM 4, size: 2, type: uint16, units: ''}
-  - {Name: Requested RPM 5, size: 2, type: uint16, units: ''}
-  - {Name: Requested RPM 6, size: 2, type: uint16, units: ''}
-  - {Name: Requested RPM 7, size: 2, type: uint16, units: ''}
-  - {Name: Requested RPM 8, size: 2, type: uint16, units: ''}
-  - {Name: Current RPM 1, size: 2, type: uint16, units: ''}
-  - {Name: Current RPM 2, size: 2, type: uint16, units: ''}
-  - {Name: Current RPM 3, size: 2, type: uint16, units: ''}
-  - {Name: Current RPM 4, size: 2, type: uint16, units: ''}
-  - {Name: Current RPM 5, size: 2, type: uint16, units: ''}
-  - {Name: Current RPM 6, size: 2, type: uint16, units: ''}
-  - {Name: Current RPM 7, size: 2, type: uint16, units: ''}
-  - {Name: Current RPM 8, size: 2, type: uint16, units: ''}
-  - {Name: ASI RPM 1, size: 2, type: uint16, units: ''}
-  - {Name: ASI RPM 2, size: 2, type: uint16, units: ''}
-  - {Name: ASI RPM 3, size: 2, type: uint16, units: ''}
-  - {Name: ASI RPM 4, size: 2, type: uint16, units: ''}
-  - {Name: ASI RPM 5, size: 2, type: uint16, units: ''}
-  - {Name: ASI RPM 6, size: 2, type: uint16, units: ''}
-  - {Name: ASI RPM 7, size: 2, type: uint16, units: ''}
-  - {Name: ASI RPM 8, size: 2, type: uint16, units: ''}
-  - {Name: State, size: 1, type: uint8, units: ''}
-  - {Name: Current Index, size: 1, type: uint8, units: ''}
-  - {Name: AMC State, size: 1, type: uint8, units: ''}
 - DAQ: false
   Name: AuxProp Data
   Node: Aux Prop Controller
