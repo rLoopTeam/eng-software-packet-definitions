@@ -68,3 +68,21 @@ packets:
           start: 1
           end: 2
           endGroup: true
+      - name: 'Validity Active'
+        type: 'uint8'
+      - name: 'Validity Is Valid'
+        type: 'uint8'
+      - name: 'Validity Accel Valid'
+        type: 'int32'
+      - name: 'Validity Velocity Valid'
+        type: 'int32'
+      - name: 'Validity Displacement Valid'
+        type: 'int32'
+      - name: 'Thresholding Active'
+        type: 'uint8'
+      - name: 'Thresholding Time'
+        type: 'uint32'
+      - name: 'Thresholding Accel'
+        type: 'int32'
+      - name: 'Thresholding Counter'
+        type: 'uint32'

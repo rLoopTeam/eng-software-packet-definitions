@@ -3950,6 +3950,60 @@
                     "units": "",
                     "size": 4,
                     "Name": "2 Previous Displacement"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Validity Active"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Validity Is Valid"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Validity Accel Valid"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Validity Velocity Valid"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Validity Displacement Valid"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "Thresholding Active"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Thresholding Time"
+                },
+                {
+                    "type": "int32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Thresholding Accel"
+                },
+                {
+                    "type": "uint32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Thresholding Counter"
                 }
             ]
         },
