@@ -29,10 +29,8 @@ packets:
         type: 'float32'
         iterate:
           beginGroup: true
-      - name: '{i} ROM ID Hi'
-        type: 'uint16'
-      - name: '{i} ROM ID Low'
-        type: 'uint16'
+      - name: '{i} ROM ID'
+        type: 'uint8'
         iterate:
           start: 1
           end: 24

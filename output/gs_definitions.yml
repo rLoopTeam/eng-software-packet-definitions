@@ -554,77 +554,53 @@ packetDefinitions:
   - {Name: DS18B20 Fault Flags, size: 4, type: uint32, units: ''}
   - {Name: Sensors Count, size: 1, type: uint8, units: ''}
   - {Name: 1 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 1 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 1 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 1 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 2 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 2 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 2 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 2 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 3 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 3 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 3 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 3 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 4 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 4 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 4 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 4 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 5 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 5 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 5 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 5 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 6 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 6 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 6 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 6 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 7 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 7 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 7 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 7 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 8 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 8 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 8 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 8 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 9 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 9 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 9 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 9 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 10 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 10 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 10 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 10 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 11 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 11 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 11 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 11 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 12 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 12 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 12 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 12 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 13 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 13 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 13 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 13 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 14 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 14 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 14 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 14 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 15 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 15 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 15 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 15 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 16 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 16 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 16 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 16 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 17 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 17 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 17 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 17 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 18 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 18 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 18 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 18 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 19 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 19 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 19 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 19 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 20 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 20 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 20 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 20 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 21 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 21 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 21 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 21 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 22 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 22 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 22 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 22 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 23 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 23 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 23 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 23 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: 24 Temperature, size: 4, type: float32, units: ''}
-  - {Name: 24 ROM ID Hi, size: 2, type: uint16, units: ''}
-  - {Name: 24 ROM ID Low, size: 2, type: uint16, units: ''}
+  - {Name: 24 ROM ID, size: 1, type: uint8, units: ''}
   - {Name: Left Highest Sensor Index, size: 2, type: uint16, units: ''}
   - {Name: Right Highest Sensor Index, size: 2, type: uint16, units: ''}
   - {Name: Brake Motor Highest Sensor Index, size: 2, type: uint16, units: ''}
