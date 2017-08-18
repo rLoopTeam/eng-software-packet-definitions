@@ -3061,9 +3061,9 @@
                     "Name": "1 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "1 ROM ID"
                 },
                 {
@@ -3073,9 +3073,9 @@
                     "Name": "2 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "2 ROM ID"
                 },
                 {
@@ -3085,9 +3085,9 @@
                     "Name": "3 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "3 ROM ID"
                 },
                 {
@@ -3097,9 +3097,9 @@
                     "Name": "4 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "4 ROM ID"
                 },
                 {
@@ -3109,9 +3109,9 @@
                     "Name": "5 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "5 ROM ID"
                 },
                 {
@@ -3121,9 +3121,9 @@
                     "Name": "6 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "6 ROM ID"
                 },
                 {
@@ -3133,9 +3133,9 @@
                     "Name": "7 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "7 ROM ID"
                 },
                 {
@@ -3145,9 +3145,9 @@
                     "Name": "8 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "8 ROM ID"
                 },
                 {
@@ -3157,9 +3157,9 @@
                     "Name": "9 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "9 ROM ID"
                 },
                 {
@@ -3169,9 +3169,9 @@
                     "Name": "10 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "10 ROM ID"
                 },
                 {
@@ -3181,9 +3181,9 @@
                     "Name": "11 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "11 ROM ID"
                 },
                 {
@@ -3193,9 +3193,9 @@
                     "Name": "12 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "12 ROM ID"
                 },
                 {
@@ -3205,9 +3205,9 @@
                     "Name": "13 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "13 ROM ID"
                 },
                 {
@@ -3217,9 +3217,9 @@
                     "Name": "14 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "14 ROM ID"
                 },
                 {
@@ -3229,9 +3229,9 @@
                     "Name": "15 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "15 ROM ID"
                 },
                 {
@@ -3241,9 +3241,9 @@
                     "Name": "16 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "16 ROM ID"
                 },
                 {
@@ -3253,9 +3253,9 @@
                     "Name": "17 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "17 ROM ID"
                 },
                 {
@@ -3265,9 +3265,9 @@
                     "Name": "18 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "18 ROM ID"
                 },
                 {
@@ -3277,9 +3277,9 @@
                     "Name": "19 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "19 ROM ID"
                 },
                 {
@@ -3289,9 +3289,9 @@
                     "Name": "20 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "20 ROM ID"
                 },
                 {
@@ -3301,9 +3301,9 @@
                     "Name": "21 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "21 ROM ID"
                 },
                 {
@@ -3313,9 +3313,9 @@
                     "Name": "22 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "22 ROM ID"
                 },
                 {
@@ -3325,9 +3325,9 @@
                     "Name": "23 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "23 ROM ID"
                 },
                 {
@@ -3337,9 +3337,9 @@
                     "Name": "24 Temperature"
                 },
                 {
-                    "type": "uint8",
+                    "type": "uint64",
                     "units": "",
-                    "size": 1,
+                    "size": 8,
                     "Name": "24 ROM ID"
                 },
                 {
