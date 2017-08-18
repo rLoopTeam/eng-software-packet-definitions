@@ -5821,43 +5821,43 @@
             "Parameters": [
                 {
                     "type": "float32",
-                    "units": "",
+                    "units": "V",
                     "size": 4,
                     "Name": "Current V"
                 },
                 {
                     "type": "float32",
-                    "units": "",
+                    "units": "I",
                     "size": 4,
                     "Name": "Current I"
                 },
                 {
                     "type": "float32",
-                    "units": "",
+                    "units": "V",
                     "size": 4,
                     "Name": "Float V SP"
                 },
                 {
                     "type": "float32",
-                    "units": "",
+                    "units": "V",
                     "size": 4,
-                    "Name": "Bost V SP"
+                    "Name": "Boost V SP"
                 },
                 {
                     "type": "float32",
-                    "units": "",
+                    "units": "I",
                     "size": 4,
                     "Name": "Max Current SP"
                 },
                 {
                     "type": "float32",
-                    "units": "",
+                    "units": "I",
                     "size": 4,
                     "Name": "Boost to Float Current SP"
                 },
                 {
                     "type": "float32",
-                    "units": "",
+                    "units": "I",
                     "size": 4,
                     "Name": "Float to Boost Current SP"
                 }

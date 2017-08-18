@@ -1098,13 +1098,13 @@ packetDefinitions:
   PacketType: 0x9125
   ParameterPrefix: 'IPS Charger '
   Parameters:
-  - {Name: Current V, size: 4, type: float32, units: ''}
-  - {Name: Current I, size: 4, type: float32, units: ''}
-  - {Name: Float V SP, size: 4, type: float32, units: ''}
-  - {Name: Bost V SP, size: 4, type: float32, units: ''}
-  - {Name: Max Current SP, size: 4, type: float32, units: ''}
-  - {Name: Boost to Float Current SP, size: 4, type: float32, units: ''}
-  - {Name: Float to Boost Current SP, size: 4, type: float32, units: ''}
+  - {Name: Current V, size: 4, type: float32, units: V}
+  - {Name: Current I, size: 4, type: float32, units: I}
+  - {Name: Float V SP, size: 4, type: float32, units: V}
+  - {Name: Boost V SP, size: 4, type: float32, units: V}
+  - {Name: Max Current SP, size: 4, type: float32, units: I}
+  - {Name: Boost to Float Current SP, size: 4, type: float32, units: I}
+  - {Name: Float to Boost Current SP, size: 4, type: float32, units: I}
 - DAQ: false
   Name: ASI Data
   Node: ASI Monitor System
