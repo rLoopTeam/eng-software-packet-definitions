@@ -35,7 +35,7 @@ packets:
         type: 'uint16'
         iterate:
           start: 1
-          end: 32
+          end: 24
           endGroup: true
 
       - name: 'Left Highest Sensor Index'
