@@ -60,3 +60,10 @@ packets:
         type: 'uint8'
       - name: 'Brake Motor Overtemp State'
         type: 'uint8'
+      - name: '{i} Solenoid Open State'
+        type: 'uint8'
+        iterate:
+          start: 1
+          end: 4
+      - name: 'Manual Control Mode'
+        type: 'uint8'

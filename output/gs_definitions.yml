@@ -613,6 +613,11 @@ packetDefinitions:
   - {Name: Left Overtemp State, size: 1, type: uint8, units: ''}
   - {Name: Right Overtemp State, size: 1, type: uint8, units: ''}
   - {Name: Brake Motor Overtemp State, size: 1, type: uint8, units: ''}
+  - {Name: 1 Solenoid Open State, size: 1, type: uint8, units: ''}
+  - {Name: 2 Solenoid Open State, size: 1, type: uint8, units: ''}
+  - {Name: 3 Solenoid Open State, size: 1, type: uint8, units: ''}
+  - {Name: 4 Solenoid Open State, size: 1, type: uint8, units: ''}
+  - {Name: Manual Control Mode, size: 1, type: uint8, units: ''}
 - DAQ: false
   Name: AuxProp Data
   Node: Aux Prop Controller
@@ -815,8 +820,8 @@ packetDefinitions:
   ParameterPrefix: ''
   Parameters:
   - {Name: All Flags, size: 4, type: uint32, units: ''}
-  - {Name: Mission State, size: 2, type: uint16, units: ''}
-  - {Name: Mission TrackDB, size: 1, type: uint8, units: ''}
+  - {Name: FCU Mission State, size: 2, type: uint16, units: ''}
+  - {Name: FCU Mission TrackDB, size: 1, type: uint8, units: ''}
   - {Name: Pod Health Fault Flags, size: 4, type: uint32, units: ''}
 - DAQ: false
   Name: All Fault Flags

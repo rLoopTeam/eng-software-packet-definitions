@@ -54,9 +54,9 @@ packets:
     parameters:
       - name: 'All Flags'
         type: 'uint32'
-      - name: 'Mission State'
+      - name: 'FCU Mission State'
         type: 'uint16'
-      - name: 'Mission TrackDB'
+      - name: 'FCU Mission TrackDB'
         type: 'uint8'
       - name: 'Pod Health Fault Flags'
         type: 'uint32'
