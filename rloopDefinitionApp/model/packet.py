@@ -180,6 +180,7 @@ class Packet:
                 for i in range(range_start, range_end):
                     for group_parameter in group_params:
                         self.append_parameter(group_parameter, i=i)
+                group_params = []
                 continue
 
             # Iterate through our range and append the parameter copies to the list.
