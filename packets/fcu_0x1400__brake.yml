@@ -75,6 +75,9 @@ packets:
         type: 'int32'
       - name: 'Current Position {i}'
         type: 'int32'
+
+      - name: 'Limit Interrupt {i}'
+        type: 'int32'
         iterate:
           {start: 1, end: 2, endGroup: true}
 

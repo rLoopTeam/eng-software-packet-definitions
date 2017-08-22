@@ -894,6 +894,7 @@ packetDefinitions:
   - {Name: Linear Velocity 1, size: 4, type: int32, units: ''}
   - {Name: Linear Acceleration 1, size: 4, type: int32, units: ''}
   - {Name: Current Position 1, size: 4, type: int32, units: ''}
+  - {Name: Limit Interrupt 1, size: 4, type: int32, units: ''}
   - {Name: Fault Flags 2, size: 4, type: uint32, units: A}
   - {Name: I Beam mm 2 Target, size: 4, type: float32, units: mm}
   - {Name: Lead Screw mm 2 Target, size: 4, type: float32, units: mm}
@@ -916,6 +917,7 @@ packetDefinitions:
   - {Name: Linear Velocity 2, size: 4, type: int32, units: ''}
   - {Name: Linear Acceleration 2, size: 4, type: int32, units: ''}
   - {Name: Current Position 2, size: 4, type: int32, units: ''}
+  - {Name: Limit Interrupt 2, size: 4, type: int32, units: ''}
   - {Name: State, size: 1, type: uint8, units: ''}
   - {Name: Calibration State, size: 1, type: uint8, units: ''}
 - DAQ: false
