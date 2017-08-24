@@ -5837,10 +5837,16 @@
                 },
                 {
                     "type": "float32",
-                    "endLoop": true,
                     "units": "",
                     "size": 4,
                     "Name": "Throttle Voltage"
+                },
+                {
+                    "type": "float32",
+                    "endLoop": true,
+                    "units": "",
+                    "size": 4,
+                    "Name": "Commanded Voltage"
                 }
             ]
         },

@@ -35,4 +35,6 @@ packets:
         type: 'uint16'
       - name: 'Throttle Voltage'
         type: 'float32'
+      - name: 'Commanded Voltage'
+        type: 'float32'
         endLoop: true
