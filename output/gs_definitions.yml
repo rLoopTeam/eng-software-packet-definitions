@@ -679,9 +679,13 @@ packetDefinitions:
   - {Name: Validity Velocity Valid, size: 4, type: int32, units: ''}
   - {Name: Validity Displacement Valid, size: 4, type: int32, units: ''}
   - {Name: Thresholding Active, size: 1, type: uint8, units: ''}
-  - {Name: Thresholding Time, size: 4, type: uint32, units: ''}
-  - {Name: Thresholding Accel, size: 4, type: int32, units: ''}
-  - {Name: Thresholding Counter, size: 4, type: uint32, units: ''}
+  - {Name: Thresholding Time, size: 2, type: uint16, units: x10ms}
+  - {Name: Thresholding Accel, size: 4, type: int32, units: mm/s/s}
+  - {Name: Thresholding Counter, size: 2, type: uint16, units: ms}
+  - {Name: Decel Thresholding Active, size: 1, type: uint8, units: ''}
+  - {Name: Decel Thresholding Time, size: 2, type: uint16, units: x10ms}
+  - {Name: Decel Thresholding Accel, size: 4, type: uint32, units: mm/s/s}
+  - {Name: Decel Thresholding Accel, size: 2, type: uint16, units: ms}
 - DAQ: false
   Name: Forward Laser Distance Sensor
   Node: Flight Control
