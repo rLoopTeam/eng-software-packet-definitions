@@ -3908,16 +3908,52 @@
                     "Name": "Index"
                 },
                 {
-                    "type": "uint16",
+                    "type": "uint8",
                     "units": "",
-                    "size": 2,
-                    "Name": "Hi"
+                    "size": 1,
+                    "Name": "1"
                 },
                 {
-                    "type": "uint16",
+                    "type": "uint8",
                     "units": "",
-                    "size": 2,
-                    "Name": "Lo"
+                    "size": 1,
+                    "Name": "2"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "3"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "4"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "5"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "6"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "7"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "8"
                 }
             ]
         },
@@ -4359,6 +4395,39 @@
                     "units": "",
                     "size": 4,
                     "Name": "Node Temp"
+                },
+                {
+                    "units": "Amps",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "Battery Current"
+                },
+                {
+                    "units": "Amps",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "Charging Current"
+                },
+                {
+                    "units": "%",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "State of Charge"
+                }
+            ]
+        },
+        {
+            "Name": "Power B Current Sensor",
+            "PacketType": 14337,
+            "Node": "Power Node B",
+            "DAQ": false,
+            "ParameterPrefix": "Power B Charger ",
+            "Parameters": [
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Current"
                 }
             ]
         },
@@ -5097,16 +5166,52 @@
                     "Name": "Index"
                 },
                 {
-                    "type": "uint16",
+                    "type": "uint8",
                     "units": "",
-                    "size": 2,
-                    "Name": "Hi"
+                    "size": 1,
+                    "Name": "1"
                 },
                 {
-                    "type": "uint16",
+                    "type": "uint8",
                     "units": "",
-                    "size": 2,
-                    "Name": "Lo"
+                    "size": 1,
+                    "Name": "2"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "3"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "4"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "5"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "6"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "7"
+                },
+                {
+                    "type": "uint8",
+                    "units": "",
+                    "size": 1,
+                    "Name": "8"
                 }
             ]
         },
@@ -5548,6 +5653,39 @@
                     "units": "",
                     "size": 4,
                     "Name": "Node Temp"
+                },
+                {
+                    "units": "Amps",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "Battery Current"
+                },
+                {
+                    "units": "Amps",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "Charging Current"
+                },
+                {
+                    "units": "%",
+                    "type": "float32",
+                    "size": 4,
+                    "Name": "State of Charge"
+                }
+            ]
+        },
+        {
+            "Name": "Power A Current Sensor",
+            "PacketType": 14337,
+            "Node": "Power Node A",
+            "DAQ": false,
+            "ParameterPrefix": "Power A Charger ",
+            "Parameters": [
+                {
+                    "type": "float32",
+                    "units": "",
+                    "size": 4,
+                    "Name": "Current"
                 }
             ]
         },
@@ -5620,7 +5758,7 @@
         {
             "Name": "ASI Data",
             "PacketType": 5889,
-            "Node": "ASI Monitor System",
+            "Node": "Flight Control",
             "DAQ": false,
             "ParameterPrefix": "ASI ",
             "Parameters": [

@@ -53,10 +53,11 @@ packets:
     parameters:
       - name: 'Index'
         type: 'uint32'
-      - name: 'Hi'
-        type: 'uint16'
-      - name: 'Lo'
-        type: 'uint16'
+      - name: '{i}'
+        type: 'uint8'
+        iterate:
+          start: 1
+          end: 8
 
   - packetName: 'Power {nodeName} BMS'
     prefix: 'Power {nodeName} BMS'
@@ -114,8 +115,22 @@ packets:
         type: 'float32'
       - name: 'Node Temp'
         type: 'float32'
-      # - name: 'Pack Current'
-      #   type: 'float32'
+      - name: 'Battery Current'
+        units: 'Amps'
+        type: 'float32'
+      - name: 'Charging Current'
+        units: 'Amps'
+        type: 'float32'
+      - name: 'State of Charge'
+        units: '%'
+        type: 'float32'
+
+  - packetName: 'Power {nodeName} Current Sensor'
+    prefix: 'Power {nodeName} Charger'
+    packetType: 0x3801
+    parameters:
+      - name: 'Current'
+        type: 'float32'
 
   # Cooling code files are missing?
   - packetName: 'Power {nodeName} Cooling'

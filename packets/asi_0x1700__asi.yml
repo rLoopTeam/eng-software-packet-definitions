@@ -1,5 +1,5 @@
 ---
-node: 'ASI Monitor System'
+node: 'Flight Control'
 
 podSources:
   # FCU packet types are in here.

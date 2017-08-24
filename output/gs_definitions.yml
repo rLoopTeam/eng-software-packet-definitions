@@ -726,8 +726,14 @@ packetDefinitions:
   ParameterPrefix: 'Power B ROM '
   Parameters:
   - {Name: Index, size: 4, type: uint32, units: ''}
-  - {Name: Hi, size: 2, type: uint16, units: ''}
-  - {Name: Lo, size: 2, type: uint16, units: ''}
+  - {Name: '1', size: 1, type: uint8, units: ''}
+  - {Name: '2', size: 1, type: uint8, units: ''}
+  - {Name: '3', size: 1, type: uint8, units: ''}
+  - {Name: '4', size: 1, type: uint8, units: ''}
+  - {Name: '5', size: 1, type: uint8, units: ''}
+  - {Name: '6', size: 1, type: uint8, units: ''}
+  - {Name: '7', size: 1, type: uint8, units: ''}
+  - {Name: '8', size: 1, type: uint8, units: ''}
 - DAQ: false
   Name: Power B BMS
   Node: Power Node B
@@ -806,6 +812,16 @@ packetDefinitions:
   - {Name: Temp Scan Count, size: 4, type: uint32, units: ''}
   - {Name: Node Pressure, size: 4, type: float32, units: ''}
   - {Name: Node Temp, size: 4, type: float32, units: ''}
+  - {Name: Battery Current, size: 4, type: float32, units: Amps}
+  - {Name: Charging Current, size: 4, type: float32, units: Amps}
+  - {Name: State of Charge, size: 4, type: float32, units: '%'}
+- DAQ: false
+  Name: Power B Current Sensor
+  Node: Power Node B
+  PacketType: 0x3801
+  ParameterPrefix: 'Power B Charger '
+  Parameters:
+  - {Name: Current, size: 4, type: float32, units: ''}
 - DAQ: false
   Name: Power B Cooling
   Node: Power Node B
@@ -964,8 +980,14 @@ packetDefinitions:
   ParameterPrefix: 'Power A ROM '
   Parameters:
   - {Name: Index, size: 4, type: uint32, units: ''}
-  - {Name: Hi, size: 2, type: uint16, units: ''}
-  - {Name: Lo, size: 2, type: uint16, units: ''}
+  - {Name: '1', size: 1, type: uint8, units: ''}
+  - {Name: '2', size: 1, type: uint8, units: ''}
+  - {Name: '3', size: 1, type: uint8, units: ''}
+  - {Name: '4', size: 1, type: uint8, units: ''}
+  - {Name: '5', size: 1, type: uint8, units: ''}
+  - {Name: '6', size: 1, type: uint8, units: ''}
+  - {Name: '7', size: 1, type: uint8, units: ''}
+  - {Name: '8', size: 1, type: uint8, units: ''}
 - DAQ: false
   Name: Power A BMS
   Node: Power Node A
@@ -1044,6 +1066,16 @@ packetDefinitions:
   - {Name: Temp Scan Count, size: 4, type: uint32, units: ''}
   - {Name: Node Pressure, size: 4, type: float32, units: ''}
   - {Name: Node Temp, size: 4, type: float32, units: ''}
+  - {Name: Battery Current, size: 4, type: float32, units: Amps}
+  - {Name: Charging Current, size: 4, type: float32, units: Amps}
+  - {Name: State of Charge, size: 4, type: float32, units: '%'}
+- DAQ: false
+  Name: Power A Current Sensor
+  Node: Power Node A
+  PacketType: 0x3801
+  ParameterPrefix: 'Power A Charger '
+  Parameters:
+  - {Name: Current, size: 4, type: float32, units: ''}
 - DAQ: false
   Name: Power A Cooling
   Node: Power Node A
@@ -1066,7 +1098,7 @@ packetDefinitions:
   - {Name: Float to Boost Current SP, size: 4, type: float32, units: I}
 - DAQ: false
   Name: ASI Data
-  Node: ASI Monitor System
+  Node: Flight Control
   PacketType: 0x1701
   ParameterPrefix: 'ASI '
   Parameters:
